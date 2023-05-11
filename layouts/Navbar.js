@@ -67,8 +67,8 @@ function Navbar() {
           <ul className='flex justify-center items-center max-md:flex-col max-md:w-full'>
             {
               tabs.map((tab, ind) => {
-                // Tabs without Dropdown
                 if (!tab?.subTabs) {
+                  // Tabs without Dropdown
                   return (
                     <>
                       <li key={ind} className='max-md:w-full'>
