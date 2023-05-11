@@ -11,10 +11,11 @@ module.exports = {
       colors: {
         primary: '#BE1687',
         secondary: '#661E78',
-        lightGrey: '#FEFEFEE5',
+        third: '#390027',
         white: '#FFFFFF',
         black: '#1E1E1E',
         grey: '#F9F9FF',
+        lightGrey: '#FEFEFEE5',
       },
       maxWidth: {
         '1200': 1180,

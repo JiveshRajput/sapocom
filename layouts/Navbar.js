@@ -47,7 +47,7 @@ function Navbar() {
   return (
     <header className='w-full px-4 py-2 h-[65px] relative z-[90] shadow-md'>
       {/* Black Transparent Screen */}
-      <div className={`absolute w-screen h-screen bg-black/5 top-0 left-0 md:hidden z-[91] ${!showNav && 'max-md:hidden'}`}></div>
+      <div className={`fixed w-screen h-screen bg-black/10 top-0 left-0 md:hidden z-[91] ${!showNav && 'max-md:hidden'}`}></div>
       {/* PC & Laptop Screen */}
       <div className={`max-w-1200 mx-auto flex justify-between gap-4 items-center h-full max-md:fixed max-md:right-0 max-md:top-0 max-md:bg-white max-md:h-screen max-md:w-[250px] max-md:flex-col max-md:p-4 max-md:items-start z-[92] max-md:shadow-nav max-md:transition-all ${!showNav && 'max-md:right-[-300px]'}`}>
         {/* Logo */}
@@ -81,14 +81,13 @@ function Navbar() {
                   // Tabs with Dropdown
                   return (
                     <>
-                      <li key={ind} className='max-md:w-full'>
+                      <li key={ind} className='max-md:w-full cursor-pointer'>
                         <div className={`p-2 md:p-4 block text-black/30 font-semibold md:border-y-4  max-md:rounded-md border-transparent hover:border-b-primary relative group hover:text-primary ${activeTab == tab.name && 'text-primary border-b-primary'}`} onClick={() => setActiveTab(tab.name)}>
                           <div className='max-md:flex max-md:justify-between'>
                             {tab.name}
                             <Image src={require('../assets/images/icons/top-arrow.svg')} width={10} height={10} className='inline ml-3 rotate-180 group-hover:rotate-0 transition-[transform]' alt='dropdown' />
                           </div>
-                          {/* <div className="md:pt-5  md:absolute group-hover:block md:w-48 w-full"> */}
-                          <div className="md:pt-5 hidden md:absolute group-hover:block md:w-48 w-full">
+                          <div className="md:pt-6 hidden md:absolute group-hover:block md:w-48 w-full">
                             <ul className='py-2 md:p-4 md:bg-white md:shadow-md rounded-md md:top-2 '>
                               <div className='font-semibold mb-2 max-md:hidden'>{tab.name}</div>
                               {

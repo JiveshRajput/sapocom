@@ -5,7 +5,7 @@ import logo from '@/assets/images/logo.png'
 
 function Footer() {
   return (
-    <footer>
+    <footer className='bg-grey'>
       {/* Top Footer */}
       <div className='p-4 max-w-1000 mx-auto grid grid-cols-[1fr_170px_170px_170px] gap-8 max-md:gap-4 max-md:grid-cols-[1fr_1fr]'>
         {/* First Row */}
@@ -16,7 +16,7 @@ function Footer() {
         {/* Second Row */}
         <div className="p-2">
           <h4 className='text-primary uppercase mb-4 font-semibold'>Company</h4>
-          <Link href='/' className='text-black mb-2 block'>Company</Link>
+          <Link href='/' className='text-black mb-2 block'>Home</Link>
           <Link href='/about-us' className='text-black mb-2 block'>About Us</Link>
           <Link href='/services' className='text-black mb-2 block'>Services</Link>
           <Link href='/industries' className='text-black block'>Industries</Link>
@@ -42,16 +42,16 @@ function Footer() {
       <div className="border-t p-4 flex justify-center items-center [550px]:gap-4 gap-2 max-[550px]:flex-col text-secondary">
         <p >@ {new Date().getFullYear()} Sapocom Global. All rights reserved</p>
         <div className=' flex '>
-          <a href='https://www.instagram.com/' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center'>
+          <a href='https://www.instagram.com/' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center hover:bg-primary'>
             <Image src={require('../assets/images/icons/instagram.svg')} />
           </a>
-          <a href='https://twitter.com/home' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center'>
+          <a href='https://twitter.com/home' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center hover:bg-primary'>
             <Image src={require('../assets/images/icons/twitter.svg')} />
           </a>
-          <a href='https://www.facebook.com/' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center'>
+          <a href='https://www.facebook.com/' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center hover:bg-primary'>
             <Image src={require('../assets/images/icons/facebook.svg')} />
           </a>
-          <a href='https://www.linkedin.com/in/sapocom-technologies-79382b231/' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center'>
+          <a href='https://www.linkedin.com/in/sapocom-technologies-79382b231/' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center hover:bg-primary'>
             <Image src={require('../assets/images/icons/linked-in.svg')} />
           </a>
         </div>
