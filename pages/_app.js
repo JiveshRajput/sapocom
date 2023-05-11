@@ -1,5 +1,11 @@
-import '@/styles/globals.css'
+import Layout from '../layouts/Layout'
+import '../styles/globals.css'
+import '../styles/fonts.css'
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  </>
 }
