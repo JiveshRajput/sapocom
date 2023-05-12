@@ -23,12 +23,18 @@ module.exports = {
         '900': 920,
       },
       boxShadow: {
-        nav: '-9px -4px 38px rgba(0, 0, 0, 0.15)'
+        nav: '-9px -4px 38px rgba(0, 0, 0, 0.15)',
+        card: '1px 1px 25px rgba(0, 0, 0, 0.15)',
       },
       gridTemplateColumns: {
         'auto-4' : 'repeat(auto-fit, minmax(250px, 1fr))',
-        'auto-3' : 'repeat(auto-fit, minmax(310px, 1fr))',
+        'auto-3' : 'repeat(auto-fit, minmax(300px, 1fr))',
         'auto-3-250' : 'repeat(auto-fit, minmax(250px, 1fr))',
+        'auto-150' : 'repeat(auto-fit, minmax(165px, 1fr))',
+      },
+      screens: {
+        'x-sm': '390px',
+        'review': '575px',
       }
     },
   },

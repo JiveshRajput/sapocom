@@ -5,7 +5,7 @@ import logo from '@/assets/images/logo.png'
 
 function Footer() {
   return (
-    <footer className='bg-grey'>
+    <footer className='bg-white'>
       {/* Top Footer */}
       <div className='p-4 max-w-1000 mx-auto grid grid-cols-[1fr_170px_170px_170px] gap-8 max-md:gap-4 max-md:grid-cols-[1fr_1fr]'>
         {/* First Row */}

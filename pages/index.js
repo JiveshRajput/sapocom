@@ -2,19 +2,22 @@ import React from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
+import { Pagination, Autoplay, Navigation } from "swiper";
 
 import SetHeaders from "@/components/SetHeaders";
-import { slidesData, industryDetails, sapServicesDetails, whyChooseUsData } from "@/configs/config";
+import { slidesData, industryDetails, sapServicesDetails, whyChooseUsData, partnersDetails, reviewData } from "@/configs/config";
 
 // image
 import aboutSapocomSection from '@/assets/images/home/about-sapocom-section.png'
-
+import mapWithFlag from '@/assets/images/home/map-with-flags.png'
+// import rightArrow from '../assets/images/icons/right-arrow-rounded-circle.svg'
+// import leftArrow from '../assets/images/icons/left-arrow-rounded-circle.svg'
 
 
 // css
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export default function Home() {
   return (
@@ -156,7 +159,7 @@ export default function Home() {
 
       {/* Why Chose Us  */}
       <section className='w-full p-4 md:py-8 max-w-1200 mx-auto ' >
-        <div className='flex items-center flex-col mb-10 max-md:mb-5'>
+        <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p className='text-black uppercase mb-2 font-medium'>Why Choose</p>
           <h2 className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Why Choose Us as Your SAP Partner</h2>
           <p className='text-black opacity-70 text-center'>Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition</p>
@@ -165,10 +168,8 @@ export default function Home() {
           {
             whyChooseUsData.map(({ name, description, image, }, ind) => {
               const even = ind % 2 == 0 || ind == 0 ? true : false;
-              console.log(even);
               return (
-                <div key={ind} className={`${even ? 'bg-white border-primary/10' : 'bg-gradient-to-br from-primary to-secondary border-transparent'} rounded-md border-2 aspect-[3/4] p-4 flex`}>
-
+                <div key={ind} className={`${even ? 'bg-white border-primary/10' : 'bg-gradient-to-br from-primary to-secondary border-transparent'} rounded-md border-2 aspect-[3/4] p-4 flex hover:shadow-card`}>
                   <div className={`select-none ${even ? 'text-black' : 'text-white'}`}>
                     <div className={`${!even ? 'bg-white' : 'bg-gradient-to-br from-primary to-secondary '} rounded-md aspect-[1/1] w-20 p-3 flex mb-8`}>
                       <Image src={image} alt={name} />
@@ -182,6 +183,79 @@ export default function Home() {
           }
         </div>
       </section >
+
+
+      {/* Our Partners */}
+      <section className='w-full p-4 md:py-8 max-w-1200 mx-auto ' >
+        <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
+          <p className='text-black uppercase mb-2 font-medium'>Clients</p>
+          <h2 className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Partnering with Industry Leaders</h2>
+          <p className='text-black opacity-70 text-center'>Our partnerships with industry leaders enable us to provide most innovative and cutting-edge SAP solutions</p>
+        </div>
+        <div className=' flex flex-wrap gap-4 justify-center'>
+          {
+            partnersDetails.map(({ name, image, }, ind) => {
+              return (
+                <div key={ind} className='bg-white p-4 max-x-sm:w-[130px] w-[170px] flex justify-center'>
+                  <Image src={image} alt={name} className='object-contain w-24 h-12 ' height={40} width={80} />
+                </div>
+              )
+            })
+          }
+        </div>
+      </section >
+
+      {/* Reviews */}
+      <section className="w-full p-4 md:py-8 bg-gradient-to-r from-primary to-third text-white " >
+        <div className="max-w-1200 mx-auto bg-[url('/map-bg.png')] bg-no-repeat bg-center bg-contain">
+          <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center text-white'>
+            <p className=' uppercase mb-2 font-medium'>Clients</p>
+            <h2 className='md:text-4xl text-3xl font-semibold mb-2'>Partnering with Industry Leaders</h2>
+            <p className=' opacity-70 text-center'>Our partnerships with industry leaders enable us to provide most innovative and cutting-edge SAP solutions</p>
+          </div>
+          <div className="flex justify-center items-center gap-6 mb-4">
+            {/* //  <Image src={leftArrow} width={50} height={50} className='cursor-pointer w-10 h-10' />  */}
+            <div className='max-w-[750px] w-full'>
+              <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} spaceBetween={50} fadeEffect={true} className="swiperReview rounded-md" pagination={{ clickable: true }} autoplay={{ delay: 2000, disableOnInteraction: false, }} >
+                {
+                  reviewData.map((data, ind) => {
+                    return (
+                      <SwiperSlide key={ind} className=''>
+                        <div className='grid review:grid-cols-[200px_1fr] max-review:grid-rows-[225px_1fr] rounded-md'>
+                          <div>
+                            <Image src={data.image} alt={data.name} className='w-full h-full review:object-cover max-review:object-cover review:rounded-l-lg max-review:rounded-t-lg ' />
+                          </div>
+                          <div className="bg-white p-4 text-black text-left text-base review:rounded-r-lg max-review:rounded-b-lg">
+                            <p className='mb-4 line-clamp-5'>{data.review}</p>
+                            <p className='text-xl font-semibold'>{data.name}</p>
+                            <p className='opacity-50 text-base'>{data.position}</p>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    )
+                  })
+                }
+              </Swiper>
+            </div>
+            {/* // <Image src={rightArrow} width={50} height={50} className='cursor-pointer w-10 h-10' />  */}
+          </div>
+
+        </div>
+      </section>
+
+      {/* About Sapocom */}
+      <section className='w-full p-4 md:py-8 bg-grey' >
+        <div className='max-w-1200 mx-auto flex gap-4 flex-wrap '>
+          <div className="md:flex-1">
+            <p className='text-secondary uppercase mb-4 font-medium'>Worldwide</p>
+            <h2 className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2 max-w-[550px]'>We are helping business all over the world with growth and efficient solutions</h2>
+            <p className='text-black mb-6 opacity-70 max-w-[500px]'>Our global presence allows us to provide local support and expertise to our clients, no matter where they are located.</p>
+          </div>
+          <div className="flex md:flex-1 max-md:text-center max-md:w-full max-md:justify-center">
+            <Image src={mapWithFlag} width={400} alt='about_sacopom_image' className='w-full' />
+          </div>
+        </div>
+      </section>
     </>
   )
 }
