@@ -35,6 +35,7 @@ module.exports = {
       screens: {
         'x-sm': '390px',
         'review': '575px',
+        '1000': '1000px',
       }
     },
   },

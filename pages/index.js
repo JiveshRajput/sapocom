@@ -10,6 +10,7 @@ import { slidesData, industryDetails, sapServicesDetails, whyChooseUsData, partn
 // image
 import aboutSapocomSection from '@/assets/images/home/about-sapocom-section.png'
 import mapWithFlag from '@/assets/images/home/map-with-flags.png'
+import mapBg from '@/assets/images/home/map-bg.png'
 // import rightArrow from '../assets/images/icons/right-arrow-rounded-circle.svg'
 // import leftArrow from '../assets/images/icons/left-arrow-rounded-circle.svg'
 
@@ -51,7 +52,7 @@ export default function Home() {
       </section >
 
       {/* Stats Detail Section */}
-      <section className='w-full p-4 md:py-8 bg-gradient-to-r from-secondary to-third text-white' >
+      <section data-aos='fade-up' className='w-full p-4 md:py-8 bg-gradient-to-r from-secondary to-third text-white' >
         <div className='max-w-1200 mx-auto'>
           <h1 className='text-center md:text-4xl text-3xl mb-4'>Stats at Glance</h1>
           <div className='grid grid-cols-4 gap-4 max-md:grid-cols-2'>
@@ -79,30 +80,30 @@ export default function Home() {
       <section className='w-full p-4 md:py-8 bg-grey' >
         <div className='max-w-1200 mx-auto flex gap-10 flex-wrap '>
           <div className="flex-1">
-            <p className='text-secondary uppercase mb-4 font-medium'>About</p>
-            <h2 className='text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>SAPOCOM Global</h2>
-            <p className='text-black mb-6 opacity-70'>Sapocom Global , a sap based company to provide asap solutions to be at top in this world</p>
-            <p className='text-black mb-6'>SAPOCOM is an emerging project-based SAP consulting, Training & talent recruitment enterprise among the fastest growing consultancy firms in India. We add value through talent acquisition, software development,</p>
-            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4'>
-              <div className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
+            <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>About</p>
+            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>SAPOCOM Global</h2>
+            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70'>Sapocom Global , a sap based company to provide asap solutions to be at top in this world</p>
+            <p data-aos='fade-up'  className='text-black mb-6'>SAPOCOM is an emerging project-based SAP consulting, Training & talent recruitment enterprise among the fastest growing consultancy firms in India. We add value through talent acquisition, software development,</p>
+            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[600px]'>
+              <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
                 <p>Important Statment One</p>
               </div>
-              <div className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
+              <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
                 <p>Important Statment One</p>
               </div>
-              <div className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
+              <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
                 <p>Important Statment One</p>
               </div>
-              <div className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
+              <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
                 <p>Important Statment One</p>
               </div>
             </div>
           </div>
-          <div className="max-md:flex max-md:text-center max-md:w-full max-md:justify-center">
+          <div data-aos="zoom-in" data-aos-delay='200' className="max-md:flex max-md:text-center max-md:w-full max-md:justify-center">
             <Image src={aboutSapocomSection} width={300} alt='about_sacopom_image' />
           </div>
         </div>
@@ -111,15 +112,15 @@ export default function Home() {
       {/* Industry Led Services */}
       <section className='w-full p-4 md:py-8 max-w-1200 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
-          <p className='text-black uppercase mb-2 font-medium'>Industries</p>
-          <h2 className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Industry Led Services</h2>
-          <p className='text-black opacity-70'>Our comprehensive SAP services are designed to meet the evolving needs of your business</p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Industries</p>
+          <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Industry Led Services</h2>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our comprehensive SAP services are designed to meet the evolving needs of your business</p>
         </div>
         <div className='grid grid-cols-auto-4 gap-4 justify-items-center'>
           {
             industryDetails.map((industry, ind) => {
               return (
-                <div key={ind} className='rounded-md aspect-[3/4] p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
+                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='rounded-md aspect-[3/4] p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
                   <Image alt='oil and gas' src={industry.image} fill className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
                   <div className='z-[87] select-none'>
                     <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{industry.name}</h1>
@@ -136,15 +137,15 @@ export default function Home() {
       {/* SAP Services  */}
       <section className='w-full p-4 md:py-8 max-w-1200 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
-          <p className='text-black uppercase mb-2 font-medium'>Services</p>
-          <h2 className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'> SAP Services</h2>
-          <p className='text-black opacity-70 text-center'>Innovative SAP solutions designed to help you stay ahead of the competition </p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Services</p>
+          <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'> SAP Services</h2>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Innovative SAP solutions designed to help you stay ahead of the competition </p>
         </div>
         <div className='grid grid-cols-auto-3 gap-4 justify-items-center'>
           {
             sapServicesDetails.map(({ name, description, image, }, ind) => {
               return (
-                <div key={ind} className='rounded-md aspect-[14/9]  p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
+                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='rounded-md aspect-[14/9]  p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
                   <Image alt={name} src={image} fill className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
                   <div className='z-[87] select-none'>
                     <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{name}</h1>
@@ -160,16 +161,16 @@ export default function Home() {
       {/* Why Chose Us  */}
       <section className='w-full p-4 md:py-8 max-w-1200 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
-          <p className='text-black uppercase mb-2 font-medium'>Why Choose</p>
-          <h2 className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Why Choose Us as Your SAP Partner</h2>
-          <p className='text-black opacity-70 text-center'>Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition</p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Why Choose</p>
+          <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Why Choose Us as Your SAP Partner</h2>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition</p>
         </div>
         <div className='grid grid-cols-auto-3-250 gap-4 justify-items-center mx-auto max-w-900'>
           {
             whyChooseUsData.map(({ name, description, image, }, ind) => {
               const even = ind % 2 == 0 || ind == 0 ? true : false;
               return (
-                <div key={ind} className={`${even ? 'bg-white border-primary/10' : 'bg-gradient-to-br from-primary to-secondary border-transparent'} rounded-md border-2 aspect-[3/4] p-4 flex hover:shadow-card`}>
+                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className={`${even ? 'bg-white border-primary/10' : 'bg-gradient-to-br from-primary to-secondary border-transparent'} rounded-md border-2 aspect-[3/4] p-4 flex hover:shadow-card`}>
                   <div className={`select-none ${even ? 'text-black' : 'text-white'}`}>
                     <div className={`${!even ? 'bg-white' : 'bg-gradient-to-br from-primary to-secondary '} rounded-md aspect-[1/1] w-20 p-3 flex mb-8`}>
                       <Image src={image} alt={name} />
@@ -184,19 +185,18 @@ export default function Home() {
         </div>
       </section >
 
-
       {/* Our Partners */}
       <section className='w-full p-4 md:py-8 max-w-1200 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
-          <p className='text-black uppercase mb-2 font-medium'>Clients</p>
-          <h2 className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Partnering with Industry Leaders</h2>
-          <p className='text-black opacity-70 text-center'>Our partnerships with industry leaders enable us to provide most innovative and cutting-edge SAP solutions</p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Clients</p>
+          <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Partnering with Industry Leaders</h2>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Our partnerships with industry leaders enable us to provide most innovative and cutting-edge SAP solutions</p>
         </div>
         <div className=' flex flex-wrap gap-4 justify-center'>
           {
             partnersDetails.map(({ name, image, }, ind) => {
               return (
-                <div key={ind} className='bg-white p-4 max-x-sm:w-[130px] w-[170px] flex justify-center'>
+                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='bg-white p-4 max-x-sm:w-[130px] w-[170px] flex justify-center'>
                   <Image src={image} alt={name} className='object-contain w-24 h-12 ' height={40} width={80} />
                 </div>
               )
@@ -206,15 +206,15 @@ export default function Home() {
       </section >
 
       {/* Reviews */}
-      <section className="w-full p-4 md:py-8 bg-gradient-to-r from-primary to-third text-white " >
-        <div className="max-w-1200 mx-auto bg-[url('/map-bg.png')] bg-no-repeat bg-center bg-contain">
+      <section className="w-full p-4 md:py-8 bg-gradient-to-r from-primary to-third text-white relative" >
+        <Image src={mapBg} alt='map-with-flag' className='absolute top-0 left-0 w-full h-full md:object-contain object-cover md:p-8 max-md:py-8' />
+        <div className="max-w-1200 mx-auto">
           <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center text-white'>
-            <p className=' uppercase mb-2 font-medium'>Clients</p>
-            <h2 className='md:text-4xl text-3xl font-semibold mb-2'>Partnering with Industry Leaders</h2>
-            <p className=' opacity-70 text-center'>Our partnerships with industry leaders enable us to provide most innovative and cutting-edge SAP solutions</p>
+            <p data-aos='flip-left' className='uppercase mb-2 font-medium'>Clients</p>
+            <h2 data-aos='flip-up' className='md:text-4xl text-3xl font-semibold mb-2'>Partnering with Industry Leaders</h2>
+            <p data-aos='flip-left' className='opacity-70 text-center'>Our partnerships with industry leaders enable us to provide most innovative and cutting-edge SAP solutions</p>
           </div>
           <div className="flex justify-center items-center gap-6 mb-4">
-            {/* //  <Image src={leftArrow} width={50} height={50} className='cursor-pointer w-10 h-10' />  */}
             <div className='max-w-[750px] w-full'>
               <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} spaceBetween={50} fadeEffect={true} className="swiperReview rounded-md" pagination={{ clickable: true }} autoplay={{ delay: 2000, disableOnInteraction: false, }} >
                 {
@@ -226,7 +226,7 @@ export default function Home() {
                             <Image src={data.image} alt={data.name} className='w-full h-full review:object-cover max-review:object-cover review:rounded-l-lg max-review:rounded-t-lg ' />
                           </div>
                           <div className="bg-white p-4 text-black text-left text-base review:rounded-r-lg max-review:rounded-b-lg">
-                            <p className='mb-4 line-clamp-5'>{data.review}</p>
+                            <p className='mb-4 line-clamp-5 h-[120px]'>{data.review}</p>
                             <p className='text-xl font-semibold'>{data.name}</p>
                             <p className='opacity-50 text-base'>{data.position}</p>
                           </div>
@@ -237,9 +237,7 @@ export default function Home() {
                 }
               </Swiper>
             </div>
-            {/* // <Image src={rightArrow} width={50} height={50} className='cursor-pointer w-10 h-10' />  */}
           </div>
-
         </div>
       </section>
 
@@ -247,11 +245,11 @@ export default function Home() {
       <section className='w-full p-4 md:py-8 bg-grey' >
         <div className='max-w-1200 mx-auto flex gap-4 flex-wrap '>
           <div className="md:flex-1">
-            <p className='text-secondary uppercase mb-4 font-medium'>Worldwide</p>
-            <h2 className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2 max-w-[550px]'>We are helping business all over the world with growth and efficient solutions</h2>
-            <p className='text-black mb-6 opacity-70 max-w-[500px]'>Our global presence allows us to provide local support and expertise to our clients, no matter where they are located.</p>
+            <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>Worldwide</p>
+            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 max-w-[550px]'>We are helping business all over the world with growth and efficient solutions</h2>
+            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70 max-w-[500px]'>Our global presence allows us to provide local support and expertise to our clients, no matter where they are located.</p>
           </div>
-          <div className="flex md:flex-1 max-md:text-center max-md:w-full max-md:justify-center">
+          <div data-aos='zoom-in' data-aos-delay={200} className="flex md:flex-1 max-md:text-center max-md:w-full max-md:justify-center">
             <Image src={mapWithFlag} width={400} alt='about_sacopom_image' className='w-full' />
           </div>
         </div>

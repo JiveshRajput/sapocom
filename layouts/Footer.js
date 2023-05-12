@@ -16,26 +16,26 @@ function Footer() {
         {/* Second Row */}
         <div className="p-2">
           <p className='text-primary uppercase mb-4 font-semibold'>Company</p>
-          <Link href='/' className='text-black mb-2 block'>Home</Link>
-          <Link href='/about-us' className='text-black mb-2 block'>About Us</Link>
-          <Link href='/services' className='text-black mb-2 block'>Services</Link>
-          <Link href='/industries' className='text-black block'>Industries</Link>
+          <Link href='/' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Home</Link>
+          <Link href='/about-us' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>About Us</Link>
+          <Link href='/services' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Services</Link>
+          <Link href='/industries' className='text-black block transition-[transform] hover:text-primary  hover:translate-x-2'>Industries</Link>
         </div>
         {/* Third Row */}
         <div className="p-2">
           <p className='text-primary uppercase mb-4 font-semibold'>Industries</p>
-          <Link href='/industries/oil-and-gas' className='text-black mb-2 block'>Oil and Gas</Link>
-          <Link href='/industries/metal-and-mining' className='text-black mb-2 block'>Metal and Mining</Link>
-          <Link href='/industries/agriculture' className='text-black mb-2 block'>Agriculture</Link>
-          <Link href='/industries/chemical' className='text-black block'>Chemical</Link>
+          <Link href='/industries/oil-and-gas' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Oil and Gas</Link>
+          <Link href='/industries/metal-and-mining' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Metal and Mining</Link>
+          <Link href='/industries/agriculture' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Agriculture</Link>
+          <Link href='/industries/chemical' className='text-black block transition-[transform] hover:text-primary  hover:translate-x-2'>Chemical</Link>
         </div>
         {/* Forth Row */}
         <div className=" p-2">
           <p className='text-primary uppercase mb-4 font-semibold'>Social</p>
-          <a  target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/sapocom-technologies-79382b231/' className='text-black mb-2 block'>LinkedIn</a>
-          <a  target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/' className='text-black mb-2 block'>Instagram</a>
-          <a  target='_blank' rel='noopener noreferrer' href='https://www.facebook.com/' className='text-black mb-2 block'>Facebook</a>
-          <a  target='_blank' rel='noopener noreferrer' href='https://twitter.com/home' className='text-black block'>Twitter</a>
+          <a  target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/sapocom-technologies-79382b231/' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>LinkedIn</a>
+          <a  target='_blank' rel='noopener noreferrer' href='https://www.instagram.com/' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Instagram</a>
+          <a  target='_blank' rel='noopener noreferrer' href='https://www.facebook.com/' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Facebook</a>
+          <a  target='_blank' rel='noopener noreferrer' href='https://twitter.com/home' className='text-black block transition-[transform] hover:text-primary  hover:translate-x-2'>Twitter</a>
         </div>
       </div>
       {/* Bottom Footer */}

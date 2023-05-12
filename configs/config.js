@@ -20,6 +20,44 @@ import partner12 from '@/assets/images/partners/12.png'
 import partner13 from '@/assets/images/partners/13.png'
 import partner14 from '@/assets/images/partners/14.png'
 
+export const navTabs = [
+    {
+        name: 'Home',
+        link: '/'
+    },
+    {
+        name: 'About Us',
+        link: '/about-us'
+    },
+    {
+        name: 'Services',
+        link: '/services'
+    },
+    {
+        name: 'Industries',
+        link: '/industries',
+        subTabs: [
+            {
+                name: 'Oil and Gas',
+                link: '/oil-and-gas'
+            },
+            {
+                name: 'Metal and Mining',
+                link: '/metal-and-mining'
+            },
+            {
+                name: 'Agriculture',
+                link: '/agriculture'
+            },
+            {
+                name: 'Chemical',
+                link: '/chemical'
+            },
+        ]
+    },
+]
+
+
 export const slidesData = [
     {
         heading: 'Upstream to Downstream, our SAP supply chain solutions for you',

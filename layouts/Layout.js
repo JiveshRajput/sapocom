@@ -3,10 +3,15 @@ import Navbar from './Navbar'
 import Footer from './Footer'
 import AOS from 'aos'
 
+import 'aos/dist/aos.css';
+
 function Layout({ children }) {
 
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            offset: 80,
+            once: false,
+        });
     }, [])
 
     return (

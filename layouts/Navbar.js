@@ -2,48 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import logo from '@/assets/images/logo.png'
+import { navTabs } from '@/configs/config'
+import { useSelector } from 'react-redux'
+import { getNavbarValue } from '@/store/reducers/toggleReducer'
 
-const tabs = [
-  {
-    name: 'Home',
-    link: '/'
-  },
-  {
-    name: 'About Us',
-    link: '/about-us'
-  },
-  {
-    name: 'Services',
-    link: '/services'
-  },
-  {
-    name: 'Industries',
-    link: '/industries',
-    subTabs: [
-      {
-        name: 'Oil and Gas',
-        link: '/oil-and-gas'
-      },
-      {
-        name: 'Metal and Mining',
-        link: '/metal-and-mining'
-      },
-      {
-        name: 'Agriculture',
-        link: '/agriculture'
-      },
-      {
-        name: 'Chemical',
-        link: '/chemical'
-      },
-    ]
-  },
-]
 
 function Navbar() {
   const [showNav, setShowNav] = useState(false);
   const [activeTab, setActiveTab] = useState('Home');
 
+  // const val = useSelector(getNavbarValue);
+  // console.log(val, 'navbar store')
+  
   return (
     <header className='w-full px-4 py-2 h-[65px] sticky top-0 left-0 z-[90] shadow-md bg-white'>
       {/* Black Transparent Screen */}
@@ -66,7 +36,7 @@ function Navbar() {
         <nav className='flex h-full max-md:w-full'>
           <ul className='flex justify-center items-center max-md:flex-col max-md:w-full'>
             {
-              tabs.map((tab, ind) => {
+              navTabs.map((tab, ind) => {
                 if (!tab?.subTabs) {
                   // Tabs without Dropdown
                   return (
