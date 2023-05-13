@@ -1,10 +1,13 @@
 import React from 'react'
+import Image from 'next/image'
+import SetHeaders from '@/components/SetHeaders'
 
 function AboutUs() {
   return (
-    <div>
+    <>
+      <SetHeaders title='About Us | Sapocom' />
       About us
-    </div>
+    </>
   )
 }
 

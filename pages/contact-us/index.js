@@ -5,11 +5,11 @@ import VideoBackgroundMessage from '@/components/VideoBackgroundMessage'
 import contactAddressBg from '@/assets/images/contact/contact-address.png'
 
 function ContactUs() {
-
   const [form, setForm] = useState({ name: '', email: '', number: '', message: '' });
 
   function formSubmitHandler(e) {
     e.preventDefault();
+    // console.log(form)
     alert('Form Submitted Successfully!!!');
   }
 

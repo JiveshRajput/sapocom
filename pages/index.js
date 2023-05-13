@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
+import { CountUp } from 'use-count-up'
+import ScrollTrigger from 'react-scroll-trigger';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Navigation } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 
 import SetHeaders from "@/components/SetHeaders";
 import { slidesData, industryDetails, sapServicesDetails, whyChooseUsData, partnersDetails, reviewData } from "@/configs/config";
@@ -11,9 +13,6 @@ import { slidesData, industryDetails, sapServicesDetails, whyChooseUsData, partn
 import aboutSapocomSection from '@/assets/images/home/about-sapocom-section.png'
 import mapWithFlag from '@/assets/images/home/map-with-flags.png'
 import mapBg from '@/assets/images/home/map-bg.png'
-// import rightArrow from '../assets/images/icons/right-arrow-rounded-circle.svg'
-// import leftArrow from '../assets/images/icons/left-arrow-rounded-circle.svg'
-
 
 // css
 import "swiper/css";
@@ -21,6 +20,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export default function Home() {
+  const [startAnimation, setStartAnimation] = useState(false)
   return (
     <>
       <SetHeaders title='Sapocom | A SAP based company to provide asap solutions to be at top in this world | Home Page' />
@@ -32,7 +32,7 @@ export default function Home() {
               return (
                 <SwiperSlide key={ind}>
                   <div className='flex justify-center items-center flex-col w-full h-full p-4  relative bg-black'>
-                    <Image src={slide.image} alt='header_bg_image' className='absolute w-full h-full object-cover' fill />
+                    <Image src={slide.image} alt='header_bg_image' priority={true} className='absolute w-full h-full object-cover' fill />
                     <h1 className='max-w-[800px] text-[44px] max-md:text-3xl font-bold leading-tight mb-5 text-transparent bg-clip-text bg-gradient-to-t via-white from-[#f3bfff] to-white'>{slide.heading}</h1>
                     <p className='max-w-[650px] leading-tight text-white mb-4 max-md:text-base'>{slide.para}</p>
                     <div className='flex gap-4 max-[500px]:flex-col'>
@@ -55,24 +55,26 @@ export default function Home() {
       <section data-aos='fade-up' className='w-full p-4 md:py-8 bg-gradient-to-r from-secondary to-third text-white' >
         <div className='max-w-1200 mx-auto'>
           <h1 className='text-center md:text-4xl text-3xl mb-4'>Stats at Glance</h1>
-          <div className='grid grid-cols-4 gap-4 max-md:grid-cols-2'>
-            <div className='text-center p-2'>
-              <h2 className='text-3xl font-semibold'>500+</h2>
-              <p>Customers across the globe</p>
+          <ScrollTrigger onEnter={() => setStartAnimation(true)} onExit={() => setStartAnimation(false)}>
+            <div className='grid grid-cols-4 gap-4 max-md:grid-cols-2'>
+              <div className='text-center p-2'>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={500} />+</h2>
+                <p>Customers across the globe</p>
+              </div>
+              <div className='text-center p-2'>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={75} />%</h2>
+                <p>Client retention rate</p>
+              </div>
+              <div className='text-center p-2'>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={50} />%</h2>
+                <p>Client retention rate</p>
+              </div>
+              <div className='text-center p-2'>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={6} />+</h2>
+                <p>Offices across the world</p>
+              </div>
             </div>
-            <div className='text-center p-2'>
-              <h2 className='text-3xl font-semibold'>75%</h2>
-              <p>Client retention rate</p>
-            </div>
-            <div className='text-center p-2'>
-              <h2 className='text-3xl font-semibold'>50%</h2>
-              <p>Client retention rate</p>
-            </div>
-            <div className='text-center p-2'>
-              <h2 className='text-3xl font-semibold'>6+</h2>
-              <p>Offices across the world</p>
-            </div>
-          </div>
+          </ScrollTrigger>
         </div>
       </section>
 
@@ -83,7 +85,7 @@ export default function Home() {
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>About</p>
             <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>SAPOCOM Global</h2>
             <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70'>Sapocom Global , a sap based company to provide asap solutions to be at top in this world</p>
-            <p data-aos='fade-up'  className='text-black mb-6'>SAPOCOM is an emerging project-based SAP consulting, Training & talent recruitment enterprise among the fastest growing consultancy firms in India. We add value through talent acquisition, software development,</p>
+            <p data-aos='fade-up' className='text-black mb-6'>SAPOCOM is an emerging project-based SAP consulting, Training & talent recruitment enterprise among the fastest growing consultancy firms in India. We add value through talent acquisition, software development,</p>
             <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[600px]'>
               <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
@@ -121,7 +123,7 @@ export default function Home() {
             industryDetails.map((industry, ind) => {
               return (
                 <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='rounded-md aspect-[3/4] p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
-                  <Image alt='oil and gas' src={industry.image} fill className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
+                  <Image alt={industry.name} width={300} src={industry.image} priority className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
                   <div className='z-[87] select-none'>
                     <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{industry.name}</h1>
                     <p className='text-white/50 mb-2'>{industry.description}</p>
@@ -146,7 +148,7 @@ export default function Home() {
             sapServicesDetails.map(({ name, description, image, }, ind) => {
               return (
                 <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='rounded-md aspect-[14/9]  p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
-                  <Image alt={name} src={image} fill className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
+                  <Image alt={name} src={image} width={400} className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
                   <div className='z-[87] select-none'>
                     <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{name}</h1>
                     <p className='text-white/50 mb-2'>{description}</p>
@@ -223,7 +225,7 @@ export default function Home() {
                       <SwiperSlide key={ind} className=''>
                         <div className='grid review:grid-cols-[200px_1fr] max-review:grid-rows-[225px_1fr] rounded-md'>
                           <div>
-                            <Image src={data.image} alt={data.name} className='w-full h-full review:object-cover max-review:object-cover review:rounded-l-lg max-review:rounded-t-lg ' />
+                            <Image src={data.image} alt={data.name} width={250} priority className='w-full h-full review:object-cover max-review:object-cover review:rounded-l-lg max-review:rounded-t-lg ' />
                           </div>
                           <div className="bg-white p-4 text-black text-left text-base review:rounded-r-lg max-review:rounded-b-lg">
                             <p className='mb-4 line-clamp-5 h-[120px]'>{data.review}</p>

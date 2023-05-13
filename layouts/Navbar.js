@@ -11,7 +11,7 @@ function Navbar() {
   const [showNav, setShowNav] = useState(false);
   const [activeTab, setActiveTab] = useState('Home');
 
-  // const val = useSelector(getNavbarValue);
+  const val = useSelector(getNavbarValue);
   // console.log(val, 'navbar store')
   
   return (
