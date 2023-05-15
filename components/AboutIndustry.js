@@ -17,7 +17,7 @@ export default function AboutIndustry({ title = 'company', heading = 'Enter Titl
                             {
                                 keyPoints.map((point, ind) => {
                                     return (
-                                        <div key={ind} data-aos='flip-left' className='flex items-center p-2 px-0'>
+                                        <div key={ind} data-aos='flip-left' data-aos-delay={ind*100} className='flex items-center p-2 px-0'>
                                             <Image alt='check' src={require('../assets/images/icons/check.svg')} className='w-4 h-4 mr-3' />
                                             <p>{point}</p>
                                         </div>

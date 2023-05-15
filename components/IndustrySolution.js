@@ -12,9 +12,8 @@ export default function IndustrySolution({ successPoints=['Intelligent Asset Man
                         <div className='grid grid-cols-1 w-full'>
                             {
                                 successPoints.map((point, ind) => {
-                                    
                                     return (
-                                        <div key={ind} data-aos='fade-left' data-aos-delay={ind * 50} className='flex items-center mb-3  text-white'>
+                                        <div key={ind} data-aos='flip-left' data-aos-delay={ind * 50} className='flex items-center mb-3  text-white'>
                                             <Image alt='check' src={require('../assets/images/icons/check.svg')} className='w-4 h-4 mr-3' />
                                             <p>{point}</p>
                                         </div>

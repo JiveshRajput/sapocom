@@ -293,7 +293,7 @@ export default function Home() {
                 {
                   reviewData.map((data, ind) => {
                     return (
-                      <SwiperSlide key={ind} className=''>
+                      <SwiperSlide key={ind} className='select-none'>
                         <div className='grid review:grid-cols-[200px_1fr] max-review:grid-rows-[225px_1fr] rounded-md'>
                           <div>
                             <Image src={data.image} alt={data.name} width={250} className='w-full h-full review:object-cover max-review:object-cover review:rounded-l-lg max-review:rounded-t-lg ' />
