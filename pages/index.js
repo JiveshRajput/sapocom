@@ -296,7 +296,7 @@ export default function Home() {
                       <SwiperSlide key={ind} className=''>
                         <div className='grid review:grid-cols-[200px_1fr] max-review:grid-rows-[225px_1fr] rounded-md'>
                           <div>
-                            <Image src={data.image} alt={data.name} width={250} priority className='w-full h-full review:object-cover max-review:object-cover review:rounded-l-lg max-review:rounded-t-lg ' />
+                            <Image src={data.image} alt={data.name} width={250} className='w-full h-full review:object-cover max-review:object-cover review:rounded-l-lg max-review:rounded-t-lg ' />
                           </div>
                           <div className="bg-white p-4 text-black text-left text-base review:rounded-r-lg max-review:rounded-b-lg">
                             <p className='mb-4 line-clamp-5 h-[120px]'>{data.review}</p>

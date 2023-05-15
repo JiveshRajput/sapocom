@@ -10,7 +10,7 @@ export function CtaBanner({ cta = '/contact-us', heading = 'Want to Learn More a
                 {/* Black to transparent gradient */}
                 <div className="absolute top-0 left-0 h-full w-full bg-secondary/50 z-10"></div>
                 {/* Background Image */}
-                <Image src={bgImg} width={1300} alt="cta_banner_image" priority className='w-full h-full absolute top-0 left-0 object-cover' />
+                <Image src={bgImg} width={1300} alt="cta_banner_image" className='w-full h-full absolute top-0 left-0 object-cover' />
                 {/* Background Image */}
                 <div className='max-w-[800px] mx-auto grid grid-cols-[2fr_1fr] max-review:grid-cols-1 gap-4 text-white z-50'>
                     <h1 className="max-w-[550px] text-3xl z-40 font-semibold max-review:text-center">{heading}</h1>
