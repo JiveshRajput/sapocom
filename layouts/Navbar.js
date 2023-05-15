@@ -22,7 +22,7 @@ function Navbar() {
       <div className={`max-w-1200 mx-auto flex justify-between gap-4 items-center h-full max-md:fixed max-md:right-0 max-md:top-0 max-md:bg-white max-md:h-screen max-md:w-[250px] max-md:flex-col max-md:p-4 max-md:items-start z-[92] max-md:shadow-nav max-md:transition-all ${!showNav && 'max-md:right-[-300px]'}`}>
         {/* Logo */}
         <Link href='/' passHref className='max-md:hidden'>
-          <Image src={logo} width={60} alt='logo' />
+          <Image src={logo} width={60} className='h-auto w-auto' alt='logo' priority/>
         </Link>
 
         {/* Navbar Close Button */}

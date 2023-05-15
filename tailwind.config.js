@@ -21,15 +21,19 @@ module.exports = {
         '1200': 1180,
         '1000': 1040,
         '900': 920,
+        '800': 820,
       },
       boxShadow: {
         nav: '-9px -4px 38px rgba(0, 0, 0, 0.15)',
         card: '1px 1px 25px rgba(0, 0, 0, 0.15)',
+        detailcard: '1px 1px 25px rgba(102, 30, 120, 0.15)',
       },
       gridTemplateColumns: {
         'auto-4' : 'repeat(auto-fit, minmax(250px, 1fr))',
+        'auto-4-200' : 'repeat(auto-fit, minmax(200px, 1fr))',
         'auto-3' : 'repeat(auto-fit, minmax(300px, 1fr))',
         'auto-3-250' : 'repeat(auto-fit, minmax(250px, 1fr))',
+        'auto-3-150' : 'repeat(auto-fit, minmax(150px, 1fr))',
         'auto-150' : 'repeat(auto-fit, minmax(165px, 1fr))',
       },
       screens: {

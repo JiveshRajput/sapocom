@@ -6,7 +6,7 @@ import ScrollTrigger from 'react-scroll-trigger';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
 
-import SetHeaders from "@/components/SetHeaders";
+import SetHeaders from "@/layouts/SetHeaders";
 import { slidesData, industryDetails, sapServicesDetails, whyChooseUsData, partnersDetails, reviewData } from "@/configs/config";
 
 // image
@@ -23,14 +23,16 @@ export default function Home() {
   const [startAnimation, setStartAnimation] = useState(false)
   return (
     <>
+      {/* Header Configs */}
       <SetHeaders title='Sapocom | A SAP based company to provide asap solutions to be at top in this world | Home Page' />
+
       {/* Header Banner */}
       <section id="Header_Banner">
         <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} className="mySwiper" pagination={{ clickable: true, }} autoplay={{ delay: 3000, disableOnInteraction: false, }}>
           {
             slidesData.map((slide, ind) => {
               return (
-                <SwiperSlide key={ind}>
+                <SwiperSlide key={ind + 1}>
                   <div className='flex justify-center items-center flex-col w-full h-full p-4  relative bg-black'>
                     <Image src={slide.image} alt='header_bg_image' priority={true} className='absolute w-full h-full object-cover' fill />
                     <h1 className='max-w-[800px] text-[44px] max-md:text-3xl font-bold leading-tight mb-5 text-transparent bg-clip-text bg-gradient-to-t via-white from-[#f3bfff] to-white'>{slide.heading}</h1>
@@ -118,21 +120,45 @@ export default function Home() {
           <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Industry Led Services</h2>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our comprehensive SAP services are designed to meet the evolving needs of your business</p>
         </div>
-        <div className='grid grid-cols-auto-4 gap-4 justify-items-center'>
+        {/* View for Desktop */}
+        <div className='grid grid-cols-auto-4 gap-4 justify-items-cente max-md:hidden'>
           {
             industryDetails.map((industry, ind) => {
               return (
-                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='rounded-md aspect-[3/4] p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
-                  <Image alt={industry.name} width={300} src={industry.image} priority className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
-                  <div className='z-[87] select-none'>
-                    <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{industry.name}</h1>
-                    <p className='text-white/50 mb-2'>{industry.description}</p>
-                    <Link href={industry.link} className='text-[#FFAAE3] opacity-60 hover:opacity-100'>Learn More &gt;</Link>
+                <>
+                  <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='rounded-md aspect-[3/4] p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
+                    <Image alt={industry.name} width={300} src={industry.image} priority className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
+                    <div className='z-[87] select-none'>
+                      <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{industry.name}</h1>
+                      <p className='text-white/50 mb-2'>{industry.description}</p>
+                      <Link href={industry.link} className='text-[#FFAAE3] opacity-60 hover:opacity-100'>Learn More &gt;</Link>
+                    </div>
                   </div>
-                </div>
+                </>
               )
             })
           }
+        </div>
+        {/* Slide Show for Mobile/Tab */}
+        <div data-aos='fade-up' className="md:hidden">
+          <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} className='sideSwiper rounded-md' pagination={{ clickable: true, }} autoplay={{ delay: 10000, disableOnInteraction: false, }} spaceBetween={20} breakpoints={{ 480: { slidesPerView: 2, }, }}>
+            {
+              industryDetails.map((industry, ind) => {
+                return (
+                  <SwiperSlide key={ind} >
+                    <div className='rounded-md aspect-[3/4] p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
+                      <Image alt={industry.name} width={300} src={industry.image} priority className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
+                      <div className='z-[87] select-none'>
+                        <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{industry.name}</h1>
+                        <p className='text-white/50 mb-2'>{industry.description}</p>
+                        <Link href={industry.link} className='text-[#FFAAE3] opacity-60 hover:opacity-100'>Learn More &gt;</Link>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
         </div>
       </section>
 
@@ -143,7 +169,8 @@ export default function Home() {
           <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'> SAP Services</h2>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Innovative SAP solutions designed to help you stay ahead of the competition </p>
         </div>
-        <div className='grid grid-cols-auto-3 gap-4 justify-items-center'>
+        {/* View for Desktop */}
+        <div className='grid grid-cols-auto-3 gap-4 justify-items-center max-md:hidden'>
           {
             sapServicesDetails.map(({ name, description, image, }, ind) => {
               return (
@@ -158,6 +185,26 @@ export default function Home() {
             })
           }
         </div>
+        {/* Slide Show for Mobile/Tab */}
+        <div data-aos='fade-up' className="md:hidden">
+          <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} className='sideSwiper rounded-md' pagination={{ clickable: true, }} autoplay={{ delay: 10000, disableOnInteraction: false, }} spaceBetween={20} breakpoints={{ 480: { slidesPerView: 2 }, }}>
+            {
+              sapServicesDetails.map(({ name, description, image, }, ind) => {
+                return (
+                  <SwiperSlide key={ind} >
+                    <div className='rounded-md aspect-[14/9]  p-4 bg-primary transition-all relative flex items-end before:content-[""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:bg-gradient-to-t before:from-black before:to-transparent before:rounded-md  before:opacity-100 before:z-[86] before:transition-all group overflow-hidden'>
+                      <Image alt={name} src={image} width={400} className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
+                      <div className='z-[87] select-none'>
+                        <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{name}</h1>
+                        <p className='text-white/50 mb-2'>{description}</p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
+        </div>
       </section>
 
       {/* Why Chose Us  */}
@@ -167,12 +214,13 @@ export default function Home() {
           <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Why Choose Us as Your SAP Partner</h2>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition</p>
         </div>
-        <div className='grid grid-cols-auto-3-250 gap-4 justify-items-center mx-auto max-w-900'>
+        {/* View for Desktop */}
+        <div className='grid grid-cols-auto-3-250 gap-4 justify-items-center mx-auto max-w-900 max-md:hidden'>
           {
             whyChooseUsData.map(({ name, description, image, }, ind) => {
               const even = ind % 2 == 0 || ind == 0 ? true : false;
               return (
-                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className={`${even ? 'bg-white border-primary/10' : 'bg-gradient-to-br from-primary to-secondary border-transparent'} rounded-md border-2 aspect-[3/4] p-4 flex hover:shadow-card`}>
+                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className={`${even ? 'bg-white border-primary/10' : 'bg-gradient-to-br from-primary to-secondary border-transparent'} rounded-md border-2 aspect-[3/4] p-4 flex hover:shadow-card overflow-clip`}>
                   <div className={`select-none ${even ? 'text-black' : 'text-white'}`}>
                     <div className={`${!even ? 'bg-white' : 'bg-gradient-to-br from-primary to-secondary '} rounded-md aspect-[1/1] w-20 p-3 flex mb-8`}>
                       <Image src={image} alt={name} />
@@ -184,6 +232,29 @@ export default function Home() {
               )
             })
           }
+        </div>
+        {/* Slide Show for Mobile/Tab */}
+        <div data-aos='fade-up' className="md:hidden">
+          <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} className='sideSwiper rounded-md' pagination={{ clickable: true, }} autoplay={{ delay: 10000, disableOnInteraction: false, }} spaceBetween={20} breakpoints={{ 480: { slidesPerView: 2 }, }}>
+            {
+              whyChooseUsData.map(({ name, description, image, }, ind) => {
+                const even = ind % 2 == 0 || ind == 0 ? true : false;
+                return (
+                  <SwiperSlide key={ind} >
+                    <div className={`${even ? 'bg-white border-primary/10' : 'bg-gradient-to-br from-primary to-secondary border-transparent'} rounded-md border-2 aspect-[3/4] p-4 flex hover:shadow-card overflow-clip`}>
+                      <div className={`select-none ${even ? 'text-black' : 'text-white'}`}>
+                        <div className={`${!even ? 'bg-white' : 'bg-gradient-to-br from-primary to-secondary '} rounded-md aspect-[1/1] w-20 p-3 flex mb-8`}>
+                          <Image src={image} alt={name} />
+                        </div>
+                        <h1 className='font-semibold text-2xl mb-2'>{name}</h1>
+                        <p className='opacity-60 mb-2'>{description}</p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
         </div>
       </section >
 

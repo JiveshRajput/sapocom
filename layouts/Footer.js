@@ -10,7 +10,7 @@ function Footer() {
       <div className='p-4 max-w-1000 mx-auto grid grid-cols-[1fr_170px_170px_170px] gap-8 max-md:gap-4 max-md:grid-cols-[1fr_1fr]'>
         {/* First Row */}
         <div className="p-2 max-md:col-span-2">
-          <Image src={logo} width={60} height={60} className='mb-4' alt='logo' />
+          <Image src={logo} width={80} height={80} priority className='mb-4 h-auto w-auto object-contain' alt='logo' />
           <p>Sapocom Global , a sap based company to provide asap solutions to be at top in this world</p>
         </div>
         {/* Second Row */}

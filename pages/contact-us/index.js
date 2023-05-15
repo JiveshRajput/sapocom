@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import SetHeaders from '@/components/SetHeaders'
+import SetHeaders from '@/layouts/SetHeaders'
 import VideoBackgroundMessage from '@/components/VideoBackgroundMessage'
 import contactAddressBg from '@/assets/images/contact/contact-address.png'
 
