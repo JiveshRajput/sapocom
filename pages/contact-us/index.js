@@ -16,7 +16,7 @@ function ContactUs() {
   return (
     <>
       <SetHeaders title='Contact Us | Sapocom' />
-      {/* About Sapocom */}
+      {/* Contact Form */}
       <section className='w-full p-4 md:py-8 bg-gradient-to-r from-secondary to-third text-white' >
         <div className='max-w-1200 mx-auto grid md:grid-cols-[1fr_1fr] grid-cols-1 gap-8'>
           {/* Contact Us Form */}
@@ -28,22 +28,22 @@ function ContactUs() {
             <form className='max-w-[450px]' onSubmit={formSubmitHandler}>
               <label htmlFor="name" className='mb-6 block'>
                 <span className='block opacity-60 text-lg'>Name *</span>
-                <input type="text" name="name" id="name" required placeholder='Please enter your name' className='border-b border-b-white/60 focus:border-b-white w-full py-2 outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.name} onChange={(e) => setForm({...form, name: e.target.value})} />
+                <input type="text" name="name" id="name" required placeholder='Please enter your name' className='border-b border-b-white/60 focus:border-b-white w-full py-2 outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
               </label>
 
               <label htmlFor="email" className='mb-6 block'>
                 <span className='block opacity-60 text-lg'>Email *</span>
-                <input type="email" name="email" id="email" required placeholder='Please enter your email' className='border-b border-b-white/60 focus:border-b-white w-full py-2 outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.email} onChange={(e) => setForm({...form, email: e.target.value})} />
+                <input type="email" name="email" id="email" required placeholder='Please enter your email' className='border-b border-b-white/60 focus:border-b-white w-full py-2 outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
               </label>
 
               <label htmlFor="mobNumber" className='mb-6 block'>
                 <span className='block opacity-60 text-lg'>Phone Number *</span>
-                <input type="number" name="mobNumber" id="mobNumber" required placeholder='Please enter your phone number' className='border-b border-b-white/60 focus:border-b-white w-full py-2 outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.number} onChange={(e) => setForm({...form, number: e.target.value})}/>
+                <input type="number" name="mobNumber" id="mobNumber" required placeholder='Please enter your phone number' className='border-b border-b-white/60 focus:border-b-white w-full py-2 outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.number} onChange={(e) => setForm({ ...form, number: e.target.value })} />
               </label>
 
               <label htmlFor="message" className='mb-6 block'>
                 <span className='block opacity-60 text-lg'>Message *</span>
-                <textarea name="message" id="message" rows="4" required placeholder='Write your message here' className='border-b border-b-white/60 focus:border-b-white w-full py-2 resize-none outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.message} onChange={(e) => setForm({...form, message: e.target.value})}></textarea>
+                <textarea name="message" id="message" rows="4" required placeholder='Write your message here' className='border-b border-b-white/60 focus:border-b-white w-full py-2 resize-none outline-none bg-transparent placeholder:text-white/60 placeholder:focus:text-white' value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}></textarea>
               </label>
 
               <div className='grid 1000:grid-cols-[135px_1fr]  gap-4'>
@@ -96,7 +96,9 @@ function ContactUs() {
         </div>
       </section>
 
-      <VideoBackgroundMessage />
+      <VideoBackgroundMessage>
+        <h1 className='text-white font-semibold max-md:text-2xl text-3xl text-center max-w-[800px]'>Let&apos;s discover what software solution will boost your services</h1>
+      </VideoBackgroundMessage>
     </>
   )
 }

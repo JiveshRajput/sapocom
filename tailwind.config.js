@@ -33,6 +33,7 @@ module.exports = {
         'auto-4-200' : 'repeat(auto-fit, minmax(200px, 1fr))',
         'auto-3' : 'repeat(auto-fit, minmax(300px, 1fr))',
         'auto-3-250' : 'repeat(auto-fit, minmax(250px, 1fr))',
+        'auto-3-280' : 'repeat(auto-fit, minmax(280px, 1fr))',
         'auto-3-150' : 'repeat(auto-fit, minmax(150px, 1fr))',
         'auto-150' : 'repeat(auto-fit, minmax(165px, 1fr))',
       },

@@ -81,6 +81,17 @@ input[type=number] {
   margin-right: 3px !important;
 }
 
+.sideSwiper.bgDark .swiper-pagination-bullet {
+  width: 20px !important;
+  height: 8px !important;
+  border-radius: 10px;
+  background-color: #fff !important;
+  opacity: 0.4 !important;
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+}
+
+
 .sideSwiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
   opacity: 1 !important;
 }

@@ -26,6 +26,16 @@ import partner13 from '@/assets/images/partners/13.png'
 import partner14 from '@/assets/images/partners/14.png'
 import industryFutureChemical1 from '@/assets/images/industry/chemical/industryFuture1.png'
 
+import service1 from '@/assets/images/service/service1.png'
+import service2 from '@/assets/images/service/service2.png'
+import service3 from '@/assets/images/service/service3.png'
+import service4 from '@/assets/images/service/service4.png'
+import service5 from '@/assets/images/service/service5.png'
+import service6 from '@/assets/images/service/service6.png'
+
+
+// Home page
+
 export const navTabs = [
     {
         name: 'Home',
@@ -259,6 +269,43 @@ export const reviewData = [
         image: reviewPerson,
     },
 ]
+
+
+// Services
+
+export const servicesData = [
+    {
+        title: 'SAP Implementation',
+        description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        image: service1,
+    },
+    {
+        title: 'SAP Rollout',
+        description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        image: service2,
+    },
+    {
+        title: 'Data Migration',
+        description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        image: service3,
+    },
+    {
+        title: 'Data Upgrade',
+        description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        image: service4,
+    },
+    {
+        title: 'Advisory',
+        description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        image: service5,
+    },
+    {
+        title: 'Support',
+        description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        image: service6,
+    },
+]
+
 
 // Industry Data
 
