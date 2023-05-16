@@ -10,6 +10,7 @@ function SetHeaders({title='Sapocom', description='Sapocom Global, a sap based c
           <meta name="description" content={description}></meta>
           <meta name="author" content="Sapocom, Jivesh Rajput"/>
           <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+          <link rel="canonical" href="https://sapocom.vercel.app" />
        </Head>
     </>
   )

@@ -3,6 +3,12 @@ import techSvg from '../assets/images/icons/tech.svg'
 import cloudNetworkingSvg from '../assets/images/icons/cloud-networking.svg'
 import heartInHandSvg from '../assets/images/icons/heart-in-hand.svg'
 import shieldSvg from '../assets/images/icons/shield.svg'
+import sapImplementationSvg from '../assets/images/icons/sap-implementation.svg'
+import sapAdvisorySvg from '../assets/images/icons/sap-advisory.svg'
+import sapDataMigrationSvg from '../assets/images/icons/sap-data-migration.svg'
+import sapDataUpgradeSvg from '../assets/images/icons/sap-data-upgrade.svg'
+import sapRolloutSvg from '../assets/images/icons/sap-rollout.svg'
+import sapSupportSvg from '../assets/images/icons/sap-support.svg'
 
 // PNGs
 import homeBanner1 from "@/assets/images/bgImages/homeBanner1.png";
@@ -25,13 +31,14 @@ import partner12 from '@/assets/images/partners/12.png'
 import partner13 from '@/assets/images/partners/13.png'
 import partner14 from '@/assets/images/partners/14.png'
 import industryFutureChemical1 from '@/assets/images/industry/chemical/industryFuture1.png'
-
 import service1 from '@/assets/images/service/service1.png'
 import service2 from '@/assets/images/service/service2.png'
 import service3 from '@/assets/images/service/service3.png'
 import service4 from '@/assets/images/service/service4.png'
 import service5 from '@/assets/images/service/service5.png'
 import service6 from '@/assets/images/service/service6.png'
+import serviceBenefit1 from '@/assets/images/service/serviceBenefit1.png'
+
 
 
 // Home page
@@ -80,6 +87,7 @@ export const slidesData = [
         image: homeBanner1,
         link: '/about-us',
         cta: '/contact-us',
+        id: '1'
     },
     {
         heading: 'Upstream to Downstream, our SAP supply chain solutions for you',
@@ -87,6 +95,7 @@ export const slidesData = [
         image: homeBanner1,
         link: '/about-us',
         cta: '/contact-us',
+        id: '2'
     },
     {
         heading: 'Upstream to Downstream, our SAP supply chain solutions for you',
@@ -94,6 +103,7 @@ export const slidesData = [
         image: homeBanner1,
         link: '/about-us',
         cta: '/contact-us',
+        id: '3'
     },
 ]
 
@@ -273,6 +283,16 @@ export const reviewData = [
 
 // Services
 
+export const serviceSolution = [
+    'Empowering Your Success Through Expert Services',
+    'Empowering Your Success Through Expert Services',
+    'Empowering Your Success Through Expert Services',
+    'Empowering Your Success Through Expert Services',
+    'Empowering Your Success Through Expert Services',
+    'Empowering Your Success Through Expert Services',
+]
+
+
 export const servicesData = [
     {
         title: 'SAP Implementation',
@@ -303,6 +323,87 @@ export const servicesData = [
         title: 'Support',
         description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
         image: service6,
+    },
+]
+
+export const serviceBenefits = [
+    {
+        title: 'Expert Workforce to expert solution',
+        description: 'Write here ag good description about something to wxcel yto your usomerss s tat hey hgeyf thewf fhere best thng in their minf aboiuh your comoany',
+        image: serviceBenefit1,
+    },
+    {
+        title: 'Expert Workforce to expert solution',
+        description: 'Write here ag good description about something to wxcel yto your usomerss s tat hey hgeyf thewf fhere best thng in their minf aboiuh your comoany',
+        image: serviceBenefit1,
+    },
+    {
+        title: 'Expert Workforce to expert solution',
+        description: 'Write here ag good description about something to wxcel yto your usomerss s tat hey hgeyf thewf fhere best thng in their minf aboiuh your comoany',
+        image: serviceBenefit1,
+    },
+]
+
+export const serviceProvidedData = [
+    {
+        title: 'SAP Implementation',
+        icon: sapImplementationSvg,
+        points: [
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+        ]
+    },
+    {
+        title: 'SAP Rollout',
+        icon: sapRolloutSvg,
+        points: [
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+        ]
+    },
+    {
+        title: 'SAP Support',
+        icon: sapSupportSvg,
+        points: [
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+        ]
+    },
+    {
+        title: 'Data Migration',
+        icon: sapDataMigrationSvg,
+        points: [
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+        ]
+    },
+    {
+        title: 'Advisory',
+        icon: sapAdvisorySvg,
+        points: [
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+        ]
+    },
+    {
+        title: 'Data Upgrade',
+        icon: sapDataUpgradeSvg,
+        points: [
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+            "Point 1 you provide under",
+        ]
     },
 ]
 
@@ -377,27 +478,27 @@ export const industryChemicalSuccessData = [
 
 export const industryChemicalClients = [
     {
-        name: 'reliance', 
+        name: 'reliance',
         image: partner10,
     },
     {
-        name: 'PAR', 
+        name: 'PAR',
         image: partner1,
     },
     {
-        name: 'Nornickel', 
+        name: 'Nornickel',
         image: partner3,
     },
     {
-        name: 'Talisman', 
+        name: 'Talisman',
         image: partner4,
     },
     {
-        name: 'Viterra', 
+        name: 'Viterra',
         image: partner5,
     },
     {
-        name: 'Baker Hughes', 
+        name: 'Baker Hughes',
         image: partner6,
     },
 ]

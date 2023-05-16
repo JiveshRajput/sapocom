@@ -4,6 +4,7 @@ import Footer from './Footer'
 import AOS from 'aos'
 
 import 'aos/dist/aos.css';
+import Loader from './Loader';
 
 function Layout({ children }) {
 
@@ -16,6 +17,7 @@ function Layout({ children }) {
 
     return (
         <>
+            <Loader />
             <Navbar />
             <main>{children}</main>
             <Footer />

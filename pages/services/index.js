@@ -10,30 +10,18 @@ import { CtaBanner } from '@/components/banners/ctaBanners';
 import ClientReviews from '@/components/ClientReviews';
 import IndustryCtaWithDetails from '@/components/IndustryCtaWithDetails';
 
-
 // Images
 import overview from '@/assets/images/service/overview.png'
 import solution from '@/assets/images/service/solution.png'
 import clientImage from '@/assets/images/industry/clientImage.png'
 
 // Configs
-import { industryDetailsData, servicesData } from '@/configs/config';
+import { industryDetailsData, servicesData, serviceBenefits, serviceProvidedData, serviceSolution } from '@/configs/config';
 
 // css
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-const serviceSolution = [
-  'Empowering Your Success Through Expert Services',
-  'Empowering Your Success Through Expert Services',
-  'Empowering Your Success Through Expert Services',
-  'Empowering Your Success Through Expert Services',
-  'Empowering Your Success Through Expert Services',
-  'Empowering Your Success Through Expert Services',
-]
-
-
 
 function Services() {
   return (
@@ -91,7 +79,7 @@ function Services() {
               servicesData.map(({ title, description, image }, ind) => {
                 const even = ind % 2 == 0 || ind == 0 ? true : false;
                 return (
-                  <div key={ind} data-aos={even ? "flip-right":"flip-left"} data-aos-delay={ind * 100} className='bg-secondary rounded-lg'>
+                  <div key={ind} data-aos={even ? "flip-right" : "flip-left"} data-aos-delay={ind * 100} className='bg-secondary rounded-lg'>
                     <div className='w-full h-auto'>
                       <Image src={image} width={350} alt='service_images' className='rounded-t-lg w-full h-auto' priority />
                     </div>
@@ -110,7 +98,7 @@ function Services() {
               {
                 servicesData.map(({ title, description, image, }, ind) => {
                   return (
-                    <SwiperSlide key={ind} >
+                    <SwiperSlide key={ind}>
                       <div className='bg-secondary rounded-lg'>
                         <div className='w-full h-auto'>
                           <Image src={image} width={350} alt='service_images' className='rounded-t-lg w-full h-auto' priority />
@@ -129,10 +117,9 @@ function Services() {
         </div>
       </section>
 
-
       {/* Solution */}
       <section className='w-full p-4 py-8 md:py-10 ' >
-        <div className='max-w-900 mx-auto grid max-md:grid-rows-[1fr_300px] md:grid-cols-[1fr_300px] rounded-lg bg-grey p-4 md:p-6 text-black'>
+        <div className='max-w-900 mx-auto grid max-md:grid-rows-[1fr_300px] md:grid-cols-[1fr_300px] rounded-lg bg-grey p-4 md:p-6 text-black gap-4'>
           <div>
             <h2 data-aos='flip-up' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 md:mb-8 max-w-[550px]'>Transform Your Business with Our Comprehensive Services</h2>
             <div className='grid grid-cols-1 w-full'>
@@ -154,6 +141,78 @@ function Services() {
         </div>
       </section >
 
+      {/* Services details  */}
+      <section className='w-full p-4 md:py-8 max-w-1200 mx-auto' >
+        <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Detail</p>
+          <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>All that we offer in these services</h2>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Here you can have a short description of some digital technologies </p>
+        </div>
+        {/* View for Desktop */}
+        <div className='max-w-1000 mx-auto grid grid-cols-auto-3 gap-4 md:gap-8 justify-items-center max-md:hidden'>
+          {
+            serviceProvidedData.map(({ title, icon, points }, ind) => {
+              return (
+                <div key={ind} data-aos='fade-up' data-aos-delay={ind * 100} className='w-full h-full  text-secondary'>
+                  <div className="rounded-lg bg-grey p-3 flex items-center mb-2">
+                    <div className='p-2 rounded-md bg-white w-12 h-12 mr-2 md:mr-4 grid place-items-center'>
+                      <Image src={icon} alt='service_icons' />
+                    </div>
+                    <p className='font-semibold text-xl'>{title}</p>
+                  </div>
+                  <div className="border-black/10 border-2 rounded-lg p-3 ">
+                    {
+                      points.map((point, ind) => {
+                        return (
+                          <div key={ind} className='mb-3 flex items-center'>
+                            <Image src={require('../../assets/images/icons/check-dark-purple.svg')} className='w-3 h-3 mr-3' alt='check_icon' />
+                            <p>{point}</p>
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+        {/* Slide Show for Mobile/Tab */}
+        <div data-aos='fade-up' className="md:hidden">
+          <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} className='sideSwiper rounded-md' pagination={{ clickable: true, }} autoplay={{ delay: 10000, disableOnInteraction: false, }} spaceBetween={20} breakpoints={{ 480: { slidesPerView: 2 }, }}>
+            {
+              serviceProvidedData.map(({ title, icon, points }, ind) => {
+                return (
+                  <SwiperSlide key={ind} >
+                    <div className='w-full h-full'>
+                      <div className="rounded-lg bg-grey p-3 flex items-center mb-2">
+                        <div className='p-2 rounded-md bg-white w-12 h-12 mr-2 md:mr-4 grid place-items-center'>
+                          <Image src={icon} alt='service_icons' />
+                        </div>
+                        <p className='text-secondary font-semibold text-xl'>{title}</p>
+                      </div>
+                      <div className="border-black/10 border-2 rounded-lg p-3 ">
+                        {
+                          points.map((point, ind) => {
+                            return (
+                              <div key={ind} className='mb-3 flex items-center'>
+                                <Image src={require('../../assets/images/icons/check-dark-purple.svg')} className='w-3 h-3 mr-3' alt='check_icon' />
+                                <p>{point}</p>
+                              </div>
+                            )
+                          })
+                        }
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
+        </div>
+      </section>
+
+
       <IndustryCtaWithDetails
         title='clients'
         heading='Optimizing Performance in Metal and Mining Operations and some more here to write '
@@ -161,6 +220,58 @@ function Services() {
         cta='/contact-us'
         industryData={industryDetailsData}
       />
+
+      {/* Benefits */}
+      <section className='w-full p-4 py-8 md:py-10 bg-gradient-to-r from-primary to-secondary text-white'>
+        <div className='max-w-1200 mx-auto'>
+          <p data-aos='fade-up' data-aos-delay='100' className='text-white uppercase mb-4 font-medium'>Benefits</p>
+          <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50 mb-8'>Advantages in working with SAPOCOM</h2>
+          {/* Desktop View card */}
+          <div className="max-w-1000 mx-auto grid grid-cols-auto-3 gap-4 md:gap-8 justify-items-center max-md:hidden">
+            {
+              serviceBenefits.map(({ title, description, image }, ind) => {
+                const even = ind % 2 == 0 || ind == 0 ? true : false;
+                return (
+                  <>
+                    <div key={ind} data-aos={even ? "flip-right" : "flip-left"} data-aos-delay={ind * 100} className='bg-white text-black rounded-lg'>
+                      <div className='w-full h-auto'>
+                        <Image src={image} width={350} alt='service_images' className='rounded-t-lg w-full h-auto' priority />
+                      </div>
+                      <div className="p-4">
+                        <h1 className='mb-3 text-xl font-semibold'>{title}</h1>
+                        <p className="line-clamp-[11]">{description}</p>
+                      </div>
+                    </div>
+                  </>
+                )
+              })
+            }
+          </div>
+          {/* Slide Show for Mobile/Tab */}
+          <div data-aos='fade-up' className="md:hidden">
+            <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} className='sideSwiper bgDark rounded-md ' pagination={{ clickable: true, }} autoplay={{ delay: 10000, disableOnInteraction: false, }} spaceBetween={20} breakpoints={{ 480: { slidesPerView: 2 }, }}>
+              {
+                serviceBenefits.map(({ title, description, image, }, ind) => {
+                  return (
+                    <SwiperSlide key={ind}>
+                      <div className='bg-white text-black rounded-lg'>
+                        <div className='w-full h-auto'>
+                          <Image src={image} width={350} alt='service_images' className='rounded-t-lg w-full h-auto' priority />
+                        </div>
+                        <div className="p-4">
+                          <h1 className='mb-3 text-xl font-semibold'>{title}</h1>
+                          <p className="line-clamp-[11]">{description}</p>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  )
+                })
+              }
+            </Swiper>
+          </div>
+        </div>
+      </section>
+
 
       <CtaBanner />
 

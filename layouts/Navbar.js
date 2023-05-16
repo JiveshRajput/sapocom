@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import logo from '@/assets/images/logo.png'
 import { navTabs } from '@/configs/config'
 import { useSelector } from 'react-redux'
-import { getNavbarValue } from '@/store/reducers/toggleReducer'
+import { getNavbarValue } from '@/store/reducers/valueReducer'
 
 
 function Navbar() {
@@ -40,17 +40,14 @@ function Navbar() {
                 if (!tab?.subTabs) {
                   // Tabs without Dropdown
                   return (
-
                     <li key={ind} className='max-md:w-full'>
                       <Link className={`p-2 md:p-4 block text-black/30 font-semibold md:border-y-4 border-transparent md:hover:border-b-primary hover:text-primary ${activeTab == tab.name && 'text-primary md:border-b-primary max-md:bg-grey max-md:rounded-md'}`} onClick={() => setActiveTab(tab.name)} href={tab.link}>{tab.name}</Link>
                     </li>
-
                   )
                 }
                 else {
                   // Tabs with Dropdown
                   return (
-
                     <li key={ind} className='max-md:w-full cursor-pointer'>
                       <div className={`p-2 md:p-4 block text-black/30 font-semibold md:border-y-4  max-md:rounded-md border-transparent hover:border-b-primary relative group hover:text-primary ${activeTab == tab.name && 'text-primary border-b-primary'}`} onClick={() => setActiveTab(tab.name)}>
                         <div className='max-md:flex max-md:justify-between'>

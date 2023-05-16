@@ -32,7 +32,7 @@ export default function Home() {
           {
             slidesData.map((slide, ind) => {
               return (
-                <SwiperSlide key={ind + 1}>
+                <SwiperSlide key={ind}>
                   <div className='flex justify-center items-center flex-col w-full h-full p-4  relative bg-black'>
                     <Image src={slide.image} alt='header_bg_image' priority={true} className='absolute w-full h-full object-cover' fill />
                     <h1 className='max-w-[800px] text-[44px] max-md:text-3xl font-bold leading-tight mb-5 text-transparent bg-clip-text bg-gradient-to-t via-white from-[#f3bfff] to-white'>{slide.heading}</h1>
@@ -42,10 +42,10 @@ export default function Home() {
                         <button className='w-36 px-5 py-1 rounded-md text-white bg-gradient-to-r from-primary to-secondary border border-transparent'>Get Started</button>
                       </Link >
                       <Link passHref href={slide.cta}>
-                        <button className='w-36 px-5 py-1 rounded-md text-white bg-transparent border '>Join Us</button>
+                        <button className='w-36 px-5 py-1 rounded-md text-white bg-transparent border'>Join Us</button>
                       </Link>
                     </div>
-                  </div >
+                  </div>
                 </SwiperSlide>
               )
             })
