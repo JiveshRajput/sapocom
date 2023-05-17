@@ -14,7 +14,9 @@ export default function ContactUsModal() {
         e.preventDefault();
         try {
             dispatch(setLoadingState(true));
-            const jsonResponse = await fetch(`http://localhost:3000/api/send-mail-to-admin`, {
+            const url = 'https://sapocom.vercel.app/api/send-mail-to-admin';
+            // const url = 'http://localhost:3000/api/send-mail-to-admin';
+            const jsonResponse = await fetch(url, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json",
@@ -29,7 +31,8 @@ export default function ContactUsModal() {
             }, 10);
             setForm({ name: '', email: '', number: '', message: '' });
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            dispatch(setLoadingState(false));
         }
     }
 

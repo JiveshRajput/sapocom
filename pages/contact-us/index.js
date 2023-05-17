@@ -16,7 +16,9 @@ function ContactUs() {
     e.preventDefault();
     try {
       dispatch(setLoadingState(true));
-      const jsonResponse = await fetch(`http://localhost:3000/api/send-mail-to-admin`, {
+      const url = 'https://sapocom.vercel.app/api/send-mail-to-admin';
+      // const url = 'http://localhost:3000/api/send-mail-to-admin';
+      const jsonResponse = await fetch(url, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
@@ -24,14 +26,15 @@ function ContactUs() {
         body: JSON.stringify(form)
       })
       const response = await jsonResponse.json();
-      console.log(response)
+      // console.log(response)
       dispatch(setLoadingState(false));
-      setTimeout(() => {        
+      setTimeout(() => {
         alert('Form Submitted Successfully!!!');
       }, 10);
       setForm({ name: '', email: '', number: '', message: '' });
     } catch (error) {
-      console.log(error)
+      console.log(error);
+      dispatch(setLoadingState(false));
     }
   }
 
