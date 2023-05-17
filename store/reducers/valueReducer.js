@@ -5,7 +5,8 @@ const toggleSlice = createSlice({
     initialState: {
         navbar: false,
         isLoading: false,
-        activeTab: 'Home'
+        contactUsModal: false,
+        activeTab: 'Home',
     },
     reducers: {
         setNavbarValue(state, action) {
@@ -14,11 +15,15 @@ const toggleSlice = createSlice({
         setLoadingState(state, action) {
             state.isLoading = action.payload;
         },
+        setContactUsModalState(state, action) {
+            state.contactUsModal = action.payload;
+        },
     }
 })
 
 export const getNavbarValue = (state) => state.value.navbar;
 export const getLoadingState = (state) => state.value.isLoading;
+export const getContactUsModalState = (state) => state.value.contactUsModal;
 
-export const { setNavbarValue, setLoadingState } = toggleSlice.actions;
+export const { setNavbarValue, setLoadingState, setContactUsModalState } = toggleSlice.actions;
 export default toggleSlice.reducer;

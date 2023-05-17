@@ -2,15 +2,37 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import SetHeaders from '@/layouts/SetHeaders'
 import VideoBackgroundMessage from '@/components/VideoBackgroundMessage'
+import { useDispatch } from 'react-redux';
+import { setLoadingState } from '@/store/reducers/valueReducer';
+
+// images
 import contactAddressBg from '@/assets/images/contact/contact-address.png'
 
 function ContactUs() {
+  const dispatch = useDispatch();
   const [form, setForm] = useState({ name: '', email: '', number: '', message: '' });
 
-  function formSubmitHandler(e) {
+  async function formSubmitHandler(e) {
     e.preventDefault();
-    // console.log(form)
-    alert('Form Submitted Successfully!!!');
+    try {
+      dispatch(setLoadingState(true));
+      const jsonResponse = await fetch(`http://localhost:3000/api/send-mail-to-admin`, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form)
+      })
+      const response = await jsonResponse.json();
+      console.log(response)
+      dispatch(setLoadingState(false));
+      setTimeout(() => {        
+        alert('Form Submitted Successfully!!!');
+      }, 10);
+      setForm({ name: '', email: '', number: '', message: '' });
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   return (
@@ -47,7 +69,7 @@ function ContactUs() {
               </label>
 
               <div className='grid 1000:grid-cols-[135px_1fr]  gap-4'>
-                <button type='submit' className='rounded-sm py-2 px-3 bg-white text-secondary inline'>Send Message</button>
+                <button type='submit' className='rounded-sm py-2 px-3 bg-white text-secondary hover:bg-primary hover:text-white transition-all'>Send Message</button>
                 <p className=' inline-block'>By clicking here, I state that I have read and understood the terms and conditions.</p>
               </div>
             </form>
@@ -89,7 +111,7 @@ function ContactUs() {
                   </div>
                 </div>
               </div>
-              <Image src={contactAddressBg} alt='contact_address_image' className='md:w-full max-md:max-w-[450px]' />
+              <Image src={contactAddressBg} priority alt='contact_address_image' className='md:w-full max-md:max-w-[450px]' />
             </div>
 
           </div>

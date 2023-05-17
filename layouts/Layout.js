@@ -5,6 +5,7 @@ import AOS from 'aos'
 
 import 'aos/dist/aos.css';
 import Loader from './Loader';
+import ContactUsModal from '@/components/modals/ContactUsModal';
 
 function Layout({ children }) {
 
@@ -18,6 +19,7 @@ function Layout({ children }) {
     return (
         <>
             <Loader />
+            <ContactUsModal />
             <Navbar />
             <main>{children}</main>
             <Footer />
