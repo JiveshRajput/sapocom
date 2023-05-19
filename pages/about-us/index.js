@@ -77,13 +77,17 @@ function AboutUs() {
         <div className="max-w-900 mx-auto rounded-lg p-8 bg-gradient-to-r from-primary to-secondary">
           <p className="text-white uppercase mb-2 font-medium">Company</p>
           <h2 className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50 mb-8 max-w-[550px]">Founder&apos;s Message</h2>
-          <div className="grid grid-cols-[250px_1fr] gap-8 text-white">
+          <div className="grid md:grid-cols-[250px_1fr] gap-8 text-white">
+            {/* Image side */}
             <div>
-              <Image alt='founder_image' src={founderImage} className='mb-8 rounded-md' />
+              <Image alt='founder_image' src={founderImage} className='mb-8 rounded-md w-[250px]' />
               <p className='mb-2 text-xl font-semibold'>Founder Name</p>
               <p className='text-base opacity-70'>Founder & CEO, Sapocom Global</p>
             </div>
-            <div className='text-base'>{`This isn’t business as usual, and it’s a time of great stress and uncertainty. It’s also a moment in time when the work we’re doing is its most critical. We’ve changed our logistics, transportation, supply chain, purchasing, and third party seller processes to prioritize stocking and delivering essential items like household staples, sanitizers, baby formula, and medical supplies. We’re providing a vital service to people everywhere, especially to those, like the elderly, who are most vulnerable. People are depending on us. I’m not alone in being grateful for the work you are doing. I’ve received hundreds of emails from customers and seen posts on social media thanking you all. Your efforts are being noticed at the highest levels of government, and President Trump earlier this week thanked this team profusely. Across the world, people are feeling the economic effects of this crisis, and I’m sad to tell you I predict things are going to get worse before they get better.`}</div>
+            {/* Message side */}
+            <div className='text-base'>
+              <p>{`This isn’t business as usual, and it’s a time of great stress and uncertainty. It’s also a moment in time when the work we’re doing is its most critical. We’ve changed our logistics, transportation, supply chain, purchasing, and third party seller processes to prioritize stocking and delivering essential items like household staples, sanitizers, baby formula, and medical supplies. We’re providing a vital service to people everywhere, especially to those, like the elderly, who are most vulnerable. People are depending on us. I’m not alone in being grateful for the work you are doing. I’ve received hundreds of emails from customers and seen posts on social media thanking you all. Your efforts are being noticed at the highest levels of government, and President Trump earlier this week thanked this team profusely. Across the world, people are feeling the economic effects of this crisis, and I’m sad to tell you I predict things are going to get worse before they get better.`}</p>
+            </div>
           </div>
         </div>
       </section>
