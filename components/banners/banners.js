@@ -23,3 +23,21 @@ export function HeaderBanner({ bgImg, heading, para, cta = '/contact-us' }) {
     )
 }
 
+
+export function BannerWithImage({ title, heading, para, img, bgImg }) {
+    return (
+        <>
+            <section className='relative bg-black'>
+                <Image src={bgImg} alt='header_with_image_bg_image' className='w-full h-full absolute top-0 left-0 object-cover' />
+                <div className='max-w-1200 mx-auto text-white z-50 pt-14 pb-24 md:pb-32 p-4'>
+                    <p className="mb-4 z-40 uppercase">{title}</p>
+                    <h1 className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary  to-white  mb-4 md:text-4xl z-40 font-semibold max-w-[650px]">{heading}</h1>
+                    <p className="leading-relaxed z-30 max-w-[550px]">{para}</p>
+                </div>
+                <div className="absolute rounded-lg max-1200:w-[calc(100vw-40px)] bottom-0 left-1/2 translate-x-[-50%] translate-y-[50%] z-[65] w-[1100px] mx-auto lg:h-48 overflow-hidden">
+                    <Image src={img} width={1200} alt='aboutUshomeBanner' className='z-[61] w-full h-auto' />
+                </div>
+            </section>
+        </>
+    )
+}
