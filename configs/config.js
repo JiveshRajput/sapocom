@@ -1,5 +1,9 @@
 // SVGs
 import techSvg from '../assets/images/icons/tech.svg'
+import handshakeSvg from '../assets/images/icons/handshake.svg'
+import alertSvg from '../assets/images/icons/alert.svg'
+import moneySvg from '../assets/images/icons/money.svg'
+import socialPeopleSvg from '../assets/images/icons/social-people.svg'
 import cloudNetworkingSvg from '../assets/images/icons/cloud-networking.svg'
 import heartInHandSvg from '../assets/images/icons/heart-in-hand.svg'
 import shieldSvg from '../assets/images/icons/shield.svg'
@@ -12,10 +16,19 @@ import sapSupportSvg from '../assets/images/icons/sap-support.svg'
 
 // PNGs
 import homeBanner1 from "@/assets/images/bgImages/homeBanner1.png";
+import homeBanner2 from "@/assets/images/bgImages/homeBanner2.png";
+import homeBanner3 from "@/assets/images/bgImages/homeBanner3.png";
 import industryOil from '@/assets/images/home/industry-oil.png'
 import industryMining from '@/assets/images/home/industry-mining.png'
+import industryChemical from '@/assets/images/home/industry-chemical.png'
+import industryAgriculture from '@/assets/images/home/industry-agriculture.png'
+import sapSupport from '@/assets/images/home/sap-support.png'
+import sapRollout from '@/assets/images/home/sap-rollout.png'
 import sapImplementation from '@/assets/images/home/sap-implementation.png'
-import reviewPerson from '@/assets/images/home/review-person.png'
+import sapDataMigration from '@/assets/images/home/sap-data-migration.png'
+import sapDataUpgrade from '@/assets/images/home/sap-data-upgrade.png'
+import sapAdvisory from '@/assets/images/home/sap-advisory.png'
+import reviewPerson1 from '@/assets/images/home/review-person1.png'
 import partner1 from '@/assets/images/partners/1.png'
 import partner2 from '@/assets/images/partners/2.png'
 import partner3 from '@/assets/images/partners/3.png'
@@ -90,25 +103,25 @@ export const navTabs = [
 
 export const slidesData = [
     {
-        heading: 'Upstream to Downstream, our SAP supply chain solutions for you',
-        para: "Whether it's optimizing exploration and production operations , our SAP-powered supply chain solutions delivercontrol, and agility.",
+        heading: 'Enhance Your Supply Chain Visibility with SAP',
+        para: "Make data-driven decisions, improve collaboration, and achieve supply chain excellence. Discover the power of SAP now!",
         image: homeBanner1,
         link: '/about-us',
         cta: '/contact-us',
         id: '1'
     },
     {
-        heading: 'Upstream to Downstream, our SAP supply chain solutions for you',
-        para: "Whether it's optimizing exploration and production operations , our SAP-powered supply chain solutions delivercontrol, and agility.",
-        image: homeBanner1,
+        heading: 'Streamline Your Operations with SAP',
+        para: "Unlock the full potential of your supply chain by leveraging SAP solutions. Transform your processes, increase efficiency, and drive business growth. Explore SAP today!",
+        image: homeBanner2,
         link: '/about-us',
         cta: '/contact-us',
         id: '2'
     },
     {
-        heading: 'Upstream to Downstream, our SAP supply chain solutions for you',
-        para: "Whether it's optimizing exploration and production operations , our SAP-powered supply chain solutions delivercontrol, and agility.",
-        image: homeBanner1,
+        heading: 'Optimize Your Supply Chain with SAP Solutions',
+        para: "Our supply chain solutions provide the necessary control and agility to optimize all production explorations and operations.",
+        image: homeBanner3,
         link: '/about-us',
         cta: '/contact-us',
         id: '3'
@@ -118,93 +131,94 @@ export const slidesData = [
 export const industryDetails = [
     {
         name: 'Oil and Gas',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
+        description: 'Our specialized SAP services for the oil and gas industry optimize operational processes',
         link: '/industries/oil-and-gas',
         image: industryOil,
     },
     {
-        name: 'Mining',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
+        name: 'Metal & Mining',
+        description: 'We help mining companies improve resource planning, optimize production, and enhance safety measures.',
         link: '/industries/metal-and-mining',
         image: industryMining,
     },
     {
         name: 'Agriculture',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
+        description: 'Our tailored SAP services for the agriculture sector enable effective farm management and streamlined procurement.',
         link: '/industries/agriculture',
-        image: industryOil,
+        image: industryAgriculture,
     },
     {
         name: 'Chemicals',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
+        description: 'Our SAP solutions for the chemicals industry, enabling better demand forecasting and enhanced regulatory compliance',
         link: '/industries/chemical',
-        image: industryMining,
+        image: industryChemical,
     },
 ]
 
 export const sapServicesDetails = [
-    {
-        name: 'SAP Implementation',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
-        image: sapImplementation,
-    },
+
     {
         name: 'SAP Support',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
-        image: sapImplementation,
+        description: 'We offer comprehensive SAP support services and system maintenance to ensure the smooth operation of your SAP environment.',
+        image: sapSupport,
     },
     {
         name: 'SAP Rollout',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
+        description: 'Our experienced consultants facilitate SAP rollout projects and ensure consistent processes to enable efficient collaboration across your organization.',
+        image: sapRollout,
+    },
+    {
+        name: 'SAP Implementation',
+        description: "Our expert team ensures a seamless SAP implementation process and enable you to unlock the full potential of SAP's capabilities.",
         image: sapImplementation,
     },
     {
         name: 'Data Migration',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
-        image: sapImplementation,
+        description: 'We specialize in secure and efficient data migration services to minimize downtime and ensure data integrity throughout the process.',
+        image: sapDataMigration,
     },
     {
         name: 'Data Upgrade',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
-        image: sapImplementation,
+        description: 'Our experts assist with SAP data upgrades, optimizing system performance, and leveraging the latest features and enhancements.',
+        image: sapDataUpgrade,
     },
     {
         name: 'Advisory',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
-        image: sapImplementation,
+        description: 'Our advisory services provide strategic guidance and help you align your SAP strategy with your business goals for long-term success.',
+        image: sapAdvisory,
     },
 ]
 
 export const whyChooseUsData = [
     {
-        name: 'Cloud Driven Tech',
+        name: 'Commitment to SAP',
+        description: 'With over 6 years of experience, we are a dedicated pure-play SAP firm providing exceptional services to our clients. Our commitment and consistency have earned us the reputation as the premier Consulting Partner for leading big four consulting firms.',
+        image: handshakeSvg,
+    },
+    {
+        name: 'Industry Solutions',
+        description: "We understand the importance of delivering tailored solutions to our clients. That's why we have dedicated industry teams for both pre-sales and value engineering. Our pre-sales team possesses in-depth knowledge of various industries and works closely with clients.",
+        image: techSvg,
+    },
+    {
+        name: 'Risk Mitigation',
+        description: 'Our teams create native and cross-platform IoT-driven applications that open up space for smart access and analysis of data generated by in this way providing businesses with the ability to get a better understanding of their custome.',
+        image: alertSvg,
+    },
+    {
+        name: 'Flexibility',
         description: 'Our teams create native and cross-platform IoT-driven applications that open up space for smart access and analysis of data generated by in this way providing businesses with the ability to get a better understanding of their custome.',
         image: cloudNetworkingSvg,
     },
     {
-        name: 'HiTech Service',
-        description: 'Our teams create native and cross-platform IoT-driven applications that open up space for smart access and analysis of data generated by in this way providing businesses with the ability to get a better understanding of their custome.',
-        image: techSvg,
+        name: 'Competetive Cost',
+        description: 'We are committed to providing our clients with an aggressive implementation pricing model that effectively reduces the cost of ownership. As a dedicated offshore SAP Solutions Center, we have optimized our operations',
+        image: moneySvg,
     },
     {
-        name: 'Certified Force',
-        description: 'Our teams create native and cross-platform IoT-driven applications that open up space for smart access and analysis of data generated by in this way providing businesses with the ability to get a better understanding of their custome.',
-        image: cloudNetworkingSvg,
-    },
-    {
-        name: 'Cloud Driven Tech',
-        description: 'Our teams create native and cross-platform IoT-driven applications that open up space for smart access and analysis of data generated by in this way providing businesses with the ability to get a better understanding of their custome.',
-        image: techSvg,
-    },
-    {
-        name: 'Cloud Driven Tech',
-        description: 'Our teams create native and cross-platform IoT-driven applications that open up space for smart access and analysis of data generated by in this way providing businesses with the ability to get a better understanding of their custome.',
-        image: cloudNetworkingSvg,
-    },
-    {
-        name: 'Cloud Driven Tech',
-        description: 'Our teams create native and cross-platform IoT-driven applications that open up space for smart access and analysis of data generated by in this way providing businesses with the ability to get a better understanding of their custome.',
-        image: techSvg,
+        name: 'Breadth & Depth',
+        description: 'Our team at Sapocom possesses extensive industry experience in the Metal & Mining and Oil & Gas sectors. We have deep knowledge and understanding of the specific challenges, requirements, and best practices within these industries.',
+        image: socialPeopleSvg,
     },
 ]
 
@@ -271,21 +285,16 @@ export const reviewData = [
     {
         name: 'Jonhathan Wick',
         position: 'Director, Table.inc',
-        review: "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth  but positive experiences! and these positives lead to our growth but positive experiences! and these positives lead to our growth",
-        image: reviewPerson,
+        review: "SAPOCOM experts played a key role in implementation and launch of functionality of new commodity price engine CPE/ CPF in one of the biggest mining projects starting from configuration and supporting developments, testing and defect resolution. From the outset, the team demonstrated an impressive level of professionalism and expertise. Their attention to detail and willingness to work closely with us to ensure that our needs were met were truly appreciated. The team's communication was excellent, and we always felt informed and involved throughout the project. We are grateful for contribution of SAPOCOM colleagues and hope for future perspective cooperation.",
+        image: reviewPerson1,
     },
     {
         name: 'Jonhathan Wick',
         position: 'Director, Table.inc',
-        review: "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth  but positive experiences! and these positives lead to our growth but positive experiences! and these positives lead to our growth",
-        image: reviewPerson,
+        review: "SAPOCOM experts played a key role in implementation and launch of functionality of new commodity price engine CPE/ CPF in one of the biggest mining projects starting from configuration and supporting developments, testing and defect resolution. From the outset, the team demonstrated an impressive level of professionalism and expertise. Their attention to detail and willingness to work closely with us to ensure that our needs were met were truly appreciated. The team's communication was excellent, and we always felt informed and involved throughout the project. We are grateful for contribution of SAPOCOM colleagues and hope for future perspective cooperation.",
+        image: reviewPerson1,
     },
-    {
-        name: 'Jonhathan Wick',
-        position: 'Director, Table.inc',
-        review: "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth  but positive experiences! and these positives lead to our growth but positive experiences! and these positives lead to our growth",
-        image: reviewPerson,
-    },
+
 ]
 
 
@@ -330,9 +339,9 @@ export const teamsList = [
     {
         name: 'Jivesh',
         designation: 'Developer',
-        image: team8 
+        image: team8
     },
-    
+
 ]
 
 
@@ -563,19 +572,19 @@ export const industryMetalSolutionProviding = [
     {
         title: 'Commodity Pricing Engine (CPE)',
         heading: 'Commodity Pricing Engine (CPE)',
-        description: 'Commodity Pricing Engine (CPE) provides a robust pricing framework that takes into account various quality parameters, assay percentages, and other relevant factors. This helps metal and mining companies to accurately price their products and minimize the impact of pricing fluctuations on their business.', 
-        image: industrySolutionProviding1, 
-    }, 
+        description: 'Commodity Pricing Engine (CPE) provides a robust pricing framework that takes into account various quality parameters, assay percentages, and other relevant factors. This helps metal and mining companies to accurately price their products and minimize the impact of pricing fluctuations on their business.',
+        image: industrySolutionProviding1,
+    },
     {
         title: 'Production Solutions',
         heading: 'Integrated Mine Operations and Production solutions (IS Mine)',
-        description: '(IS Mine) helps mining companies plan, schedule, and optimize their operations more effectively. This solution integrates all mining processes into a single system, enabling real-time data analysis and decision-making. By providing comprehensive planning and scheduling capabilities, IS Mine can help mining companies to improve productivity, reduce costs, and increase profitability.', 
-        image: industrySolutionProviding1, 
-    }, 
+        description: '(IS Mine) helps mining companies plan, schedule, and optimize their operations more effectively. This solution integrates all mining processes into a single system, enabling real-time data analysis and decision-making. By providing comprehensive planning and scheduling capabilities, IS Mine can help mining companies to improve productivity, reduce costs, and increase profitability.',
+        image: industrySolutionProviding1,
+    },
     {
         title: 'SAP Solutions',
         heading: 'SAP solutions such as SAP Environment, Health, and Safety Management',
-        description: 'It can help mining companies to ensure compliance with regulatory requirements. This solution provides a comprehensive set of tools for managing environmental, health, and safety risks, ensuring compliance with regulations, and reducing operational risks.', 
-        image: industrySolutionProviding1, 
-    }, 
+        description: 'It can help mining companies to ensure compliance with regulatory requirements. This solution provides a comprehensive set of tools for managing environmental, health, and safety risks, ensuring compliance with regulations, and reducing operational risks.',
+        image: industrySolutionProviding1,
+    },
 ]

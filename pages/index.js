@@ -85,25 +85,25 @@ export default function Home() {
         <div className='max-w-1200 mx-auto flex gap-10 flex-wrap '>
           <div className="flex-1">
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>About</p>
-            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>SAPOCOM Global</h2>
-            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70'>Sapocom Global , a sap based company to provide asap solutions to be at top in this world</p>
-            <p data-aos='fade-up' className='text-black mb-6'>SAPOCOM is an emerging project-based SAP consulting, Training & talent recruitment enterprise among the fastest growing consultancy firms in India. We add value through talent acquisition, software development,</p>
-            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[600px]'>
+            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4'>SAPOCOM</h2>
+            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70'>Empowering SAP Professionals for Global Success</p>
+            <p data-aos='fade-up' className='text-black mb-6'>Sapocom is an emerging SAP consulting, training, and talent recruitment industry leader. Our team focuses on software development, talent acquisition, and training programs. </p>
+            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4'>
               <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>Renowned and reliable enterprise</p>
               </div>
               <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>Fostering collaborative team approach</p>
               </div>
               <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>Focus on revolutionizing SAP & IT industry</p>
               </div>
               <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>Innovative solutions for sustainable growth</p>
               </div>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Industries</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Industry Led Services</h2>
-          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our comprehensive SAP services are designed to meet the evolving needs of your business</p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our industry-led SAP services are tailored to meet your business needs.</p>
         </div>
         {/* View for Desktop */}
         <div className='grid grid-cols-auto-4 gap-4 justify-items-cente max-md:hidden'>
@@ -130,7 +130,7 @@ export default function Home() {
                     <Image alt={industry.name} width={300} src={industry.image} priority className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
                     <div className='z-[87] select-none'>
                       <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{industry.name}</h1>
-                      <p className='text-white/50 mb-2'>{industry.description}</p>
+                      <p className='text-white/50 mb-2 min-h-[96px]'>{industry.description}</p>
                       <Link href={industry.link} className='text-[#FFAAE3] opacity-60 hover:opacity-100'>Learn More &gt;</Link>
                     </div>
                   </div>
@@ -167,7 +167,7 @@ export default function Home() {
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Services</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'> SAP Services</h2>
-          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Innovative SAP solutions designed to help you stay ahead of the competition </p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center max-w-800'>SAP Implementation: Our expert team ensures a seamless SAP implementation process, customizing the system to fit your business requirements and enabling you to unlock the full potential of SAP's capabilities.</p>
         </div>
         {/* View for Desktop */}
         <div className='grid grid-cols-auto-3 gap-4 justify-items-center max-md:hidden'>
@@ -178,7 +178,7 @@ export default function Home() {
                   <Image alt={name} src={image} width={400} className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
                   <div className='z-[87] select-none'>
                     <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{name}</h1>
-                    <p className='text-white/50 mb-2'>{description}</p>
+                    <p className='text-white/50 mb-2 text-sm'>{description}</p>
                   </div>
                 </div>
               )
@@ -212,7 +212,7 @@ export default function Home() {
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Why Choose</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Why Choose Us as Your SAP Partner</h2>
-          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition</p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center max-w-800'>We pride ourselves in providing industry-led SAP services customized to your unique business needs. Our team of experienced SAP professionals is dedicated to delivering exceptional results and unparalleled customer satisfaction, making us the ideal partner for businesses looking to achieve their respective goals and stay ahead of the competition.</p>
         </div>
         {/* View for Desktop */}
         <div className='grid grid-cols-auto-3-250 gap-4 justify-items-center mx-auto max-w-900 max-md:hidden'>
@@ -319,8 +319,8 @@ export default function Home() {
         <div className='max-w-1200 mx-auto flex gap-4 flex-wrap '>
           <div className="md:flex-1">
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>Worldwide</p>
-            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 max-w-[550px]'>We are helping business all over the world with growth and efficient solutions</h2>
-            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70 max-w-[500px]'>Our global presence allows us to provide local support and expertise to our clients, no matter where they are located.</p>
+            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 max-w-[550px]'>With our strong global presence and unwavering commitment to delivering growth-oriented and efficient SAP solutions, SAPOCOM enables businesses worldwide to thrive.</h2>
+            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70 max-w-[500px]'>We provide local support and expertise to our clients, regardless of location, ensuring they receive the best possible service and results. So, why wait? Join us today for unique SAP solutions.</p>
           </div>
           <div data-aos='zoom-in' data-aos-delay={200} className="flex md:flex-1 max-md:text-center max-md:w-full max-md:justify-center">
             <Image src={mapWithFlag} width={400} alt='about_sacopom_image' className='w-full' />
