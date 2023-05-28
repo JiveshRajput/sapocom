@@ -18,14 +18,15 @@ import industrySolution from '@/assets/images/industry/metalMining/industrySolut
 import clientImage from '@/assets/images/industry/clientImage.png'
 
 // Configs
-import { industryChemicalClients, industryChemicalFutureData, industryChemicalSuccessData,  industryChemicalFeaturesData } from '@/configs/config';
+import { industryChemicalClients, industryChemicalFutureData, industryChemicalSuccessData, industryChemicalFeaturesData, industryMetalSolutionProviding } from '@/configs/config';
+import IndustryPartsDetail from '@/components/IndustryPartsDetail';
 
 export default function MetalMining() {
   return (
     <>
       <SetHeaders title='Metal & Mining Industry | Sapocom' />
       <HeaderBanner heading='Metal & Mining Industry' para='Meet demand for a more sustainable energy mix – faster – with integrated oil, gas, and energy software from SAP.' bgImg={bgBanner} />
-
+      
       <AboutIndustry
         title='Client'
         heading='Innovating the Chemical Industry with SAP Technology'
@@ -33,7 +34,7 @@ export default function MetalMining() {
         image={industryAbout}
         keyPoints={['Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added']}
       />
-
+      <IndustryPartsDetail details={industryMetalSolutionProviding} />
       <IndustryFuture
         title='Future'
         heading='SAP Services Tailored to the Oil and Gas Industry'
@@ -59,9 +60,9 @@ export default function MetalMining() {
       />
 
       <WhyChooseSapocom />
-      
+
       <CtaBanner />
-      
+
       <ClientReviews
         message='We have been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth xperiences! and these positives lead to our growth  and these positives lead to our growth'
         name='Jonhathan Wick'

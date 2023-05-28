@@ -31,6 +31,7 @@ import partner12 from '@/assets/images/partners/12.png'
 import partner13 from '@/assets/images/partners/13.png'
 import partner14 from '@/assets/images/partners/14.png'
 import industryFutureChemical1 from '@/assets/images/industry/chemical/industryFuture1.png'
+import industrySolutionProviding1 from '@/assets/images/industry/metalMining/industrySolutionProviding1.png'
 import service1 from '@/assets/images/service/service1.png'
 import service2 from '@/assets/images/service/service2.png'
 import service3 from '@/assets/images/service/service3.png'
@@ -42,7 +43,6 @@ import serviceBenefit1 from '@/assets/images/service/serviceBenefit1.png'
 
 
 // Home page
-
 export const navTabs = [
     {
         name: 'Home',
@@ -501,4 +501,26 @@ export const industryChemicalClients = [
         name: 'Baker Hughes',
         image: partner6,
     },
+]
+
+// 1. Metal and Mining
+export const industryMetalSolutionProviding = [
+    {
+        title: 'Commodity Pricing Engine (CPE)',
+        heading: 'Commodity Pricing Engine (CPE)',
+        description: 'Commodity Pricing Engine (CPE) provides a robust pricing framework that takes into account various quality parameters, assay percentages, and other relevant factors. This helps metal and mining companies to accurately price their products and minimize the impact of pricing fluctuations on their business.', 
+        image: industrySolutionProviding1, 
+    }, 
+    {
+        title: 'Production Solutions',
+        heading: 'Integrated Mine Operations and Production solutions (IS Mine)',
+        description: '(IS Mine) helps mining companies plan, schedule, and optimize their operations more effectively. This solution integrates all mining processes into a single system, enabling real-time data analysis and decision-making. By providing comprehensive planning and scheduling capabilities, IS Mine can help mining companies to improve productivity, reduce costs, and increase profitability.', 
+        image: industrySolutionProviding1, 
+    }, 
+    {
+        title: 'SAP Solutions',
+        heading: 'SAP solutions such as SAP Environment, Health, and Safety Management',
+        description: 'It can help mining companies to ensure compliance with regulatory requirements. This solution provides a comprehensive set of tools for managing environmental, health, and safety risks, ensuring compliance with regulations, and reducing operational risks.', 
+        image: industrySolutionProviding1, 
+    }, 
 ]
