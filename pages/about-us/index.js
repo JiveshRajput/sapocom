@@ -6,13 +6,18 @@ import VideoBackgroundMessage from '@/components/VideoBackgroundMessage'
 // SVG
 import rocketSvg from '@/assets/images/icons/rocket.svg'
 
-// images
+// Images
 import aboutBanner from "@/assets/images/bgImages/aboutUsBanner.png";
-import headerImage from '@/assets/images/about/headerImage.png'
-import founderImage from '@/assets/images/about/founder.png'
-import companyImage from '@/assets/images/about/company.png'
-import missionImage from '@/assets/images/about/mission.png'
-import { BannerWithImage } from '@/components/banners/banners'
+import headerImage from '@/assets/images/about/headerImage.png';
+import founderImage from '@/assets/images/about/founder.png';
+import companyImage from '@/assets/images/about/company.png';
+import missionImage from '@/assets/images/about/mission.png';
+import { BannerWithImage } from '@/components/banners/banners';
+
+// Configs
+import { teamsList } from '@/configs/config'
+
+
 
 function AboutUs() {
   return (
@@ -73,7 +78,7 @@ function AboutUs() {
       </section>
 
       {/* Founder Message */}
-      <section className='w-full p-4 py-10 border-t border-primary/20' >
+      <section data-aos='flip-left' className='w-full p-4 py-10 border-t border-primary/20' >
         <div className="max-w-900 mx-auto rounded-lg p-8 bg-gradient-to-r from-primary to-secondary">
           <p className="text-white uppercase mb-2 font-medium">Company</p>
           <h2 className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50 mb-8 max-w-[550px]">Founder&apos;s Message</h2>
@@ -87,6 +92,63 @@ function AboutUs() {
             {/* Message side */}
             <div className='text-base'>
               <p>{`This isn’t business as usual, and it’s a time of great stress and uncertainty. It’s also a moment in time when the work we’re doing is its most critical. We’ve changed our logistics, transportation, supply chain, purchasing, and third party seller processes to prioritize stocking and delivering essential items like household staples, sanitizers, baby formula, and medical supplies. We’re providing a vital service to people everywhere, especially to those, like the elderly, who are most vulnerable. People are depending on us. I’m not alone in being grateful for the work you are doing. I’ve received hundreds of emails from customers and seen posts on social media thanking you all. Your efforts are being noticed at the highest levels of government, and President Trump earlier this week thanked this team profusely. Across the world, people are feeling the economic effects of this crisis, and I’m sad to tell you I predict things are going to get worse before they get better.`}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Team */}
+      <section className='w-full p-4 md:py-8 max-w-1000 mx-auto ' >
+        <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>team</p>
+          <h2 data-aos='flip-right' data-aos-delay='100' className='max-w-[800px] md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30% to-secondary to-90% mb-4'>We believe that the team is the one which leads a company to new greater heights</h2>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our team of SAP professionals is the driving force behind our success. With their expertise, dedication, and unwavering commitment to delivering top-notch services, we can help businesses thrive and reach new heights with our innovative SAP solutions.</p>
+        </div>
+        {/* Teams Card */}
+        <div className="grid max-review:grid-cols-2 grid-cols-auto-4">
+          {
+            teamsList.map((team, ind) => {
+              return (
+                <div key={ind} className='aspect-square relative group'>
+                  <div className="w-full h-full absolute bg-primary/60 z-10 p-4 text-white flex flex-col justify-center transition-all opacity-0 group-hover:opacity-100 ">
+                    <p className='text-2xl font-bold'>{team.name}</p>
+                    <p className='opacity-60'>{team.designation}</p>
+                  </div>
+                  <Image src={team.image} width={280} className='w-full h-full object-cover' />
+                </div>
+              )
+            })
+          }
+        </div>
+      </section>
+
+
+      {/* Sapocom Stats and Details */}
+      <section className='w-full p-4 py-8 md:py-16 bg-grey' >
+        <div className='max-w-1000 mx-auto flex gap-4 flex-wrap items-center '>
+          <div className="md:flex-1">
+            <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>Worldwide</p>
+            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 max-w-[550px]'>Trusted Global SAP Partners</h2>
+            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70 max-w-[500px]'>We call ourselves the pioneers of customized SAP solutions for businesses of all sizes worldwide. With decades of experience in the field, we ensure to provide the best services to our clients.</p>
+          </div>
+          <div data-aos='zoom-in' data-aos-delay={200} className="flex md:flex-1 max-md:text-center max-md:w-full justify-center">
+            <div className="p-6 px-8 rounded-lg bg-white grid grid-cols-2 gap-8 text-black border-primary/40 border">
+              <div>
+                <h3 className='text-3xl font-semibold'>500+</h3>
+                <p>Clients</p>
+              </div>
+              <div>
+                <h3 className='text-3xl font-semibold'>7+</h3>
+                <p>Offices</p>
+              </div>
+              <div>
+                <h3 className='text-3xl font-semibold'>70+</h3>
+                <p>Professions</p>
+              </div>
+              <div>
+                <h3 className='text-3xl font-semibold'>200+</h3>
+                <p>Clients Worldwide</p>
+              </div>
             </div>
           </div>
         </div>

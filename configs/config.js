@@ -40,6 +40,14 @@ import service5 from '@/assets/images/service/service5.png'
 import service6 from '@/assets/images/service/service6.png'
 import serviceBenefit1 from '@/assets/images/service/serviceBenefit1.png'
 
+import team1 from '@/assets/images/about/team1.png'
+import team2 from '@/assets/images/about/team2.png'
+import team3 from '@/assets/images/about/team3.png'
+import team4 from '@/assets/images/about/team4.png'
+import team5 from '@/assets/images/about/team5.png'
+import team6 from '@/assets/images/about/team6.png'
+import team7 from '@/assets/images/about/team7.png'
+import team8 from '@/assets/images/about/team1.png'
 
 
 // Home page
@@ -278,6 +286,53 @@ export const reviewData = [
         review: "Finsweet has been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth  but positive experiences! and these positives lead to our growth but positive experiences! and these positives lead to our growth",
         image: reviewPerson,
     },
+]
+
+
+// About Us
+
+export const teamsList = [
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team1
+    },
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team2
+    },
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team3
+    },
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team4
+    },
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team5
+    },
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team6
+    },
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team7
+    },
+    {
+        name: 'Jivesh',
+        designation: 'Developer',
+        image: team8 
+    },
+    
 ]
 
 
