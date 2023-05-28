@@ -5,6 +5,11 @@ import VideoBackgroundMessage from '@/components/VideoBackgroundMessage'
 
 // SVG
 import rocketSvg from '@/assets/images/icons/rocket.svg'
+import airplaneSvg from '@/assets/images/icons/airplane.svg'
+import horseSvg from '@/assets/images/icons/horse.svg'
+import mountainSvg from '@/assets/images/icons/mountain.svg'
+import targetSvg from '@/assets/images/icons/target.svg'
+import growthSvg from '@/assets/images/icons/growth.svg'
 
 // Images
 import aboutBanner from "@/assets/images/bgImages/aboutUsBanner.png";
@@ -67,12 +72,12 @@ function AboutUs() {
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>Mission</p>
             <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Our mission is to empower businesses with cutting-edge SAP solutions and services that drive growth and success.</h2>
           </div>
-          <div className='max-md:hidden'>
+          <div className='max-md:hidden' data-aos='flip-right'>
             <Image src={rocketSvg} alt='rocket_svg' className='w-[200px] h-[200px] object-contain' />
           </div>
         </div>
         {/* image */}
-        <div className="w-full h-full">
+        <div className="w-full h-full" data-aos='flip-up'>
           <Image src={missionImage} alt='company_mission_image' width={1200} className='w-full h-full rounded-lg' />
         </div>
       </section>
@@ -98,14 +103,14 @@ function AboutUs() {
       </section>
 
       {/* Company Team */}
-      <section className='w-full p-4 md:py-8 max-w-1000 mx-auto ' >
+      <section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>team</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='max-w-[800px] md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30% to-secondary to-90% mb-4'>We believe that the team is the one which leads a company to new greater heights</h2>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our team of SAP professionals is the driving force behind our success. With their expertise, dedication, and unwavering commitment to delivering top-notch services, we can help businesses thrive and reach new heights with our innovative SAP solutions.</p>
         </div>
         {/* Teams Card */}
-        <div className="grid max-review:grid-cols-2 grid-cols-auto-4">
+        <div data-aos='zoom-in' className="grid max-review:grid-cols-2 grid-cols-auto-4">
           {
             teamsList.map((team, ind) => {
               return (
@@ -122,6 +127,104 @@ function AboutUs() {
         </div>
       </section>
 
+      {/* Company's Timeline */}
+      <section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
+        <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Timeline</p>
+          <h2 data-aos='flip-right' data-aos-delay='100' className='max-w-[800px] md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30% to-secondary to-90% mb-4'>From nothing to a big name in industry</h2>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Check our yearly achievemnts here</p>
+        </div>
+        {/* Teams Card */}
+        <div data-aos='flip-up' className="md:py-8 max-md:px-2 rounded-md border border-black/25">
+          <div className='grid md:grid-cols-5 max-md:grid-rows-5'>
+            {/* first */}
+            <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
+              {/* Achievement and Year */}
+              <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
+                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial </p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+              </div>
+              {/* Center Border Line */}
+              <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
+              {/* Icon Circle */}
+              <div className="w-full grid md:grid-rows-[1fr_100px] max-md:grid-cols-[1fr_100px] md:justify-center max-md:items-center">
+                <div className="md:w-[1px] md:h-full max-md:h-[1px] max-md:w-full mx-auto bg-secondary"></div>
+                <div className="w-[100px] h-[100px] rounded-full border border-secondary p-6 grid place-items-center">
+                  <Image src={airplaneSvg} alt='airplane_svg' className='w-[50px] h-[50px] object-contain' />
+                </div>
+              </div>
+            </div>
+            {/* second */}
+            <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
+              {/* Icon Circle */}
+              <div className="w-full grid md:grid-rows-[100px_1fr] max-md:grid-cols-[100px_1fr] md:justify-center max-md:items-center">
+                <div className="w-[100px] h-[100px] rounded-full border border-secondary p-6 grid place-items-center object-contain">
+                  <Image src={horseSvg} alt='horse_svg' className='w-[50px] h-[50px] object-contain' />
+                </div>
+                <div className="md:w-[1px] md:h-full max-md:h-[1px] max-md:w-full mx-auto bg-secondary"></div>
+              </div>
+              {/* Center Border Line */}
+              <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
+              {/* Achievement and Year */}
+              <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
+                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial and here more details come</p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+              </div>
+            </div>
+            {/* third */}
+            <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
+              {/* Achievement and Year */}
+              <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
+                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial </p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+              </div>
+              {/* Center Border Line */}
+              <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
+              {/* Icon Circle */}
+              <div className="w-full grid md:grid-rows-[1fr_100px] max-md:grid-cols-[1fr_100px] md:justify-center max-md:items-center">
+                <div className="md:w-[1px] md:h-full max-md:h-[1px] max-md:w-full mx-auto bg-secondary"></div>
+                <div className="w-[100px] h-[100px] rounded-full border border-secondary p-6 grid place-items-center">
+                  <Image src={mountainSvg} alt='airplane_svg' className='w-[50px] h-[50px] object-contain' />
+                </div>
+              </div>
+            </div>
+            {/* forth */}
+            <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
+              {/* Icon Circle */}
+              <div className="w-full grid md:grid-rows-[100px_1fr] max-md:grid-cols-[100px_1fr] md:justify-center max-md:items-center">
+                <div className="w-[100px] h-[100px] rounded-full border border-secondary p-6 grid place-items-center object-contain">
+                  <Image src={targetSvg} alt='horse_svg' className='w-[50px] h-[50px] object-contain' />
+                </div>
+                <div className="md:w-[1px] md:h-full max-md:h-[1px] max-md:w-full mx-auto bg-secondary"></div>
+              </div>
+              {/* Center Border Line */}
+              <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
+              {/* Achievement and Year */}
+              <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
+                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial and here more details come</p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+              </div>
+            </div>
+            {/* fifth */}
+            <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
+              {/* Achievement and Year */}
+              <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
+                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial </p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+              </div>
+              {/* Center Border Line */}
+              <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
+              {/* Icon Circle */}
+              <div className="w-full grid md:grid-rows-[1fr_100px] max-md:grid-cols-[1fr_100px] md:justify-center max-md:items-center">
+                <div className="md:w-[1px] md:h-full max-md:h-[1px] max-md:w-full mx-auto bg-secondary"></div>
+                <div className="w-[100px] h-[100px] rounded-full border border-secondary p-6 grid place-items-center">
+                  <Image src={growthSvg} alt='airplane_svg' className='w-[50px] h-[50px] object-contain' />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Sapocom Stats and Details */}
       <section className='w-full p-4 py-8 md:py-16 bg-grey' >
