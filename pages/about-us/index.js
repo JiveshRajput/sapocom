@@ -119,7 +119,7 @@ function AboutUs() {
                     <p className='text-2xl font-bold'>{team.name}</p>
                     <p className='opacity-60'>{team.designation}</p>
                   </div>
-                  <Image src={team.image} width={280} className='w-full h-full object-cover' />
+                  <Image src={team.image} alt='teamImage' width={280} className='w-full h-full object-cover' />
                 </div>
               )
             })

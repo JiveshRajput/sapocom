@@ -167,7 +167,7 @@ export default function Home() {
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Services</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'> SAP Services</h2>
-          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center max-w-800'>SAP Implementation: Our expert team ensures a seamless SAP implementation process, customizing the system to fit your business requirements and enabling you to unlock the full potential of SAP's capabilities.</p>
+          <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center max-w-800'>SAP Implementation: Our expert team ensures a seamless SAP implementation process, customizing the system to fit your business requirements and enabling you to unlock the full potential of SAP&apos;s capabilities.</p>
         </div>
         {/* View for Desktop */}
         <div className='grid grid-cols-auto-3 gap-4 justify-items-center max-md:hidden'>
