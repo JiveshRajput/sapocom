@@ -13,7 +13,6 @@ import ClientReviews from '@/components/ClientReviews';
 // Images
 import bgBanner from "@/assets/images/bgImages/industryOilAndGas.png";
 import industryAbout from '@/assets/images/industry/oilGas/industryAbout.png'
-import industryFeatures from '@/assets/images/industry/oilGas/industryFeatures.png'
 import industrySolution from '@/assets/images/industry/oilGas/industrySolution.png'
 import clientImage from '@/assets/images/industry/clientImage.png'
 
@@ -38,7 +37,6 @@ function OilGasPage() {
         title='Challenges'
         heading='Challenges in Oil & Gas Industry'
         description='Like every industry, Oil & Gas industry has its share of issues to tackl'
-        image={industryFeatures}
         featuresData={industryOilGasChallengeData}
       />
 

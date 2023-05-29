@@ -14,7 +14,6 @@ import ClientReviews from '@/components/ClientReviews';
 // Images
 import bgBanner from "@/assets/images/bgImages/industryChemical.png";
 import industryAbout from '@/assets/images/industry/chemical/industryAbout.png'
-import industryFeaturesChemical from '@/assets/images/industry/chemical/industryFeatures.png'
 import industrySolution from '@/assets/images/industry/chemical/industrySolution.png'
 import clientImage from '@/assets/images/industry/clientImage.png'
 
@@ -39,7 +38,6 @@ export default function Chemical() {
         title='CHALLENGES'
         heading='Challenges in the Chemical Industry'
         description='The chemical industry is facing several challenges that affect its growth and profitability as mentioned below.'
-        image={industryFeaturesChemical}
         featuresData={industryChemicalChallengeData}
       />
 

@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
+import industryFeatures from '@/assets/images/industry/industryFeatures.png'
 
-function IndustryFeatures({ title = 'features', heading = 'All these to be future ready', description = 'Your description will come here', image, featuresData }) {
+function IndustryFeatures({ title = 'challenges', heading = 'All these to be future ready', description = 'Your description will come here', image = industryFeatures, featuresData }) {
     return (
         <section className='w-full p-4 py-8 md:py-10 max-w-1200 mx-auto border-b border-primary/20' >
             <div className='flex md:gap-10 gap-4 flex-wrap mb-10'>
@@ -18,10 +19,10 @@ function IndustryFeatures({ title = 'features', heading = 'All these to be futur
                 {
                     featuresData.map(({ title, description }, ind) => {
                         return (
-                                <div key={ind} data-aos="fade-up" data-aos-delay={ind * 100} className='p-4  hover:shadow-detailcard rounded-md select-none transition-all'>
-                                    <h1 className='text-2xl text-secondary mb-4 font-semibold '>{title}</h1>
-                                    <p className='text-black/60'>{description}</p>
-                                </div>
+                            <div key={ind} data-aos="fade-up" data-aos-delay={ind * 100} className='p-4  hover:shadow-detailcard rounded-md select-none transition-all'>
+                                <h1 className='text-2xl text-secondary mb-4 font-semibold '>{title}</h1>
+                                <p className='text-black/60'>{description}</p>
+                            </div>
                         )
                     })
                 }

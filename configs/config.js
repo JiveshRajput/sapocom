@@ -29,6 +29,7 @@ import sapDataMigration from '@/assets/images/home/sap-data-migration.png'
 import sapDataUpgrade from '@/assets/images/home/sap-data-upgrade.png'
 import sapAdvisory from '@/assets/images/home/sap-advisory.png'
 import reviewPerson1 from '@/assets/images/home/review-person1.png'
+import reviewPerson2 from '@/assets/images/home/review-person2.png'
 import partner1 from '@/assets/images/partners/1.png'
 import partner2 from '@/assets/images/partners/2.png'
 import partner3 from '@/assets/images/partners/3.png'
@@ -48,8 +49,11 @@ import partner16 from '@/assets/images/partners/16.png'
 import partner17 from '@/assets/images/partners/17.png'
 import partner18 from '@/assets/images/partners/18.png'
 import partner19 from '@/assets/images/partners/19.png'
+import industryFutureAgriculture1 from '@/assets/images/industry/agriculture/industryFuture1.png'
 import industryFutureChemical1 from '@/assets/images/industry/chemical/industryFuture1.png'
 import industryFutureChemical2 from '@/assets/images/industry/chemical/industryFuture2.png'
+import industryFutureMetal1 from '@/assets/images/industry/metalMining/industryFuture1.png'
+import industryFutureMetal2 from '@/assets/images/industry/metalMining/industryFuture2.png'
 import industryFutureOilGas1 from '@/assets/images/industry/oilGas/industryFuture1.png'
 import industryFutureOilGas2 from '@/assets/images/industry/oilGas/industryFuture2.png'
 import industryFutureOilGas3 from '@/assets/images/industry/oilGas/industryFuture3.png'
@@ -315,10 +319,10 @@ export const reviewData = [
         image: reviewPerson1,
     },
     {
-        name: 'Jonhathan Wick',
-        position: 'Director, Table.inc',
-        review: "SAPOCOM experts played a key role in implementation and launch of functionality of new commodity price engine CPE/ CPF in one of the biggest mining projects starting from configuration and supporting developments, testing and defect resolution. From the outset, the team demonstrated an impressive level of professionalism and expertise. Their attention to detail and willingness to work closely with us to ensure that our needs were met were truly appreciated. The team's communication was excellent, and we always felt informed and involved throughout the project. We are grateful for contribution of SAPOCOM colleagues and hope for future perspective cooperation.",
-        image: reviewPerson1,
+        name: 'Dominic M Pinili',
+        position: 'Head of Solutions Delivery',
+        review: "I want to extend my gratitude to each member of the Sapocom team for their hard work, professionalism, and dedication. It is because of your collective efforts that we now have a top-notch solution that meets our requirements and exceeds our expectations. We look forward to continuing our partnership with Sapocom and working together on future projects. Without a doubt, we highly recommend the Sapocom team to any organization seeking excellence in project delivery.Thank you once again for your outstanding work.",
+        image: reviewPerson2,
     },
 
 ]
@@ -755,4 +759,56 @@ export const industryMetalSolutionProviding = [
         image: industrySolutionProviding1,
     },
 ]
+export const industryMetalChallengeData = [
+    {
+        title: 'Pricing Complexity',
+        description: "Metal and mineral prices are determined by various parameters, such as purity, grade, and other quality characteristics, and often fluctuate based on global market conditions. This complexity makes it difficult for industry players to accurately determine pricing, discounts, and penalties, which can affect the final product price and overall profitability."
+    },
+    {
+        title: 'Scheduling and Planning',
+        description: 'Mining operations require detailed planning to optimize production, minimize downtime, and reduce costs. However, planning for complex mining operations can be challenging due to the dynamic nature of the industry and the unpredictability of market conditions.'
+    },
+    {
+        title: 'Regulatory Compliance',
+        description: 'Mining operations are subject to various environmental, safety, labor and tax regulations, which can be complex and costly to comply with. Non-compliance can result in significant fines, legal liabilities, and reputational damage, which can have severe implications for the industry.'
+    }
+]
+export const industryMetalFutureData = [
+    {
+        title: 'SAP Industry Specific Mining Solution',
+        description: "We are experts that provide industry specific  integrated solutions for the metal and mining industry to streamline all the business processes providing a single SAP platform for all the operations.",
+        image: industryFutureMetal1,
+    },
+    {
+        title: 'Commodity Pricing Engine',
+        description: 'Our CPE is a unique platform from SAP to optimize complex pricing which follows business rule framework that uses all the required variables to accurately and efficiently calculate prices for various commodities.',
+        image: industryFutureMetal2,
+    }
+]
 
+// Agriculture
+export const industryAgricultureFutureData = [
+    {
+        title: 'ACM Module',
+        description: "SAP Agricultural Contract administration combines contract administration with data and procedures for inventory, risk, and finance management. Learn how to handle and administer all contracts with thousands of business partners for a wide range of commodities for your agricultural firm.",
+        image: industryFutureAgriculture1,
+    }
+]
+export const industryAgricultureChallengeData = [
+    {
+        title: 'Price Management',
+        description: "With prices of different agriculture commodities scattered across various interfaces, it's difficult to keep track of all prices in one place."
+    },
+    {
+        title: 'Commodity Fluctuations',
+        description: 'Fluctuations in commodity prices can lead to uncertainty in planning and budgeting.'
+    },
+    {
+        title: 'Transportation',
+        description: 'Transportation changes can disrupt the supply chain, leading to delays and losses.'
+    }
+]
+export const industryagricultureSuccessData = [
+    "The Agricultural Contract Management (ACM) module provides an integrated solution to manage contracts and agreements between agricultural producers and other stakeholders in the agricultural supply chain.",
+    "Agricultural contracts enable risk management through clear terms on pricing, quantity, quality, delivery, and payment, empowering producers and buyers to reduce uncertainty and enhance operational planning",
+]

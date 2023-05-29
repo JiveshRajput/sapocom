@@ -13,50 +13,54 @@ import ClientReviews from '@/components/ClientReviews';
 // images
 import bgBanner from "@/assets/images/bgImages/industryMining.png";
 import industryAbout from '@/assets/images/industry/metalMining/industryAbout.png'
-import industryFeatures from '@/assets/images/industry/metalMining/industryFeatures.png'
 import industrySolution from '@/assets/images/industry/metalMining/industrySolution.png'
 import clientImage from '@/assets/images/industry/clientImage.png'
 
 // Configs
-import { industryChemicalClients, industryChemicalFutureData, industryChemicalSuccessData, industryChemicalFeaturesData, industryMetalSolutionProviding } from '@/configs/config';
+import { industryClients, industryMetalFutureData, industryMetalChallengeData, industryMetalSolutionProviding } from '@/configs/config';
 import IndustryPartsDetail from '@/components/IndustryPartsDetail';
 
 export default function MetalMining() {
   return (
     <>
       <SetHeaders title='Metal & Mining Industry | Sapocom' />
-      <HeaderBanner heading='Metal & Mining Industry' para='Meet demand for a more sustainable energy mix – faster – with integrated oil, gas, and energy software from SAP.' bgImg={bgBanner} />
-      
+      <HeaderBanner heading='Metal & Mining Industry' para='Upgrade(Enhance) your metal and mining operations with our SAP software - with enhanced business  processes and boost productivity towards sustainable growth.' bgImg={bgBanner} />
+
       <AboutIndustry
-        title='Client'
-        heading='Innovating the Chemical Industry with SAP Technology'
-        description='We study, test, and analyze the impact of artificial intelligence, augmented/virtual reality, machine learning, and NLP and measure their'
+        title='OVERVIEW'
+        heading='Grow exponentially in the Metal and Mining industry with our SAP solutions'
+        description="Our SAP technical expertise empowers your metal and mining operations with cutting-edge solutions for enhanced efficiency and profitability."
         image={industryAbout}
-        keyPoints={['Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added']}
-      />
-      <IndustryPartsDetail details={industryMetalSolutionProviding} />
-      <IndustryFuture
-        title='Future'
-        heading='SAP Services Tailored to the Oil and Gas Industry'
-        description='Here you can have a short description of some digital technologies '
-        cardsData={industryChemicalFutureData}
+        keyPoints={['Nonbulk transportation management', 'Portfolio and project management', ' Asset management', 'Warehouse management']}
       />
 
       <IndustryFeatures
-        image={industryFeatures}
-        featuresData={industryChemicalFeaturesData}
+        heading='Challenges Observed in the Metal and Mining Industry'
+        description="The metal and mining industry faces a multitude of challenges that affect 
+        its operations, profitability, and sustainability. These challenges can significantly
+        impact the industry's success."
+        featuresData={industryMetalChallengeData}
       />
 
-      <IndustrySolution
+      <IndustryPartsDetail details={industryMetalSolutionProviding} />
+
+      <IndustryFuture
+        title='service'
+        heading='SAP Services Tailored to the Mining Industry'
+        description='Here you can have a short description of some digital technologies '
+        cardsData={industryMetalFutureData}
+      />
+
+      {/* <IndustrySolution
         successPoints={industryChemicalSuccessData}
         imageIndustrySuccess={industrySolution}
-      />
+      /> */}
 
       <IndustryClient
         title='clients'
         heading='We have been serving companies all over the globe'
         description='Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition.'
-        clientData={industryChemicalClients}
+        clientData={industryClients}
       />
 
       <WhyChooseSapocom />

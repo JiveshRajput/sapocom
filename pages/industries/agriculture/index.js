@@ -14,41 +14,42 @@ import ClientReviews from '@/components/ClientReviews';
 // images
 import bgBanner from "@/assets/images/bgImages/industryAgriculture.png";
 import industryAbout from '@/assets/images/industry/agriculture/industryAbout.png'
-import industryFeatures from '@/assets/images/industry/agriculture/industryFeatures.png'
 import industrySolution from '@/assets/images/industry/agriculture/industrySolution.png'
 import clientImage from '@/assets/images/industry/clientImage.png'
 
 // Configs
-import { industryChemicalClients, industryChemicalFutureData, industryChemicalSuccessData, industryChemicalFeaturesData } from '@/configs/config';
+import { industryClients, industryAgricultureFutureData, industryagricultureSuccessData, industryAgricultureChallengeData } from '@/configs/config';
 
 export default function Agriculture() {
   return (
     <>
       <SetHeaders title='Agriculture Industry | Sapocom' />
-      <HeaderBanner heading='Agriculture Industry' para='Meet demand for a more sustainable energy mix – faster – with integrated oil, gas, and energy software from SAP.' bgImg={bgBanner} />
+      <HeaderBanner heading='SAP Agriculture - Modernize Your Agriculture Business With Us' para='Stay ahead in the agricultural sector with our futuristic solutions to optimize management and gain insights with useful analytics.' bgImg={bgBanner} />
 
       <AboutIndustry
-        title='Clients'
-        heading='Innovating the Chemical Industry with SAP Technology'
-        description='We study, test, and analyze the impact of artificial intelligence, augmented/virtual reality, machine learning, and NLP and measure their'
+        title='Overview'
+        heading='Transform Your Agricultural Business With Our Cutting-Edge Solutions That Lead The Industry'
+        description="Are you in the agriculture industry and struggling to keep track of prices and logistics? Look no further than Sapocom's Agricultural Contract Management (ACM) module!"
         image={industryAbout}
-        keyPoints={['Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added']}
-      />
-
-      <IndustryFuture
-        title='Future'
-        heading='SAP Services Tailored to the Oil and Gas Industry'
-        description='Here you can have a short description of some digital technologies '
-        cardsData={industryChemicalFutureData}
+        keyPoints={['Emphasizing point to be added', 'Connected truck, rail, marine, pipeline management', "Process monitoring across supply, production, inventory, and emand", 'Inclusion of crop details in the sales terms in grower contracts']}
       />
 
       <IndustryFeatures
-        image={industryFeatures}
-        featuresData={industryChemicalFeaturesData}
+        title='challenges'
+        heading='Challenges The Agri-Industry'
+        description='A one liner for this section'
+        featuresData={industryAgricultureChallengeData}
+      />
+
+      <IndustryFuture
+        title='Service'
+        heading='Connecting Agriculture to the Future with SAP Technologies'
+        description='Here you can have a short description of some digital technologies '
+        cardsData={industryAgricultureFutureData}
       />
 
       <IndustrySolution
-        successPoints={industryChemicalSuccessData}
+        successPoints={industryagricultureSuccessData}
         imageIndustrySuccess={industrySolution}
       />
 
@@ -56,7 +57,7 @@ export default function Agriculture() {
         title='clients'
         heading='We have been serving companies all over the globe'
         description='Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition.'
-        clientData={industryChemicalClients}
+        clientData={industryClients}
       />
 
       <WhyChooseSapocom />
