@@ -35,25 +35,24 @@ function Services() {
         <div className='max-w-1200 mx-auto flex gap-10 flex-wrap '>
           <div className="flex-1">
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>Overview</p>
-            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 max-w-[550px]'>Transform Your Business with Our Comprehensive Services</h2>
-            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-8 opacity-70 max-w-[450px]'>From implementation to ongoing support, we offer a full suite of services to meet your unique business needs.</p>
-
-            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[600px]'>
+            <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 max-w-[550px]'>Empower Your Business Growth with Our Customized Solutions</h2>
+            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-8 opacity-70 max-w-[450px]'>We offer a complete range of services, from implementation to ongoing support, to help you harness the full power of our solutions and meet your unique business needs.</p>
+            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[700px]'>
               <div data-aos='flip-left' className='flex items-center text-black'>
                 <Image alt='check_black_svg' src={require('../../assets/images/icons/check-black.svg')} className='w-4 h-4 mr-3' />
-                <p>Emphasizing point to be added</p>
+                <p>Dedicated suite of services</p>
               </div>
               <div data-aos='flip-left' className='flex items-center text-black'>
                 <Image alt='check_black_svg' src={require('../../assets/images/icons/check-black.svg')} className='w-4 h-4 mr-3' />
-                <p>Emphasizing point to be added</p>
+                <p>Industry-leading software solutions</p>
               </div>
               <div data-aos='flip-left' className='flex items-center text-black'>
                 <Image alt='check_black_svg' src={require('../../assets/images/icons/check-black.svg')} className='w-4 h-4 mr-3' />
-                <p>Emphasizing point to be added</p>
+                <p>Global network of experts</p>
               </div>
               <div data-aos='flip-left' className='flex items-center text-black'>
                 <Image alt='check_black_svg' src={require('../../assets/images/icons/check-black.svg')} className='w-4 h-4 mr-3' />
-                <p>Emphasizing point to be added</p>
+                <p>Customized services to business demands</p>
               </div>
             </div>
           </div>
@@ -68,15 +67,15 @@ function Services() {
         <div className='max-w-1200 mx-auto'>
           {/* Heading */}
           <div className="flex items-center flex-col mb-10 max-md:mb-5 text-center">
-            <p data-aos="flip-left" data-aos-delay="100" className="uppercase mb-4 font-medium ">Industries</p>
+            <p data-aos="flip-left" data-aos-delay="100" className="uppercase mb-4 font-medium ">SERVICES</p>
             <h2 data-aos="flip-right" data-aos-delay="100" className="md:text-4xl text-3xl font-semibold text-white mb-4 max-w-1000">Empower Your Business with the Best-in-Class SAP Technologies for Future-Proof Growth</h2>
-            <p data-aos="flip-left" data-aos-delay="100" className="opacity-70 max-w-[600px]">Here you can have a short description of our services technologies </p>
+            <p data-aos="flip-left" data-aos-delay="100" className="opacity-70 max-w-[900px]">With global collaborations, we work with clients worldwide in most SAP modules to leverage and diversify our project experience. We are determined to establish our organization and develop a unique community of SAP and IT professionals that will contribute significantly to global SAP projec</p>
           </div>
           {/* Cards */}
           {/* View on Desktop */}
           <div className="max-w-1000 mx-auto grid grid-cols-auto-3-280 gap-4 md:gap-8 justify-items-center max-md:hidden">
             {
-              servicesData.map(({ title, description, image }, ind) => {
+              servicesData.map(({ title, image, points }, ind) => {
                 const even = ind % 2 == 0 || ind == 0 ? true : false;
                 return (
                   <div key={ind} data-aos={even ? "flip-right" : "flip-left"} data-aos-delay={ind * 100} className='bg-secondary rounded-lg'>
@@ -85,7 +84,15 @@ function Services() {
                     </div>
                     <div className="p-4">
                       <h1 className='mb-4 text-2xl font-semibold'>{title}</h1>
-                      <p className="opacity-60 line-clamp-[11]">{description}</p>
+                      <ul className="opacity-60 list-outside pl-3">
+                        {
+                          points.map((point, ind) => {
+                            return (
+                              <li key={ind} className='mb-3 list-disc'>{point}</li>
+                            )
+                          })
+                        }
+                      </ul>
                     </div>
                   </div>
                 )
@@ -96,16 +103,24 @@ function Services() {
           <div data-aos='fade-up' className="md:hidden">
             <Swiper slidesPerView={1} loop={true} modules={[Pagination, Autoplay]} className='sideSwiper bgDark rounded-md ' pagination={{ clickable: true, }} autoplay={{ delay: 10000, disableOnInteraction: false, }} spaceBetween={20} breakpoints={{ 480: { slidesPerView: 2 }, }}>
               {
-                servicesData.map(({ title, description, image, }, ind) => {
+                servicesData.map(({ title, points, image, }, ind) => {
                   return (
                     <SwiperSlide key={ind}>
                       <div className='bg-secondary rounded-lg'>
                         <div className='w-full h-auto'>
                           <Image src={image} width={350} alt='service_images' className='rounded-t-lg w-full h-auto' priority />
                         </div>
-                        <div className="p-4">
+                        <div className="p-4 min-h-[512px]">
                           <h1 className='mb-4 text-2xl font-semibold'>{title}</h1>
-                          <p className="opacity-60 line-clamp-[11]">{description}</p>
+                          <ul className="opacity-60 list-outside pl-3">
+                            {
+                              points.map((point, ind) => {
+                                return (
+                                  <li key={ind} className='mb-3 list-disc'>{point}</li>
+                                )
+                              })
+                            }
+                          </ul>
                         </div>
                       </div>
                     </SwiperSlide>
@@ -121,14 +136,14 @@ function Services() {
       <section className='w-full p-4 py-8 md:py-10 ' >
         <div className='max-w-900 mx-auto grid max-md:grid-rows-[1fr_300px] md:grid-cols-[1fr_300px] rounded-lg bg-grey p-4 md:p-6 text-black gap-4'>
           <div>
-            <h2 data-aos='flip-up' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 md:mb-8 max-w-[550px]'>Transform Your Business with Our Comprehensive Services</h2>
+            <h2 data-aos='flip-up' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4 md:mb-8 max-w-[550px]'>Revolutionize Your Business Operations with SAPOCOM&apos; s SAP Services</h2>
             <div className='grid grid-cols-1 w-full'>
               {
                 serviceSolution.map((point, ind) => {
                   return (
                     <div key={ind} data-aos='flip-left' data-aos-delay={ind * 50} className='flex items-center mb-3 '>
                       <Image alt='right_arrow' src={require('../../assets/images/icons/right-arrow.svg')} className='w-4 h-4 mr-3' />
-                      <p>{point}</p>
+                      <p className='text-secondary'>{point}</p>
                     </div>
                   )
                 })
@@ -160,7 +175,7 @@ function Services() {
                     </div>
                     <p className='font-semibold text-xl'>{title}</p>
                   </div>
-                  <div className="border-black/10 border-2 rounded-lg p-3 ">
+                  <div className="border-black/10 border-2 rounded-lg p-3 min-h-[172px]">
                     {
                       points.map((point, ind) => {
                         return (
@@ -191,7 +206,7 @@ function Services() {
                         </div>
                         <p className='text-secondary font-semibold text-xl'>{title}</p>
                       </div>
-                      <div className="border-black/10 border-2 rounded-lg p-3 ">
+                      <div className="border-black/10 border-2 rounded-lg p-3 min-h-[196px]">
                         {
                           points.map((point, ind) => {
                             return (
@@ -212,11 +227,10 @@ function Services() {
         </div>
       </section>
 
-
       <IndustryCtaWithDetails
-        title='clients'
-        heading='Optimizing Performance in Metal and Mining Operations and some more here to write '
-        description='Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition.'
+        title='BENEFITS'
+        heading='We give the best solutions to help business revenues skyrocket further!'
+        description='Our commitment to quality and client satisfaction is what makes us stand out among the crow'
         cta='/contact-us'
         industryData={industryDetailsData}
       />
@@ -224,7 +238,7 @@ function Services() {
       {/* Benefits */}
       <section className='w-full p-4 py-8 md:py-10 bg-gradient-to-r from-primary to-secondary text-white'>
         <div className='max-w-1200 mx-auto'>
-          <p data-aos='fade-up' data-aos-delay='100' className='text-white uppercase mb-4 font-medium'>Benefits</p>
+          <p data-aos='fade-up' data-aos-delay='100' className='text-white uppercase mb-4 font-medium'>Advantages</p>
           <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50 mb-8'>Advantages in working with SAPOCOM</h2>
           {/* Desktop View card */}
           <div className="max-w-1000 mx-auto grid grid-cols-auto-3 gap-4 md:gap-8 justify-items-center max-md:hidden">
@@ -235,7 +249,7 @@ function Services() {
                   <>
                     <div key={ind} data-aos={even ? "flip-right" : "flip-left"} data-aos-delay={ind * 100} className='bg-white text-black rounded-lg'>
                       <div className='w-full h-auto'>
-                        <Image src={image} width={350} alt='service_images' className='rounded-t-lg w-full h-auto' priority />
+                        <Image src={image} width={350} alt='service_images' className='aspect-video object-cover rounded-t-lg w-full h-auto' priority />
                       </div>
                       <div className="p-4">
                         <h1 className='mb-3 text-xl font-semibold'>{title}</h1>
@@ -256,9 +270,9 @@ function Services() {
                     <SwiperSlide key={ind}>
                       <div className='bg-white text-black rounded-lg'>
                         <div className='w-full h-auto'>
-                          <Image src={image} width={350} alt='service_images' className='rounded-t-lg w-full h-auto' priority />
+                        <Image src={image} width={350} alt='service_images' className='aspect-video object-cover rounded-t-lg w-full h-auto' priority />
                         </div>
-                        <div className="p-4">
+                        <div className="p-4 min-h-[196px]">
                           <h1 className='mb-3 text-xl font-semibold'>{title}</h1>
                           <p className="line-clamp-[11]">{description}</p>
                         </div>
@@ -271,7 +285,6 @@ function Services() {
           </div>
         </div>
       </section>
-
 
       <CtaBanner />
 

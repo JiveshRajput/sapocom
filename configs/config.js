@@ -52,6 +52,8 @@ import service4 from '@/assets/images/service/service4.png'
 import service5 from '@/assets/images/service/service5.png'
 import service6 from '@/assets/images/service/service6.png'
 import serviceBenefit1 from '@/assets/images/service/serviceBenefit1.png'
+import serviceBenefit2 from '@/assets/images/service/serviceBenefit2.png'
+import serviceBenefit3 from '@/assets/images/service/serviceBenefit3.png'
 
 import team1 from '@/assets/images/about/team1.png'
 import team2 from '@/assets/images/about/team2.png'
@@ -346,14 +348,11 @@ export const teamsList = [
 
 
 // Services
-
 export const serviceSolution = [
-    'Empowering Your Success Through Expert Services',
-    'Empowering Your Success Through Expert Services',
-    'Empowering Your Success Through Expert Services',
-    'Empowering Your Success Through Expert Services',
-    'Empowering Your Success Through Expert Services',
-    'Empowering Your Success Through Expert Services',
+    'SAP consulting, training, and talent recruitment, providing valuable expertise for businesses worldwide.',
+    'Extensive experience in diverse SAP modules, we collaborate globally to optimize project outcomes',
+    'Our commitment is to deliver world-class SAP services, ensuring client satisfaction and success.',
+    'SAPOCOM strives to establish a strong organization and contribute to global SAP projects.'
 ]
 
 
@@ -361,50 +360,86 @@ export const servicesData = [
     {
         title: 'SAP Implementation',
         description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        points: [
+            'Proper planning with clearly defined goals and objectives for project success.',
+            'Software configuration to meet organizational requirements.',
+            'Testing to ensure system functionalities.',
+            'Training and support for the effective use of the SAP system',
+        ],
         image: service1,
     },
     {
         title: 'SAP Rollout',
         description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        points: [
+            'Key stakeholders from each location or business unit in the planning process to ensure fulfillment of needs.',
+            'Prioritized data consistency across all locations for a successful rollout.',
+            'Comprehensive training and support to end- users to ensure they are comfortable with the new system and can maximize its benefits.',
+            'Regularly monitor and evaluate the rollout to identify and address any issues or areas for improvement.'
+        ],
         image: service2,
     },
     {
         title: 'Data Migration',
         description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        points: [
+            'Thorough assessment and mapping of existing data to ensure accurate and smooth transfer to the new system.',
+            'Data cleansing and validation processes to eliminate errors and inconsistencies.',
+            'Data verification and reconciliation to ensure data integrity post - migration.',
+            'Testing and validation of migrated data to ensure it aligns with business requirements.',
+        ],
         image: service3,
     },
     {
         title: 'Data Upgrade',
         description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        points: [
+            'Evaluation of existing data structures and formats for compatibility with the upgraded system.',
+            'Data transformation and conversion to the new systems format and structure.',
+            'Verification and validation of upgraded data to ensure accuracy and completeness.',
+            'Testing of upgraded data to ensure seamless integration with the upgraded system.'
+        ],
         image: service4,
     },
     {
         title: 'Advisory',
         description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        points: [
+            'Evaluation of existing data structures and formats for compatibility with the upgraded system.',
+            'Data transformation and conversion to the new systems format and structure.',
+            'Verification and validation of upgraded data to ensure accuracy and completeness.',
+            'Testing of upgraded data to ensure seamless integration with the upgraded system.',
+        ],
         image: service5,
     },
     {
         title: 'Support',
         description: 'Implementing SAP involves setting up the software to meet the unique needs of the business. This involves customizing the software to match the business processes, integrating SAP with other software and applications, and configuring the system to meet the needs of the users. SAP implementation services can also include data migration and training services to ensure a smooth transition to the new system.',
+        points: [
+            'Establishment of a dedicated support system to address user queries and technical issues.',
+            'Timely resolution of system - related problems and troubleshooting.',
+            'Continuous monitoring and maintenance of the SAP system to ensure optimal performance.',
+            'Regular system updates and enhancements to meet evolving business needs.',
+        ],
         image: service6,
     },
 ]
 
 export const serviceBenefits = [
     {
-        title: 'Expert Workforce to expert solution',
-        description: 'Write here ag good description about something to wxcel yto your usomerss s tat hey hgeyf thewf fhere best thng in their minf aboiuh your comoany',
+        title: 'Trusted Partner for SAP Solutions',
+        description: 'We offer comprehensive solutions focusing on innovation and quality.',
         image: serviceBenefit1,
     },
     {
-        title: 'Expert Workforce to expert solution',
-        description: 'Write here ag good description about something to wxcel yto your usomerss s tat hey hgeyf thewf fhere best thng in their minf aboiuh your comoany',
-        image: serviceBenefit1,
+        title: 'Experienced Team of Professionals',
+        description: 'Our certified and experienced SAP professionals provide expert guidance throughout the project lifecycle.',
+        image: serviceBenefit2,
     },
     {
-        title: 'Expert Workforce to expert solution',
-        description: 'Write here ag good description about something to wxcel yto your usomerss s tat hey hgeyf thewf fhere best thng in their minf aboiuh your comoany',
-        image: serviceBenefit1,
+        title: 'Cost-Effective Solutions',
+        description: 'We provide cost-effective solutions without compromising on quality and innovation.',
+        image: serviceBenefit3,
     },
 ]
 
@@ -413,60 +448,50 @@ export const serviceProvidedData = [
         title: 'SAP Implementation',
         icon: sapImplementationSvg,
         points: [
+            "Implementation & Tech Support",
+            "SAP Readiness Analysis & IT Strategy",
             "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
+            "Support and Sustenance",
         ]
     },
     {
         title: 'SAP Rollout',
         icon: sapRolloutSvg,
         points: [
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
+            "SAP Governance",
+            "SAP IS-OIL",
         ]
     },
-    {
-        title: 'SAP Support',
-        icon: sapSupportSvg,
-        points: [
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-        ]
-    },
+    // {
+    //     title: 'SAP Support',
+    //     icon: sapSupportSvg,
+    //     points: [
+    //         "Point 1 you provide under",
+    //         "Point 1 you provide under",
+    //         "Point 1 you provide under",
+    //         "Point 1 you provide under",
+    //     ]
+    // },
     {
         title: 'Data Migration',
         icon: sapDataMigrationSvg,
         points: [
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
+            "Easy transferability of services",
         ]
     },
     {
         title: 'Advisory',
         icon: sapAdvisorySvg,
         points: [
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
+            "SAP Training",
+            "Talent Resourcing",
         ]
     },
     {
         title: 'Data Upgrade',
         icon: sapDataUpgradeSvg,
         points: [
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
-            "Point 1 you provide under",
+            "Technical Upgrade and Support",
         ]
     },
 ]
@@ -511,23 +536,23 @@ export const industryChemicalFeaturesData = [
 export const industryDetailsData = [
     {
         image: heartInHandSvg,
-        title: 'Cloud Solutions',
-        description: 'They can develop custom applications and solutions that are tailored to meet the specific needs of the oil and'
+        title: '24x7 Assist',
+        description: '24x7 Expert assistance'
+    },
+    {
+        image: shieldSvg,
+        title: 'World Class Tech',
+        description: 'World-class technology tailored for every business'
     },
     {
         image: heartInHandSvg,
-        title: 'Digital',
-        description: 'They can develop custom applications and solutions that are tailored to meet the specific needs of the oil and'
+        title: 'Custom Assistance',
+        description: 'Custom applications and solutions for client needs'
     },
     {
         image: shieldSvg,
-        title: 'Optimization',
-        description: 'They can develop custom applications and solutions that are tailored to meet the specific needs of the oil and'
-    },
-    {
-        image: shieldSvg,
-        title: 'Optimization',
-        description: 'They can develop custom applications and solutions that are tailored to meet the specific needs of the oil and'
+        title: 'Affordable',
+        description: 'Affordable SAP-based services for all'
     },
 ]
 

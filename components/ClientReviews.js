@@ -18,7 +18,7 @@ export default function ClientReviews({ message = 'We have been a wonderful part
             <div className='bg-gradient-to-br from-primary to-secondary text-white max-w-[400px] max-md:mx-auto'>
               <div className='p-4'>
                 <Image src={doubleQuote} className='w-6 h-6 mb-4' alt='double_quote_client_reviews' />
-                <p className='text-base'>{message}</p>
+                <p className='text-base italic'>{message}</p>
               </div>
               <div className='p-4 bg-black grid grid-cols-[40px_1fr] gap-4'>
                 <Image src={image} width={50} alt='client-review-image' className='rounded-full w-10 h-10 bg-white' />
