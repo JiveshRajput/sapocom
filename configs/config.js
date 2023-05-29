@@ -50,9 +50,11 @@ import partner18 from '@/assets/images/partners/18.png'
 import partner19 from '@/assets/images/partners/19.png'
 import industryFutureChemical1 from '@/assets/images/industry/chemical/industryFuture1.png'
 import industryFutureChemical2 from '@/assets/images/industry/chemical/industryFuture2.png'
-import industryFutureChemical3 from '@/assets/images/industry/chemical/industryFuture3.png'
-import industryFutureChemical4 from '@/assets/images/industry/chemical/industryFuture4.png'
-import industryFutureChemical5 from '@/assets/images/industry/chemical/industryFuture5.png'
+import industryFutureOilGas1 from '@/assets/images/industry/oilGas/industryFuture1.png'
+import industryFutureOilGas2 from '@/assets/images/industry/oilGas/industryFuture2.png'
+import industryFutureOilGas3 from '@/assets/images/industry/oilGas/industryFuture3.png'
+import industryFutureOilGas4 from '@/assets/images/industry/oilGas/industryFuture4.png'
+import industryFutureOilGas5 from '@/assets/images/industry/oilGas/industryFuture5.png'
 import industrySolutionProviding1 from '@/assets/images/industry/metalMining/industrySolutionProviding1.png'
 import service1 from '@/assets/images/service/service1.png'
 import service2 from '@/assets/images/service/service2.png'
@@ -293,13 +295,13 @@ export const partnersDetails = [
     {
         name: 'partner15',
         image: partner15,
-    },    {
+    }, {
         name: 'partner16',
         image: partner16,
-    },    {
+    }, {
         name: 'partner17',
         image: partner17,
-    },    {
+    }, {
         name: 'partner18',
         image: partner18,
     },
@@ -519,51 +521,36 @@ export const serviceProvidedData = [
 
 // Industry Data
 
-// 1. Chemical
-export const industryChemicalFutureData = [
+export const industryClients = [
     {
-        title: 'Commodity Pricing Engine (CPE)',
-        description: 'Sapocom’s solution helps oil and gas companies manage complex pricing models by considering various parameters.',
-        image: industryFutureChemical1,
+        name: 'reliance',
+        image: partner10,
     },
     {
-        title: 'Scheduling Planning & Forecasting',
-        description: 'Our scheduling, planning, and forecasting modules provide oil and gas companies with tools to optimize their production and distribution processes.',
-        image: industryFutureChemical2,
+        name: 'accenture',
+        image: partner15,
     },
     {
-        title: 'Inventory Management',
-        description: 'Manage your stock levels efficiently by utilizing our Inventory management system reducing the risk of stockout.',
-        image: industryFutureChemical3,
+        name: 'al-qaryan',
+        image: partner19,
     },
     {
-        title: 'Truck Planning, Scheduling, and Dispatching',
-        description: 'Reduce transport costs with our tools and digital solutions that simplify the planning, scheduling, and dispatch of trucks for oil and gas organizations.',
-        image: industryFutureChemical4,
+        name: 'nornickel',
+        image: partner3,
     },
     {
-        title: 'Retail Station Reconciliations',
-        description: 'Observe a visible increase in profits with Sapocom’s solution for retail station reconciliations that helps oil and gas companies optimize their retail operations',
-        image: industryFutureChemical5,
+        name: 'kaisa',
+        image: partner11,
+    },
+    {
+        name: 'pwc',
+        image: partner13,
     },
 ]
 
-export const industryChemicalFeaturesData = [
-    {
-        title: 'Cloud Solutions',
-        description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
-    },
-    {
-        title: 'Digital transformation',
-        description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
-    },
-    {
-        title: 'Optimization',
-        description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
-    },
-]
 
-export const industryChemicalChallengeData = [
+// Oil and Gas
+export const industryOilGasChallengeData = [
     {
         title: 'Pricing Products',
         description: 'Quick and accurate pricing of products is a common issue faced by oil companies due to numerous variables that affect the pricing.'
@@ -577,7 +564,40 @@ export const industryChemicalChallengeData = [
         description: 'Ensuring accurate tracking of inventory levels and minimizing the risk of financial losses due to errors, theft, or spoilage.'
     },
 ]
-
+export const industryOilGasSuccessData = [
+    'Tailored oil and gas solutions for unique industry needs.',
+    'Optimization and improved profitability through Sapocom modules.',
+    'Real-time data analysis for swift decision-making.',
+    'Long-term success achieved with real-time insights.',
+    'Industry-specific modules for profitable operations.',
+]
+export const industryOilGasFutureData = [
+    {
+        title: 'Commodity Pricing Engine (CPE)',
+        description: 'Sapocom’s solution helps oil and gas companies manage complex pricing models by considering various parameters.',
+        image: industryFutureOilGas1,
+    },
+    {
+        title: 'Scheduling Planning & Forecasting',
+        description: 'Our scheduling, planning, and forecasting modules provide oil and gas companies with tools to optimize their production and distribution processes.',
+        image: industryFutureOilGas2,
+    },
+    {
+        title: 'Inventory Management',
+        description: 'Manage your stock levels efficiently by utilizing our Inventory management system reducing the risk of stockout.',
+        image: industryFutureOilGas3,
+    },
+    {
+        title: 'Truck Planning, Scheduling, and Dispatching',
+        description: 'Reduce transport costs with our tools and digital solutions that simplify the planning, scheduling, and dispatch of trucks for oil and gas organizations.',
+        image: industryFutureOilGas4,
+    },
+    {
+        title: 'Retail Station Reconciliations',
+        description: 'Observe a visible increase in profits with Sapocom’s solution for retail station reconciliations that helps oil and gas companies optimize their retail operations',
+        image: industryFutureOilGas5,
+    },
+]
 export const industryDetailsData = [
     {
         image: heartInHandSvg,
@@ -601,12 +621,90 @@ export const industryDetailsData = [
     },
 ]
 
+// 1. Chemical
+export const industryChemicalFutureData = [
+    {
+        title: 'Fiori App Feature',
+        description: "SAP's Fiori app feature enables chemical companies to access critical information and insights from their mobile devices.",
+        image: industryFutureChemical1,
+    },
+    {
+        title: 'Implementing Analytical Query',
+        description: 'Analyze their data and gain insights into their operation and leverage machine learning algorithms to identify patterns trends in the data',
+        image: industryFutureChemical2,
+    }
+]
+
+export const industryChemicalFeaturesData = [
+    {
+        title: 'Cloud Solutions',
+        description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
+    },
+    {
+        title: 'Digital transformation',
+        description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
+    },
+    {
+        title: 'Optimization',
+        description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
+    },
+]
+
+export const industryChemicalChallengeData = [
+    {
+        title: 'Process Optimization',
+        description: 'Process optimization is a challenge in improving efficiency and product quality.'
+    },
+    {
+        title: 'Risk Management',
+        description: 'Safety and risk management are vital due to the hazardous nature of chemical processes.'
+    },
+    {
+        title: 'Quality Check',
+        description: 'Scaling up production while maintaining quality is a complex task.'
+    },
+    {
+        title: 'Availability',
+        description: 'Fluctuations in raw material availability and pricing impact profitability.'
+    },
+    {
+        title: 'Innovations',
+        description: 'Developing new products with unique properties requires significant research.'
+    },
+    {
+        title: 'Cybersecurity',
+        description: 'Integrating digital systems and ensuring cybersecurity are challenges.'
+    },
+]
+
+export const industryChemicalDetailsData = [
+    {
+        image: heartInHandSvg,
+        title: 'Cloud Solutions:',
+        description: 'Cutting-edge cloud solutions empower businesses to leverage the full potential and improved collaboration across teams.'
+    },
+    {
+        image: shieldSvg,
+        title: 'Digital Services:',
+        description: 'Comprehensive range of digital services encompasses  development, digital marketing, and more, driving businesses towards digital transformation'
+    },
+    {
+        image: heartInHandSvg,
+        title: 'Custom Assistance',
+        description: 'Our team of experts provides tailored assistance and solutions, ensuring that our clients receive personalized support that aligns perfectly with their specific requirements.'
+    },
+    {
+        image: shieldSvg,
+        title: 'Innovative Techniques',
+        description: 'We strive to stay at the forefront of innovation by adopting the latest technologies and techniques.'
+    },
+]
+
 export const industryChemicalSuccessData = [
-    'Tailored oil and gas solutions for unique industry needs.',
-    'Optimization and improved profitability through Sapocom modules.',
-    'Real-time data analysis for swift decision-making.',
-    'Long-term success achieved with real-time insights.',
-    'Industry-specific modules for profitable operations.',
+    "SAP's cloud solutions offer flexibility for managing a sustainable energy mix in the chemical industry.",
+    "Improved collaboration and optimized production processes through SAP's integrated platform",
+    "Leverage real-time data analytics for effective energy management in the chemical industry.",
+    "SAP facilitates digital transformation initiatives to modernize energy operations in the chemical sector.",
 ]
 
 export const industryChemicalClients = [
@@ -657,3 +755,4 @@ export const industryMetalSolutionProviding = [
         image: industrySolutionProviding1,
     },
 ]
+

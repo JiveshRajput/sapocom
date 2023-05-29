@@ -18,7 +18,7 @@ import industrySolution from '@/assets/images/industry/oilGas/industrySolution.p
 import clientImage from '@/assets/images/industry/clientImage.png'
 
 // Configs
-import { industryChemicalClients, industryChemicalFutureData, industryChemicalSuccessData, industryChemicalFeaturesData, industryChemicalChallengeData } from '@/configs/config';
+import { industryClients, industryOilGasChallengeData, industryOilGasSuccessData, industryOilGasFutureData } from '@/configs/config';
 
 function OilGasPage() {
   return (
@@ -39,11 +39,11 @@ function OilGasPage() {
         heading='Challenges in Oil & Gas Industry'
         description='Like every industry, Oil & Gas industry has its share of issues to tackl'
         image={industryFeatures}
-        featuresData={industryChemicalChallengeData}
+        featuresData={industryOilGasChallengeData}
       />
 
       <IndustrySolution
-        successPoints={industryChemicalSuccessData}
+        successPoints={industryOilGasSuccessData}
         imageIndustrySuccess={industrySolution}
       />
 
@@ -51,14 +51,14 @@ function OilGasPage() {
         title='services'
         heading='SAP Services Tailored to the Oil and Gas Industry'
         description='Here you can have a short description of some digital technologies '
-        cardsData={industryChemicalFutureData}
+        cardsData={industryOilGasFutureData}
       />
 
       <IndustryClient
         title='clients'
         heading='We have been serving companies all over the globe'
         description='Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition.'
-        clientData={industryChemicalClients}
+        clientData={industryClients}
       />
 
       <WhyChooseSapocom />

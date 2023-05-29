@@ -19,40 +19,28 @@ import industrySolution from '@/assets/images/industry/chemical/industrySolution
 import clientImage from '@/assets/images/industry/clientImage.png'
 
 // Configs
-import { industryChemicalClients, industryChemicalFutureData, industryChemicalSuccessData, industryDetailsData, industryChemicalFeaturesData } from '@/configs/config';
+import { industryClients, industryChemicalFutureData, industryChemicalSuccessData, industryDetailsData, industryChemicalDetailsData, industryChemicalChallengeData } from '@/configs/config';
 
 export default function Chemical() {
   return (
     <>
       <SetHeaders title='Chemical Industry | Sapocom' />
-      <HeaderBanner heading='Chemical Industry' para='Meet demand for a more sustainable energy mix – faster – with integrated oil, gas, and energy software from SAP.' bgImg={bgBanner} />
+      <HeaderBanner heading='Chemical Industry' para='Unique integrated software for the chemical industry to accelerate the adoption of a sustainable energy mix' bgImg={bgBanner} />
 
       <AboutIndustry
-        title='Client'
-        heading='Innovating the Chemical Industry with SAP Technology'
+        title='Overview'
+        heading='Cutting-Edge SAP Technology to Revolutionize the Chemical Industry'
         description='We study, test, and analyze the impact of artificial intelligence, augmented/virtual reality, machine learning, and NLP and measure their'
         image={industryAbout}
-        keyPoints={['Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added', 'Emphasizing point to be added']}
-      />
-
-      <IndustryFuture
-        title='Future'
-        heading='SAP Services Tailored to the Oil and Gas Industry'
-        description='Here you can have a short description of some digital technologies '
-        cardsData={industryChemicalFutureData}
+        keyPoints={['Circular value chain management', 'Synchronised processes to optimise asset performance', 'Product compliance management', 'Connected truck, rail, marine, pipeline, and yard management']}
       />
 
       <IndustryFeatures
+        title='CHALLENGES'
+        heading='Challenges in the Chemical Industry'
+        description='The chemical industry is facing several challenges that affect its growth and profitability as mentioned below.'
         image={industryFeaturesChemical}
-        featuresData={industryChemicalFeaturesData}
-      />
-
-      <IndustryCtaWithDetails
-        title='clients'
-        heading='Optimizing Performance in Metal and Mining Operations and some more here to write '
-        description='Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition.'
-        cta='/contact-us'
-        industryData={industryDetailsData}
+        featuresData={industryChemicalChallengeData}
       />
 
       <IndustrySolution
@@ -60,11 +48,28 @@ export default function Chemical() {
         imageIndustrySuccess={industrySolution}
       />
 
+      <IndustryFuture
+        title='services'
+        heading='SAP Services Tailored to the Chemical Industry'
+        description='Here you can have a short description of some digital technologies '
+        cardsData={industryChemicalFutureData}
+      />
+
+
+      <IndustryCtaWithDetails
+        title='benefits'
+        heading='We give the best solutions to help business revenues skyrocket further!'
+        description='Our commitment to quality and client satisfaction is what makes us stand out among the crow'
+        cta='/contact-us'
+        industryData={industryChemicalDetailsData}
+      />
+
+
       <IndustryClient
         title='clients'
         heading='We have been serving companies all over the globe'
         description='Our commitment to quality, innovation, and customer satisfaction sets us apart from the competition.'
-        clientData={industryChemicalClients}
+        clientData={industryClients}
       />
 
       <WhyChooseSapocom />
