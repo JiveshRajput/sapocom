@@ -302,43 +302,43 @@ export const reviewData = [
 
 export const teamsList = [
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Dr. Tribhuvan Raj',
+        designation: 'Director',
         image: team1
     },
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Anchit Aggarwal',
+        designation: 'SAP Senior Consultant',
         image: team2
     },
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Ramesh Marriappa',
+        designation: 'Senior Manager',
         image: team3
     },
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Raghavendra Reddy',
+        designation: 'SAP Senior Consultant',
         image: team4
     },
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Anurag Singh',
+        designation: 'SAP Senior Consultant',
         image: team5
     },
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Shiba Pattnaik',
+        designation: 'SAP Senior Consultant',
         image: team6
     },
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Kritika Mohan',
+        designation: 'Administration & Finance Head',
         image: team7
     },
     {
-        name: 'Jivesh',
-        designation: 'Developer',
+        name: 'Shrey Kanherkar',
+        designation: 'SAP Senior Consultant',
         image: team8
     },
 

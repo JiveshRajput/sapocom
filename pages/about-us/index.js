@@ -10,6 +10,7 @@ import horseSvg from '@/assets/images/icons/horse.svg'
 import mountainSvg from '@/assets/images/icons/mountain.svg'
 import targetSvg from '@/assets/images/icons/target.svg'
 import growthSvg from '@/assets/images/icons/growth.svg'
+import economicGrowthSvg from '@/assets/images/icons/economic-growth.svg'
 
 // Images
 import aboutBanner from "@/assets/images/bgImages/aboutUsBanner.png";
@@ -39,22 +40,22 @@ function AboutUs() {
             <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold mb-2'>SAPOCOM Global</h2>
             <p data-aos='fade-up' data-aos-delay='300' className='mb-6 opacity-70'>SAPOCOM acknowledges the potency of SAP technology and its impact on businesses. We are enthusiastic about delivering bespoke solutions that meet our client&apos;s requirements. Our team of professionals is available to provide unwavering support throughout your journey.</p>
             <p data-aos='fade-up' className='mb-6'>Customized SAP solutions that meet the requirements and specifications of its clients.</p>
-            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[600px]'>
+            <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4'>
               <div data-aos='flip-left' className='flex items-center'>
                 <Image alt='check_with_circle_svg' src={require('../../assets/images/icons/check-with-circle-white.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>Cutting-edge solutions for businesses</p>
               </div>
               <div data-aos='flip-left' className='flex items-center'>
                 <Image alt='check_with_circle_svg' src={require('../../assets/images/icons/check-with-circle-white.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>Stocks and deliveries</p>
               </div>
               <div data-aos='flip-left' className='flex items-center'>
                 <Image alt='check_with_circle_svg' src={require('../../assets/images/icons/check-with-circle-white.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>SAP-based growth services</p>
               </div>
               <div data-aos='flip-left' className='flex items-center'>
                 <Image alt='check_with_circle_svg' src={require('../../assets/images/icons/check-with-circle-white.svg')} className='w-5 h-5 mr-3' />
-                <p>Important Statment One</p>
+                <p>Commitment to top-notch services</p>
               </div>
             </div>
           </div>
@@ -91,19 +92,20 @@ function AboutUs() {
             {/* Image side */}
             <div>
               <Image alt='founder_image' src={founderImage} className='mb-8 rounded-md w-[250px]' />
-              <p className='mb-2 text-xl font-semibold'>Founder Name</p>
+              <p className='mb-2 text-xl font-semibold'>Anurag Goel</p>
               <p className='text-base opacity-70'>Founder & CEO, Sapocom Global</p>
             </div>
             {/* Message side */}
             <div className='text-base'>
-              <p>{`This isn’t business as usual, and it’s a time of great stress and uncertainty. It’s also a moment in time when the work we’re doing is its most critical. We’ve changed our logistics, transportation, supply chain, purchasing, and third party seller processes to prioritize stocking and delivering essential items like household staples, sanitizers, baby formula, and medical supplies. We’re providing a vital service to people everywhere, especially to those, like the elderly, who are most vulnerable. People are depending on us. I’m not alone in being grateful for the work you are doing. I’ve received hundreds of emails from customers and seen posts on social media thanking you all. Your efforts are being noticed at the highest levels of government, and President Trump earlier this week thanked this team profusely. Across the world, people are feeling the economic effects of this crisis, and I’m sad to tell you I predict things are going to get worse before they get better.`}</p>
+              <p>{`We commit to providing our customers best SAP solutions; our solutions will showcase the industry's best practices, easy-to-use solutions and use the latest technology trends. Along with customer focus, we value our employees and are committed to providing the best in class facilities, equipping them with the latest technology and bringing the best out of each team member. Whether it's software development, training programs, or measurable IT governance, we strive to provide world-class deliverables that drive growth and success for our clients. `}</p>
+              <p>{`We understand the power of SAP technology and the impact it can have on businesses. That is why our team of experts is dedicated to delivering customized solutions that meet the unique needs of our clients.  Whether it's software development, training programs, or measurable IT governance, we strive to provide world-class deliverables that drive growth and success for our clients. The team is the backbone of any successful company, and at SAPOCOM, we are proud of the talented professionals who make up our team. So, we understand that this is different from usual. They have worked tirelessly to adapt our logistics, transportation, supply chain, purchasing, and third-party seller processes to prioritize stocking and delivering essential items to those who need them most. We provide vital services to people everywhere, especially those most vulnerable.`}</p>
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Company Team */}
-      <section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
+      <section section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>team</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='max-w-[800px] md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30% to-secondary to-90% mb-4'>We believe that the team is the one which leads a company to new greater heights</h2>
@@ -125,10 +127,10 @@ function AboutUs() {
             })
           }
         </div>
-      </section>
+      </section >
 
       {/* Company's Timeline */}
-      <section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
+      <section section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Timeline</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='max-w-[800px] md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30% to-secondary to-90% mb-4'>From nothing to a big name in industry</h2>
@@ -136,13 +138,13 @@ function AboutUs() {
         </div>
         {/* Teams Card */}
         <div data-aos='flip-up' className="md:py-8 max-md:px-2 rounded-md border border-black/25">
-          <div className='grid md:grid-cols-5 max-md:grid-rows-5'>
+          <div className='grid md:grid-cols-6 max-md:grid-rows-6'>
             {/* first */}
             <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
               {/* Achievement and Year */}
               <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
-                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial </p>
-                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+                <p className='mb-3 font-semibold leading-tight'>Sapocom was founded</p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2017</p>
               </div>
               {/* Center Border Line */}
               <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
@@ -167,15 +169,15 @@ function AboutUs() {
               <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
               {/* Achievement and Year */}
               <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
-                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial and here more details come</p>
-                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+                <p className='mb-3 font-semibold leading-tight'>Implemented IS-OIL for money lab</p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2018</p>
               </div>
             </div>
             {/* third */}
             <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
               {/* Achievement and Year */}
               <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
-                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial </p>
+                <p className='mb-3 font-semibold leading-tight'>Implemented US trans mountain and ENOC project</p>
                 <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
               </div>
               {/* Center Border Line */}
@@ -201,16 +203,16 @@ function AboutUs() {
               <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
               {/* Achievement and Year */}
               <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
-                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial and here more details come</p>
-                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+                <p className='mb-3 font-semibold leading-tight'>Successfully got the project of Engen Petroleum</p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2020</p>
               </div>
             </div>
             {/* fifth */}
             <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
               {/* Achievement and Year */}
               <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
-                <p className='mb-3 font-semibold leading-tight'>Why the company was started by foundersn and the initial </p>
-                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2019</p>
+                <p className='mb-3 font-semibold leading-tight'>Succeeded in gaining a significant project from companies like Nornickel, Raizen, Centurian</p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2021</p>
               </div>
               {/* Center Border Line */}
               <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
@@ -222,12 +224,29 @@ function AboutUs() {
                 </div>
               </div>
             </div>
+            {/* sixth */}
+            <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
+              {/* Icon Circle */}
+              <div className="w-full grid md:grid-rows-[100px_1fr] max-md:grid-cols-[100px_1fr] md:justify-center max-md:items-center">
+                <div className="w-[100px] h-[100px] rounded-full border border-secondary p-6 grid place-items-center object-contain">
+                  <Image src={economicGrowthSvg} alt='horse_svg' className='w-[50px] h-[50px] object-contain' />
+                </div>
+                <div className="md:w-[1px] md:h-full max-md:h-[1px] max-md:w-full mx-auto bg-secondary"></div>
+              </div>
+              {/* Center Border Line */}
+              <div className="bg-secondary md:w-full md:h-[1px] max-md:w-[1px] max-md:h-full"></div>
+              {/* Achievement and Year */}
+              <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
+                <p className='mb-3 font-semibold leading-tight'>Implement SAP solution for Al-Qaryan</p>
+                <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2022</p>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Sapocom Stats and Details */}
-      <section className='w-full p-4 py-8 md:py-16 bg-grey' >
+      <section section className='w-full p-4 py-8 md:py-16 bg-grey' >
         <div className='max-w-1000 mx-auto flex gap-4 flex-wrap items-center '>
           <div className="md:flex-1">
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>Worldwide</p>
@@ -237,29 +256,29 @@ function AboutUs() {
           <div data-aos='zoom-in' data-aos-delay={200} className="flex md:flex-1 max-md:text-center max-md:w-full justify-center">
             <div className="p-6 px-8 rounded-lg bg-white grid grid-cols-2 gap-8 text-black border-primary/40 border">
               <div>
-                <h3 className='text-3xl font-semibold'>500+</h3>
-                <p>Clients</p>
+                <h3 className='text-3xl md:text-4xl font-semibold'>20+</h3>
+                <p className='text-sm'>Clients across globe</p>
               </div>
               <div>
-                <h3 className='text-3xl font-semibold'>7+</h3>
-                <p>Offices</p>
+                <h3 className='text-3xl md:text-4xl font-semibold'>50</h3>
+                <p className='text-sm'>Number of employees</p>
               </div>
               <div>
-                <h3 className='text-3xl font-semibold'>70+</h3>
-                <p>Professions</p>
+                <h3 className='text-3xl md:text-4xl font-semibold'>10+</h3>
+                <p className='text-sm'>Global Projects</p>
               </div>
               <div>
-                <h3 className='text-3xl font-semibold'>200+</h3>
-                <p>Clients Worldwide</p>
+                <h3 className='text-3xl md:text-4xl font-semibold'>18+</h3>
+                <p className='text-sm'>Total experience</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section >
       {/* Video BG Section */}
-      <VideoBackgroundMessage >
+      <VideoBackgroundMessage VideoBackgroundMessage >
         <h1 className='text-white font-semibold text-2xl text-center max-w-[800px]'>We are helping business all overthe world with growth and efficient solutions and then they start their partnering with ther big clients </h1>
-      </VideoBackgroundMessage>
+      </VideoBackgroundMessage >
     </>
   )
 }

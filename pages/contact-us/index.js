@@ -61,7 +61,7 @@ function ContactUs() {
           <div>
             <p className=' uppercase mb-4 font-medium'>Client</p>
             <h2 className='text-3xl font-medium max-w-[550px] mb-4'>Have a Question ?<br />Let’s Get in Touch with us 👋</h2>
-            <p className=' mb-6 opacity-70 max-w-[500px]'>Our global presence allows us to provide local support and expertise to our clients, no matter where they are located.</p>
+            <p className=' mb-6 opacity-70 max-w-[500px]'>Fill up the Form  and ou team will get back to within 24 hrs</p>
             {/* Form  */}
             <form className='max-w-[450px]' onSubmit={formSubmitHandler}>
               <label htmlFor="name" className='mb-6 block'>
@@ -98,18 +98,18 @@ function ContactUs() {
                 <div className='text-left text-white'>
                   <div className='mb-4'>
                     <p className='text-white/60 pb-1 border-b border-b-white mb-2 max-w-[200px]'>Office Address</p>
-                    <p>USqaure Ring road Bangalore ,411587</p>
+                    <p>Third Floor, Plot No: 128-P2, Ground Floor, near Ginger Hotel, Whitefield, EPIP Zone, Bengaluru, Karnataka 560066</p>
                   </div>
                   <div className='mb-4'>
                     <p className='text-white/60 pb-1 border-b border-b-white mb-2 max-w-[200px]'>Working Hour</p>
                     <p>Monday to Friday</p>
-                    <p>9:00 AM to 8:00 PM</p>
+                    <p>11:00 AM to 7:00 PM</p>
                     <p className='opacity-60'>Our Support Team is available 24Hrs</p>
                   </div>
                   <div className='mb-4'>
                     <p className='text-white/60 pb-1 border-b border-b-white mb-2 max-w-[200px]'>Contact Us</p>
-                    <p>020 7993 2905</p>
-                    <p>hello@sapocomglobal.com</p>
+                    <p>9919636685</p>
+                    <p>contact@sapocomglobal.com</p>
                   </div>
                   <div className=' flex '>
                     <a href='https://www.instagram.com/' target='_blank' rel="noopener noreferrer" className='w-9 h-9 bg-secondary rounded-full p-2 mr-2 grid place-items-center hover:bg-primary' aria-label="instagram">
