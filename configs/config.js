@@ -117,7 +117,6 @@ export const navTabs = [
         ]
     },
 ]
-
 export const slidesData = [
     {
         heading: 'Enhance Your Supply Chain Visibility with SAP',
@@ -144,7 +143,6 @@ export const slidesData = [
         id: '3'
     },
 ]
-
 export const industryDetails = [
     {
         name: 'Oil and Gas',
@@ -171,7 +169,6 @@ export const industryDetails = [
         image: industryChemical,
     },
 ]
-
 export const sapServicesDetails = [
 
     {
@@ -205,7 +202,6 @@ export const sapServicesDetails = [
         image: sapAdvisory,
     },
 ]
-
 export const whyChooseUsData = [
     {
         name: 'Commitment to SAP',
@@ -238,7 +234,6 @@ export const whyChooseUsData = [
         image: socialPeopleSvg,
     },
 ]
-
 export const partnersDetails = [
     {
         name: 'partner1',
@@ -310,7 +305,6 @@ export const partnersDetails = [
         image: partner18,
     },
 ]
-
 export const reviewData = [
     {
         name: 'Jonhathan Wick',
@@ -381,7 +375,6 @@ export const serviceSolution = [
     'Our commitment is to deliver world-class SAP services, ensuring client satisfaction and success.',
     'SAPOCOM strives to establish a strong organization and contribute to global SAP projects.'
 ]
-
 export const servicesData = [
     {
         title: 'SAP Implementation',
@@ -450,7 +443,6 @@ export const servicesData = [
         image: service6,
     },
 ]
-
 export const serviceBenefits = [
     {
         title: 'Trusted Partner for SAP Solutions',
@@ -468,7 +460,6 @@ export const serviceBenefits = [
         image: serviceBenefit3,
     },
 ]
-
 export const serviceProvidedData = [
     {
         title: 'SAP Implementation',
@@ -524,7 +515,6 @@ export const serviceProvidedData = [
 
 
 // Industry Data
-
 export const industryClients = [
     {
         name: 'reliance',
