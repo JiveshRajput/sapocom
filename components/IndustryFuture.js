@@ -26,7 +26,7 @@ export default function IndustryFuture({ title = 'company', heading = 'Enter Tit
                         return (
                             <div key={ind} data-aos={even ? 'flip-right' : 'flip-left'} data-aos-delay={ind * 100} className='rounded-md p-2 border border-secondary/50'>
                                 <Image src={image} width={250} className='w-full aspect-video object-cover rounded-t-md' alt={title} />
-                                <div className="rounded-b-md p-4 bg-gradient-to-tl from-primary to-[#24002D] text-white">
+                                <div className="rounded-b-md p-4 bg-gradient-to-tl from-primary to-[#24002D] text-white min-h-[260px]">
                                     <h1 className='text-xl mb-2'>{title}</h1>
                                     <p className='opacity-60 mb-4'>{description}</p>
                                 </div>
@@ -44,7 +44,7 @@ export default function IndustryFuture({ title = 'company', heading = 'Enter Tit
                                 <SwiperSlide key={ind} >
                                     <div className='rounded-md p-2 border border-secondary/50 '>
                                         <Image src={image} width={250} className='w-full aspect-video object-cover rounded-t-md' alt={title} />
-                                        <div className="rounded-b-md p-4 bg-gradient-to-tl from-primary to-[#24002D] text-white">
+                                        <div className="rounded-b-md p-4 bg-gradient-to-tl from-primary to-[#24002D] text-white  min-h-[260px]">
                                             <h1 className='text-xl mb-2'>{title}</h1>
                                             <p className='opacity-60 mb-4'>{description}</p>
                                         </div>

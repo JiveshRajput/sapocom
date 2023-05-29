@@ -13,7 +13,7 @@ export default function AboutIndustry({ title = 'company', heading = 'Enter Titl
                         <p data-aos='fade-up' data-aos-delay='100' className='uppercase mb-4 font-medium'>{title}</p>
                         <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold mb-4 max-w-[550px]'>{heading}</h2>
                         <p data-aos='fade-up' data-aos-delay='300' className='mb-10 text-white/60 opacity-60 max-w-[450px]'>{description}</p>
-                        <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[600px]'>
+                        <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4 max-w-[800px]'>
                             {
                                 keyPoints.map((point, ind) => {
                                     return (

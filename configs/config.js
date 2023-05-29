@@ -43,7 +43,16 @@ import partner11 from '@/assets/images/partners/11.png'
 import partner12 from '@/assets/images/partners/12.png'
 import partner13 from '@/assets/images/partners/13.png'
 import partner14 from '@/assets/images/partners/14.png'
+import partner15 from '@/assets/images/partners/15.png'
+import partner16 from '@/assets/images/partners/16.png'
+import partner17 from '@/assets/images/partners/17.png'
+import partner18 from '@/assets/images/partners/18.png'
+import partner19 from '@/assets/images/partners/19.png'
 import industryFutureChemical1 from '@/assets/images/industry/chemical/industryFuture1.png'
+import industryFutureChemical2 from '@/assets/images/industry/chemical/industryFuture2.png'
+import industryFutureChemical3 from '@/assets/images/industry/chemical/industryFuture3.png'
+import industryFutureChemical4 from '@/assets/images/industry/chemical/industryFuture4.png'
+import industryFutureChemical5 from '@/assets/images/industry/chemical/industryFuture5.png'
 import industrySolutionProviding1 from '@/assets/images/industry/metalMining/industrySolutionProviding1.png'
 import service1 from '@/assets/images/service/service1.png'
 import service2 from '@/assets/images/service/service2.png'
@@ -62,7 +71,7 @@ import team4 from '@/assets/images/about/team4.png'
 import team5 from '@/assets/images/about/team5.png'
 import team6 from '@/assets/images/about/team6.png'
 import team7 from '@/assets/images/about/team7.png'
-import team8 from '@/assets/images/about/team1.png'
+import team8 from '@/assets/images/about/team8.png'
 
 
 // Home page
@@ -281,6 +290,19 @@ export const partnersDetails = [
         name: 'partner14',
         image: partner14,
     },
+    {
+        name: 'partner15',
+        image: partner15,
+    },    {
+        name: 'partner16',
+        image: partner16,
+    },    {
+        name: 'partner17',
+        image: partner17,
+    },    {
+        name: 'partner18',
+        image: partner18,
+    },
 ]
 
 export const reviewData = [
@@ -301,7 +323,6 @@ export const reviewData = [
 
 
 // About Us
-
 export const teamsList = [
     {
         name: 'Dr. Tribhuvan Raj',
@@ -354,7 +375,6 @@ export const serviceSolution = [
     'Our commitment is to deliver world-class SAP services, ensuring client satisfaction and success.',
     'SAPOCOM strives to establish a strong organization and contribute to global SAP projects.'
 ]
-
 
 export const servicesData = [
     {
@@ -502,19 +522,29 @@ export const serviceProvidedData = [
 // 1. Chemical
 export const industryChemicalFutureData = [
     {
-        title: 'Chemical',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
+        title: 'Commodity Pricing Engine (CPE)',
+        description: 'Sapocom’s solution helps oil and gas companies manage complex pricing models by considering various parameters.',
         image: industryFutureChemical1,
     },
     {
-        title: 'Chemical',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
-        image: industryFutureChemical1,
+        title: 'Scheduling Planning & Forecasting',
+        description: 'Our scheduling, planning, and forecasting modules provide oil and gas companies with tools to optimize their production and distribution processes.',
+        image: industryFutureChemical2,
     },
     {
-        title: 'Chemical',
-        description: 'Complete development and implementation of IS-Oil & Gas module.',
-        image: industryFutureChemical1,
+        title: 'Inventory Management',
+        description: 'Manage your stock levels efficiently by utilizing our Inventory management system reducing the risk of stockout.',
+        image: industryFutureChemical3,
+    },
+    {
+        title: 'Truck Planning, Scheduling, and Dispatching',
+        description: 'Reduce transport costs with our tools and digital solutions that simplify the planning, scheduling, and dispatch of trucks for oil and gas organizations.',
+        image: industryFutureChemical4,
+    },
+    {
+        title: 'Retail Station Reconciliations',
+        description: 'Observe a visible increase in profits with Sapocom’s solution for retail station reconciliations that helps oil and gas companies optimize their retail operations',
+        image: industryFutureChemical5,
     },
 ]
 
@@ -530,6 +560,21 @@ export const industryChemicalFeaturesData = [
     {
         title: 'Optimization',
         description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
+    },
+]
+
+export const industryChemicalChallengeData = [
+    {
+        title: 'Pricing Products',
+        description: 'Quick and accurate pricing of products is a common issue faced by oil companies due to numerous variables that affect the pricing.'
+    },
+    {
+        title: 'Truck Scheduling',
+        description: 'Timely scheduling of trucks to be dispatched. Planning efficient routes for product delivery trucks can be a challenge.'
+    },
+    {
+        title: 'Retail Station Inventory Reconciliation',
+        description: 'Ensuring accurate tracking of inventory levels and minimizing the risk of financial losses due to errors, theft, or spoilage.'
     },
 ]
 
@@ -557,12 +602,11 @@ export const industryDetailsData = [
 ]
 
 export const industryChemicalSuccessData = [
-    'Intelligent Asset Management',
-    'Supply Chain Optimization',
-    'Digital Transformation and Innovation',
-    'Enterprise Resource Planning (ERP)',
-    'Customer Experience Management',
-    'Environmental Health and Safety Management',
+    'Tailored oil and gas solutions for unique industry needs.',
+    'Optimization and improved profitability through Sapocom modules.',
+    'Real-time data analysis for swift decision-making.',
+    'Long-term success achieved with real-time insights.',
+    'Industry-specific modules for profitable operations.',
 ]
 
 export const industryChemicalClients = [
@@ -571,24 +615,24 @@ export const industryChemicalClients = [
         image: partner10,
     },
     {
-        name: 'PAR',
-        image: partner1,
+        name: 'accenture',
+        image: partner15,
     },
     {
-        name: 'Nornickel',
+        name: 'al-qaryan',
+        image: partner19,
+    },
+    {
+        name: 'nornickel',
         image: partner3,
     },
     {
-        name: 'Talisman',
-        image: partner4,
+        name: 'kaisa',
+        image: partner11,
     },
     {
-        name: 'Viterra',
-        image: partner5,
-    },
-    {
-        name: 'Baker Hughes',
-        image: partner6,
+        name: 'pwc',
+        image: partner13,
     },
 ]
 

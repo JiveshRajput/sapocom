@@ -13,7 +13,7 @@ function WhyChooseSapocom() {
                 <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
                     <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Why Choose</p>
                     <h2 data-aos='flip-right' data-aos-delay='100' className='md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-2'>Why Choose SAPOCOM ?</h2>
-                    <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Here you can have a short description of some digital technologies </p>
+                    <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70 text-center'>Our state-of-the-art digital solutions promise our clients exponential growth toward a sustainable future.</p>
                 </div>
                 {/* View for Desktop */}
                 <div className='grid grid-cols-auto-3-250 justify-items-center gap-6 mx-auto max-w-800 p-2'>
