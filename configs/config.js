@@ -310,8 +310,8 @@ export const partnersDetails = [
 ]
 export const reviewData = [
     {
-        name: 'Jonhathan Wick',
-        position: 'Director, Table.inc',
+        name: 'Vladimir Soloview',
+        position: 'Executive Director at PWC',
         review: "SAPOCOM experts played a key role in implementation and launch of functionality of new commodity price engine CPE/ CPF in one of the biggest mining projects starting from configuration and supporting developments, testing and defect resolution. From the outset, the team demonstrated an impressive level of professionalism and expertise. Their attention to detail and willingness to work closely with us to ensure that our needs were met were truly appreciated. The team's communication was excellent, and we always felt informed and involved throughout the project. We are grateful for contribution of SAPOCOM colleagues and hope for future perspective cooperation.",
         image: reviewPerson1,
     },
@@ -327,14 +327,14 @@ export const reviewData = [
 // About Us
 export const teamsList = [
     {
-        name: 'Dr. Tribhuvan Raj',
-        designation: 'Director',
-        image: team1
-    },
-    {
         name: 'Anurag Goel',
         designation: 'Founder & CEO',
         image: team10
+    },
+    {
+        name: 'Dr. Tribhuvan Raj',
+        designation: 'Director',
+        image: team1
     },
     {
         name: 'Kritika Mohan',

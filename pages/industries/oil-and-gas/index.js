@@ -65,8 +65,8 @@ function OilGasPage() {
 
       <ClientReviews
         message="SAPOCOM experts played a key role in implementation and launch of functionality of new commodity price engine CPE/ CPF in one of the biggest mining projects starting from configuration and supporting developments, testing and defect resolution.From the outset, the team demonstrated an impressive level of professionalism and expertise. The team's communication was excellent, and we always felt informed and involved throughout the project. We are grateful for contribution of SAPOCOM colleagues and hope for future perspective cooperation."
-        name='Jonhathan Wick'
-        position='Director, Table.inc'
+        name='Vladimir Soloviev'
+        position='Executive Director at PWC'
         image={clientImage}
       />
 

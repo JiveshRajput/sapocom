@@ -64,11 +64,11 @@ export default function Home() {
                 <p>Clients across Globe</p>
               </div>
               <div className='text-center p-2'>
-                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={50} />%</h2>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={50} />+</h2>
                 <p>Number of Employees</p>
               </div>
               <div className='text-center p-2'>
-                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={10} />%</h2>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={10} />+</h2>
                 <p>Global Projects</p>
               </div>
               <div className='text-center p-2'>

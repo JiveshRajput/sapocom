@@ -4,7 +4,8 @@ import map from '@/assets/images/industry/map.png'
 import doubleQuote from '../assets/images/icons/double-quote.svg'
 
 
-export default function ClientReviews({ message = 'We have been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth xperiences! and these positives lead to our growth  and these positives lead to our growth', name = 'Anonymous', position = 'Director', image }) {
+export default function ClientReviews({ message = 'We have been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth xperiences! and these positives lead to our growth  and these positives lead to our growth', name = 'Vladimir Soloviev',
+position = 'Executive Director at PWC', image }) {
   return (
     <>
       <section className='w-full p-4 py-10 bg-black' >

@@ -66,8 +66,8 @@ export default function Agriculture() {
 
       <ClientReviews
         message='We have been a wonderful partner to work with. I have been a customer now for the past few months now and I have had nothing but positive experiences! and these positives lead to our growth xperiences! and these positives lead to our growth  and these positives lead to our growth'
-        name='Jonhathan Wick'
-        position='Director, Table.inc'
+        name='Vladimir Soloviev'
+        position='Executive Director at PWC'
         image={clientImage}
       />
     </>
