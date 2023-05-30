@@ -78,6 +78,8 @@ import team5 from '@/assets/images/about/team5.png'
 import team6 from '@/assets/images/about/team6.png'
 import team7 from '@/assets/images/about/team7.png'
 import team8 from '@/assets/images/about/team8.png'
+import team9 from '@/assets/images/about/team9.png'
+import team10 from '@/assets/images/about/founder.png'
 
 
 // Home page
@@ -119,6 +121,14 @@ export const navTabs = [
 ]
 export const slidesData = [
     {
+        heading: 'Optimize Your Supply Chain with SAP Solutions',
+        para: "Our supply chain solutions provide the necessary control and agility to optimize all production explorations and operations.",
+        image: homeBanner3,
+        link: '/about-us',
+        cta: '/contact-us',
+        id: '3'
+    },
+    {
         heading: 'Enhance Your Supply Chain Visibility with SAP',
         para: "Make data-driven decisions, improve collaboration, and achieve supply chain excellence. Discover the power of SAP now!",
         image: homeBanner1,
@@ -134,14 +144,7 @@ export const slidesData = [
         cta: '/contact-us',
         id: '2'
     },
-    {
-        heading: 'Optimize Your Supply Chain with SAP Solutions',
-        para: "Our supply chain solutions provide the necessary control and agility to optimize all production explorations and operations.",
-        image: homeBanner3,
-        link: '/about-us',
-        cta: '/contact-us',
-        id: '3'
-    },
+
 ]
 export const industryDetails = [
     {
@@ -321,7 +324,6 @@ export const reviewData = [
 
 ]
 
-
 // About Us
 export const teamsList = [
     {
@@ -330,9 +332,14 @@ export const teamsList = [
         image: team1
     },
     {
-        name: 'Anchit Aggarwal',
-        designation: 'SAP Senior Consultant',
-        image: team2
+        name: 'Anurag Goel',
+        designation: 'Founder & CEO',
+        image: team10
+    },
+    {
+        name: 'Kritika Mohan',
+        designation: 'Administration & Finance Head',
+        image: team7
     },
     {
         name: 'Ramesh Marriappa',
@@ -340,9 +347,9 @@ export const teamsList = [
         image: team3
     },
     {
-        name: 'Raghavendra Reddy',
+        name: 'Prashant Purushottam',
         designation: 'SAP Senior Consultant',
-        image: team4
+        image: team9
     },
     {
         name: 'Anurag Singh',
@@ -350,14 +357,19 @@ export const teamsList = [
         image: team5
     },
     {
+        name: 'Anchit Aggarwal',
+        designation: 'SAP Senior Consultant',
+        image: team2
+    },
+    {
+        name: 'Raghavendra Reddy',
+        designation: 'SAP Senior Consultant',
+        image: team4
+    },
+    {
         name: 'Shiba Pattnaik',
         designation: 'SAP Senior Consultant',
         image: team6
-    },
-    {
-        name: 'Kritika Mohan',
-        designation: 'Administration & Finance Head',
-        image: team7
     },
     {
         name: 'Shrey Kanherkar',
@@ -366,7 +378,6 @@ export const teamsList = [
     },
 
 ]
-
 
 // Services
 export const serviceSolution = [
@@ -513,7 +524,6 @@ export const serviceProvidedData = [
     },
 ]
 
-
 // Industry Data
 export const industryClients = [
     {
@@ -541,7 +551,6 @@ export const industryClients = [
         image: partner13,
     },
 ]
-
 
 // Oil and Gas
 export const industryOilGasChallengeData = [
@@ -628,7 +637,6 @@ export const industryChemicalFutureData = [
         image: industryFutureChemical2,
     }
 ]
-
 export const industryChemicalFeaturesData = [
     {
         title: 'Cloud Solutions',
@@ -643,7 +651,6 @@ export const industryChemicalFeaturesData = [
         description: 'They can help oil and gas companies leverage the benefits of cloud computing to increase agility, scalability, and efficiency. This could include implementing solutions for'
     },
 ]
-
 export const industryChemicalChallengeData = [
     {
         title: 'Process Optimization',

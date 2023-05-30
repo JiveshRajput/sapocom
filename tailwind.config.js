@@ -29,6 +29,7 @@ module.exports = {
         detailcard: '1px 1px 25px rgba(102, 30, 120, 0.15)',
       },
       gridTemplateColumns: {
+        'auto-5' : 'repeat(auto-fit, minmax(200px, 1fr))',
         'auto-4' : 'repeat(auto-fit, minmax(250px, 1fr))',
         'auto-4-200' : 'repeat(auto-fit, minmax(200px, 1fr))',
         'auto-3' : 'repeat(auto-fit, minmax(300px, 1fr))',

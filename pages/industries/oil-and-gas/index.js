@@ -69,6 +69,7 @@ function OilGasPage() {
         position='Director, Table.inc'
         image={clientImage}
       />
+
     </>
   )
 }

@@ -112,7 +112,7 @@ function AboutUs() {
           <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our team of SAP professionals is the driving force behind our success. With their expertise, dedication, and unwavering commitment to delivering top-notch services, we can help businesses thrive and reach new heights with our innovative SAP solutions.</p>
         </div>
         {/* Teams Card */}
-        <div data-aos='zoom-in' className="grid max-review:grid-cols-2 grid-cols-auto-4">
+        <div data-aos='zoom-in' className="grid max-review:grid-cols-2 grid-cols-auto-5">
           {
             teamsList.map((team, ind) => {
               return (

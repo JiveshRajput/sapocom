@@ -60,20 +60,20 @@ export default function Home() {
           <ScrollTrigger onEnter={() => setStartAnimation(true)} onExit={() => setStartAnimation(false)}>
             <div className='grid grid-cols-4 gap-4 max-md:grid-cols-2'>
               <div className='text-center p-2'>
-                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={500} />+</h2>
-                <p>Customers across the globe</p>
-              </div>
-              <div className='text-center p-2'>
-                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={75} />%</h2>
-                <p>Client retention rate</p>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={20} />+</h2>
+                <p>Clients across Globe</p>
               </div>
               <div className='text-center p-2'>
                 <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={50} />%</h2>
-                <p>Client retention rate</p>
+                <p>Number of Employees</p>
               </div>
               <div className='text-center p-2'>
-                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={6} />+</h2>
-                <p>Offices across the world</p>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={10} />%</h2>
+                <p>Global Projects</p>
+              </div>
+              <div className='text-center p-2'>
+                <h2 className='text-3xl font-semibold'><CountUp isCounting={startAnimation} start={1} end={18} />+</h2>
+                <p>Total Experience</p>
               </div>
             </div>
           </ScrollTrigger>
@@ -196,7 +196,7 @@ export default function Home() {
                       <Image alt={name} src={image} width={400} className='object-cover w-full h-full absolute top-0 left-0 z-[85] rounded-md group-hover:scale-[1.1] transition-[transform]' />
                       <div className='z-[87] select-none'>
                         <h1 className='text-white font-semibold text-2xl md:text-3xl mb-2'>{name}</h1>
-                        <p className='text-white/50 mb-2'>{description}</p>
+                        <p className='text-white/50 mb-2 text-sm'>{description}</p>
                       </div>
                     </div>
                   </SwiperSlide>

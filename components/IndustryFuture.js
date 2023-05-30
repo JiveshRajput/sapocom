@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function IndustryFuture({ title = 'company', heading = 'Enter Title', description = 'Your description will come here', cardsData = [] }) {
+export default function IndustryFuture({ title = 'company', heading = 'Enter Title', description = 'Your description will come here', cardsData = [], cardWidth='w-[260px]' }) {
     return (
         <section className='w-full p-4 py-8 md:py-10 bg-grey' >
             <div className='max-w-1200 mx-auto'>
@@ -19,12 +19,13 @@ export default function IndustryFuture({ title = 'company', heading = 'Enter Tit
                 </div>
             </div>
             {/* View for Desktop */}
-            <div className='grid grid-cols-auto-3-250 justify-items-center gap-6 mx-auto max-w-900 p-2 max-md:hidden'>
+            {/* <div className='grid grid-cols-auto-3-250 justify-items-center gap-6 mx-auto max-w-900 p-2 max-md:hidden'> */}
+            <div className='flex justify-center items-center flex-wrap gap-6 mx-auto max-w-900 p-2 max-md:hidden'>
                 {
                     cardsData.map(({ image, title, description }, ind) => {
                         const even = ind % 2 == 0 || ind == 0;
                         return (
-                            <div key={ind} data-aos={even ? 'flip-right' : 'flip-left'} data-aos-delay={ind * 100} className='rounded-md p-2 border border-secondary/50'>
+                            <div key={ind} data-aos={even ? 'flip-right' : 'flip-left'} data-aos-delay={ind * 100} className={`rounded-md p-2 border border-secondary/50 ${cardWidth}`}>
                                 <Image src={image} width={250} className='w-full aspect-video object-cover rounded-t-md' alt={title} />
                                 <div className="rounded-b-md p-4 bg-gradient-to-tl from-primary to-[#24002D] text-white min-h-[260px]">
                                     <h1 className='text-xl mb-2'>{title}</h1>
