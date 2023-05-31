@@ -18,3 +18,11 @@ Website contains 4 main page and 4 subpage.
 
 Check out [Sapocom Deployment Link](https://sapocom.vercel.app) for Layout. 
 (NOTE: This is temporarily link for development)
+
+
+### For Running Project Locally follow the given process:
+1. Open the Command Prompt the the file directory
+2. Install the package using command: yarn install
+3. To run the project use command: yarn run dev
+
+### For Build run the command: yarn run build
