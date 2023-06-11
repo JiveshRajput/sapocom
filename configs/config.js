@@ -81,7 +81,7 @@ import team8 from '@/assets/images/about/team8.png'
 import team9 from '@/assets/images/about/team9.png'
 import team10 from '@/assets/images/about/founder.png'
 
-export const MAIN_URL = 'http://sapocom.vercel.app';
+export const MAIN_URL = 'https://sapocom.vercel.app';
 // export const MAIN_URL = 'https://sapocomglobal.com';
 
 
