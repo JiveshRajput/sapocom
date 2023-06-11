@@ -14,7 +14,6 @@ function ContactUs() {
   const [form, setForm] = useState({ name: '', email: '', number: '', message: '' });
 
   async function formSubmitHandler(e) {
-    const mail = form.email;
     e.preventDefault();
     try {
       dispatch(setLoadingState(true));
@@ -39,18 +38,18 @@ function ContactUs() {
     }
 
     // Send Mail to User
-    try {
-      const url = `${MAIN_URL}/api/send-mail-to-user`;
-      // const url = 'http://localhost:3000/api/send-mail-to-user';
-      const jsonResponse = await fetch(url, {
-        method: 'POST',
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: mail })
-      })
-      const response = await jsonResponse.json();
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   const url = `${MAIN_URL}/api/send-mail-to-user`;
+    //   // const url = 'http://localhost:3000/api/send-mail-to-user';
+    //   const jsonResponse = await fetch(url, {
+    //     method: 'POST',
+    //     headers: { "Content-Type": "application/json" },
+    //     body: JSON.stringify({ email: mail })
+    //   })
+    //   const response = await jsonResponse.json();
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 
   return (

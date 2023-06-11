@@ -13,7 +13,6 @@ export default function ContactUsModal() {
 
     async function formSubmitHandler(e) {
         // Send Mail to Admin
-        const mail = form.email;
         e.preventDefault();
         try {
             dispatch(setLoadingState(true));
