@@ -16,14 +16,13 @@ import economicGrowthSvg from '@/assets/images/icons/economic-growth.svg'
 import aboutBanner from "@/assets/images/bgImages/aboutUsBanner.png";
 import headerImage from '@/assets/images/about/headerImage.png';
 import founderImage from '@/assets/images/about/founder.png';
+import directorImage from '@/assets/images/about/team1.png';
 import companyImage from '@/assets/images/about/company.png';
 import missionImage from '@/assets/images/about/mission.png';
 import { BannerWithImage } from '@/components/banners/banners';
 
 // Configs
 import { teamsList } from '@/configs/config'
-
-
 
 function AboutUs() {
   return (
@@ -91,9 +90,16 @@ function AboutUs() {
           <div className="grid md:grid-cols-[250px_1fr] gap-8 text-white">
             {/* Image side */}
             <div>
-              <Image alt='founder_image' src={founderImage} className='mb-8 rounded-md w-[250px]' />
-              <p className='mb-2 text-xl font-semibold'>Anurag Goel</p>
-              <p className='text-base opacity-70'>Founder & CEO, Sapocom Global</p>
+              <div className='mb-8'>
+                <Image alt='founder_image' src={founderImage} className='mb-4 rounded-md w-[250px]' />
+                <p className='mb-2 text-xl font-semibold'>Anurag Goel</p>
+                <p className='text-base opacity-70'>Founder & CEO, Sapocom Global</p>
+              </div>
+              <div className=''>
+                <Image alt='founder_image' src={directorImage} className='mb-4 rounded-md w-[250px]' />
+                <p className='mb-2 text-xl font-semibold'>Dr. Tribhuvan Raj</p>
+                <p className='text-base opacity-70'>Director, Sapocom Global</p>
+              </div>
             </div>
             {/* Message side */}
             <div className='text-base'>
@@ -105,7 +111,7 @@ function AboutUs() {
       </section >
 
       {/* Company Team */}
-      <section section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
+      <section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>team</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='max-w-[800px] md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30% to-secondary to-90% mb-4'>We believe that the team is the one which leads a company to new greater heights</h2>
@@ -130,14 +136,14 @@ function AboutUs() {
       </section >
 
       {/* Company's Timeline */}
-      <section section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
+      <section className='w-full p-4 py-8 md:py-16 max-w-1000 mx-auto ' >
         <div className='flex items-center flex-col mb-10 max-md:mb-5 text-center'>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black uppercase mb-2 font-medium'>Timeline</p>
           <h2 data-aos='flip-right' data-aos-delay='100' className='max-w-[800px] md:text-4xl text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30% to-secondary to-90% mb-4'>From nothing to a big name in industry</h2>
           <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Check our yearly achievemnts here</p>
         </div>
         {/* Teams Card */}
-        <div data-aos='flip-up' className="md:py-8 max-md:px-2 rounded-md border border-black/25">
+        <div data-aos='zoom-in' className="md:py-8 max-md:px-2 rounded-md border border-black/25">
           <div className='grid md:grid-cols-6 max-md:grid-rows-6'>
             {/* first */}
             <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
@@ -246,7 +252,7 @@ function AboutUs() {
       </section >
 
       {/* Sapocom Stats and Details */}
-      <section section className='w-full p-4 py-8 md:py-16 bg-grey' >
+      <section className='w-full p-4 py-8 md:py-16 bg-grey' >
         <div className='max-w-1000 mx-auto flex gap-4 flex-wrap items-center '>
           <div className="md:flex-1">
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>Worldwide</p>

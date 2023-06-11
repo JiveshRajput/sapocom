@@ -7,6 +7,7 @@ import { setLoadingState } from '@/store/reducers/valueReducer';
 
 // images
 import contactAddressBg from '@/assets/images/contact/contact-address.png'
+import { MAIN_URL } from '@/configs/config';
 
 function ContactUs() {
   const dispatch = useDispatch();
@@ -17,8 +18,7 @@ function ContactUs() {
     e.preventDefault();
     try {
       dispatch(setLoadingState(true));
-      const url = 'https://sapocom.vercel.app/api/send-mail-to-admin';
-      // const url = 'http://localhost:3000/api/send-mail-to-admin';
+      const url = `${MAIN_URL}/api/send-mail-to-admin`;
       const jsonResponse = await fetch(url, {
         method: 'POST',
         headers: {
@@ -33,12 +33,14 @@ function ContactUs() {
       }, 10);
       setForm({ name: '', email: '', number: '', message: '' });
     } catch (error) {
+      alert('Something went wrong. Please Try Again')
       console.log(error);
       dispatch(setLoadingState(false));
     }
 
+    // Send Mail to User
     try {
-      const url = 'https://sapocom.vercel.app/api/send-mail-to-user';
+      const url = `${MAIN_URL}/api/send-mail-to-user`;
       // const url = 'http://localhost:3000/api/send-mail-to-user';
       const jsonResponse = await fetch(url, {
         method: 'POST',
@@ -94,7 +96,7 @@ function ContactUs() {
           {/* Office Address Details  */}
           <div className="flex flex-grow text-center w-full justify-center items-center max-md:hidden">
             <div className='md:w-full max-md:max-w-[450px] relative'>
-              <div className='absolute top-0 left-0 w-full h-full bg-black/70 z-[10] rounded-tr-[60px] p-8 flex justify-start place-items-end'>
+              <div className='absolute top-0 left-0 w-full h-full bg-transparent z-[10] rounded-tr-[60px] p-8 flex justify-start place-items-end'>
                 <div className='text-left text-white'>
                   <div className='mb-4'>
                     <p className='text-white/60 pb-1 border-b border-b-white mb-2 max-w-[200px]'>Office Address</p>
