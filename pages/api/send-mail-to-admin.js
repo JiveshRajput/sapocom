@@ -1,7 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 const nodemailer = require("nodemailer");
 
-
 export const config = {
   api: {
     bodyParser: {
@@ -10,24 +9,31 @@ export const config = {
   },
 };
 
+const data = {
+  MAIL_EMAIL: 'punjabibollywoodmovies@gmail.com',
+  MAIL_PASSWORD: 'exyrgedqjwtedrth',
+  ADMIN_MAIL: 'contact@sapocomglobal.com'
+}
+
 export default async function handler(req, res) {
   if (req.method = 'POST') {
     try {
+
       const { name, email, number, message } = req.body;
 
       // Creating Transporter for sending mail
       let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: process.env.MAIL_EMAIL, // generated ethereal user
-          pass: process.env.MAIL_PASSWORD, // generated ethereal password
+          user: data.MAIL_EMAIL, // generated ethereal user
+          pass: data.MAIL_PASSWORD, // generated ethereal password
         },
       });
 
       // Sending mail
       const info = await transporter.sendMail({
-        from: process.env.MAIL_EMAIL, // sender address
-        to: process.env.ADMIN_MAIL, // list of receivers 
+        from: data.MAIL_EMAIL, // sender address
+        to: data.ADMIN_MAIL, // list of receivers 
         subject: `Form Submission - ${name} details are there.`, // Subject line
         // text: `Dear ${username || 'User'}, Your OTP is ${req.app.locals.OTP}. Enter the OTP to reset your password.`, // plain text body
         html: `<h1>${name} Submitted the Form</h1>
