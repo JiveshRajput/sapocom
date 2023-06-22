@@ -12,8 +12,8 @@ import sapAdvisorySvg from '../assets/images/icons/sap-advisory.svg'
 import sapDataMigrationSvg from '../assets/images/icons/sap-data-migration.svg'
 import sapDataUpgradeSvg from '../assets/images/icons/sap-data-upgrade.svg'
 import sapRolloutSvg from '../assets/images/icons/sap-rollout.svg'
-import sapCoreModulesSvg from '../assets/images/icons/sap-rollout.svg'
-import sapSupportSvg from '../assets/images/icons/sap-core-modules.svg'
+// import sapCoreModulesSvg from '../assets/images/icons/sap-rollout.svg'
+import sapCoreModulesSvg from '../assets/images/icons/sap-core-modules.svg'
 
 // PNGs
 import homeBanner1 from "@/assets/images/bgImages/homeBanner1.png";

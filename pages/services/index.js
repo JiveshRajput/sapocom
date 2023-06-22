@@ -176,7 +176,7 @@ sustainability & growth. ' bgImg={serviceBanner} />
                     </div>
                     <p className='font-semibold text-xl'>{title}</p>
                   </div>
-                  <div className="border-black/10 border-2 rounded-lg p-3 min-h-[172px]">
+                  <div className="border-black/10 border-2 rounded-lg p-3 min-h-[292px]">
                     {
                       points.map((point, ind) => {
                         return (
@@ -207,7 +207,7 @@ sustainability & growth. ' bgImg={serviceBanner} />
                         </div>
                         <p className='text-secondary font-semibold text-xl'>{title}</p>
                       </div>
-                      <div className="border-black/10 border-2 rounded-lg p-3 min-h-[196px]">
+                      <div className="border-black/10 border-2 rounded-lg p-3 min-h-[268px]">
                         {
                           points.map((point, ind) => {
                             return (
