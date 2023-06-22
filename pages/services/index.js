@@ -70,7 +70,7 @@ sustainability & growth. ' bgImg={serviceBanner} />
           <div className="flex items-center flex-col mb-10 max-md:mb-5 text-center">
             <p data-aos="flip-left" data-aos-delay="100" className="uppercase mb-4 font-medium ">SERVICES</p>
             <h2 data-aos="flip-right" data-aos-delay="100" className="md:text-4xl text-3xl font-semibold text-white mb-4 max-w-1000">Empower Your Business with the Best-in-Class SAP Technologies for Future-Proof Growth</h2>
-            <p data-aos="flip-left" data-aos-delay="100" className="opacity-70 max-w-[900px]">With global collaborations, we work with clients worldwide in most SAP modules to leverage and diversify our project experience. We are determined to establish our organization and develop a unique community of SAP and IT professionals that will contribute significantly to global SAP project</p>
+            <p data-aos="flip-left" data-aos-delay="100" className="opacity-70 max-w-[900px]">With global collaborations, we work with clients worldwide in most SAP modules to leverage and diversify our project experience. We are determined to establish our organization and develop a unique community of SAP and IT professionals that will contribute significantly to global SAP projects</p>
           </div>
           {/* Cards */}
           {/* View on Desktop */}

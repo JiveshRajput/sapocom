@@ -12,7 +12,8 @@ import sapAdvisorySvg from '../assets/images/icons/sap-advisory.svg'
 import sapDataMigrationSvg from '../assets/images/icons/sap-data-migration.svg'
 import sapDataUpgradeSvg from '../assets/images/icons/sap-data-upgrade.svg'
 import sapRolloutSvg from '../assets/images/icons/sap-rollout.svg'
-import sapSupportSvg from '../assets/images/icons/sap-support.svg'
+import sapCoreModulesSvg from '../assets/images/icons/sap-rollout.svg'
+import sapSupportSvg from '../assets/images/icons/sap-core-modules.svg'
 
 // PNGs
 import homeBanner1 from "@/assets/images/bgImages/homeBanner1.png";
@@ -496,16 +497,6 @@ export const serviceProvidedData = [
             "SAP IS-OIL",
         ]
     },
-    // {
-    //     title: 'SAP Support',
-    //     icon: sapSupportSvg,
-    //     points: [
-    //         "Point 1 you provide under",
-    //         "Point 1 you provide under",
-    //         "Point 1 you provide under",
-    //         "Point 1 you provide under",
-    //     ]
-    // },
     {
         title: 'Data Migration',
         icon: sapDataMigrationSvg,
@@ -526,6 +517,18 @@ export const serviceProvidedData = [
         icon: sapDataUpgradeSvg,
         points: [
             "Technical Upgrade and Support",
+        ]
+    },
+    {
+        title: 'SAP Core Modules ',
+        icon: sapCoreModulesSvg,
+        points: [
+            "S/4 HANA Oil & Gas & Energy, S4SCSD SDM IDM RFNO",
+            "Material Management",
+            "Sales & Distribution",
+            "Commodity Trading & Risk Management",
+            "ABAP FIORI",
+            "Global Trade Management",
         ]
     },
 ]

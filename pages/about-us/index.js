@@ -217,7 +217,7 @@ function AboutUs() {
             <div className="bg-red w-full grid md:grid-rows-[1fr_1px_1fr] max-md:grid-cols-[1fr_1px_1fr]">
               {/* Achievement and Year */}
               <div className="p-4 px-2 text-center flex flex-col justify-center items-center">
-                <p className='mb-3 font-semibold leading-tight'>Succeeded in gaining a significant project from companies like Nornickel, Raizen, Centurian</p>
+                <p className='mb-3 font-semibold leading-tight'>Succeeded in gaining a significant project from companies like Nornickel, Raizen, Centurion</p>
                 <p className='rounded-md p-2 bg-primary mx-auto text-white w-[100px]'>2021</p>
               </div>
               {/* Center Border Line */}
