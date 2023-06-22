@@ -54,11 +54,13 @@ import industryFutureChemical1 from '@/assets/images/industry/chemical/industryF
 import industryFutureChemical2 from '@/assets/images/industry/chemical/industryFuture2.png'
 import industryFutureMetal1 from '@/assets/images/industry/metalMining/industryFuture1.png'
 import industryFutureMetal2 from '@/assets/images/industry/metalMining/industryFuture2.png'
+import industryFutureMetal3 from '@/assets/images/industry/metalMining/industryFuture3.png'
 import industryFutureOilGas1 from '@/assets/images/industry/oilGas/industryFuture1.png'
 import industryFutureOilGas2 from '@/assets/images/industry/oilGas/industryFuture2.png'
 import industryFutureOilGas3 from '@/assets/images/industry/oilGas/industryFuture3.png'
 import industryFutureOilGas4 from '@/assets/images/industry/oilGas/industryFuture4.png'
 import industryFutureOilGas5 from '@/assets/images/industry/oilGas/industryFuture5.png'
+import industryFutureOilGas6 from '@/assets/images/industry/oilGas/industryFuture6.png'
 import industrySolutionProviding1 from '@/assets/images/industry/metalMining/industrySolutionProviding1.png'
 import service1 from '@/assets/images/service/service1.png'
 import service2 from '@/assets/images/service/service2.png'
@@ -330,16 +332,16 @@ export const reviewData = [
 
 // About Us
 export const teamsList = [
-    {
-        name: 'Anurag Goel',
-        designation: 'Founder & CEO',
-        image: team10
-    },
-    {
-        name: 'Dr. Tribhuvan Raj',
-        designation: 'Director',
-        image: team1
-    },
+    // {
+    //     name: 'Anurag Goel',
+    //     designation: 'Founder & CEO',
+    //     image: team10
+    // },
+    // {
+    //     name: 'Dr. Tribhuvan Raj',
+    //     designation: 'Director',
+    //     image: team1
+    // },
     {
         name: 'Kritika Mohan',
         designation: 'Administration & Finance Head',
@@ -604,6 +606,11 @@ export const industryOilGasFutureData = [
         description: 'Observe a visible increase in profits with Sapocom’s solution for retail station reconciliations that helps oil and gas companies optimize their retail operations',
         image: industryFutureOilGas5,
     },
+    {
+        title: 'SAP Upstream Downstream',
+        description: 'Remote Logistic Management,Product Revenue Accounting,Joint Venture Accounting Hydrocarbon Product Management Transportation and Distribution, Trader’s and Scheduler’s Workbench , S4SCSD, SDM, IDM,RFNO',
+        image: industryFutureOilGas6,
+    },
 ]
 export const industryDetailsData = [
     {
@@ -784,6 +791,11 @@ export const industryMetalFutureData = [
         title: 'Commodity Pricing Engine',
         description: 'Our CPE is a unique platform from SAP to optimize complex pricing which follows business rule framework that uses all the required variables to accurately and efficiently calculate prices for various commodities.',
         image: industryFutureMetal2,
+    },
+    {
+        title: 'Global Trade Management',
+        description: 'SAP GTM streamlines the commodity business processes with its unique functionalities like logistic execution, contract management, expense management & position Management',
+        image: industryFutureMetal3,
     }
 ]
 

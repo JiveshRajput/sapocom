@@ -86,8 +86,8 @@ export default function Home() {
           <div className="flex-1">
             <p data-aos='fade-up' data-aos-delay='100' className='text-secondary uppercase mb-4 font-medium'>About</p>
             <h2 data-aos='fade-up' data-aos-delay='200' className='text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary from-30%  to-secondary to-90% mb-4'>SAPOCOM</h2>
-            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70'>Empowering SAP Professionals for Global Success</p>
-            <p data-aos='fade-up' className='text-black mb-6'>Sapocom is an emerging SAP consulting, training, and talent recruitment industry leader. Our team focuses on software development, talent acquisition, and training programs. </p>
+            <p data-aos='fade-up' data-aos-delay='300' className='text-black mb-6 opacity-70'>Empowering business organisations to unlock their full potential through SAP digital transformation</p>
+            <p data-aos='fade-up' className='text-black mb-6'>Sapocom is an emerging SAP consulting, training, and talent recruitment industry leader. The gateway to unleashing the boundless potential of your business through the captivating realm of SAP digital transformation! </p>
             <div className='grid grid-cols-2 max-[600px]:grid-cols-1 w-full gap-4'>
               <div data-aos='flip-left' className='flex items-center p-2 px-5 rounded-full border border-black/20 text-secondary'>
                 <Image alt='check_with_circle_svg' src={require('../assets/images/icons/check-with-circle.svg')} className='w-5 h-5 mr-3' />

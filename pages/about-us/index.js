@@ -87,18 +87,18 @@ function AboutUs() {
         <div className="max-w-900 mx-auto rounded-lg p-8 bg-gradient-to-r from-primary to-secondary">
           <p className="text-white uppercase mb-2 font-medium">Company</p>
           <h2 className="text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50 mb-8 max-w-[550px]">Founder&apos;s Message</h2>
-          <div className="grid md:grid-cols-[250px_1fr] gap-8 text-white">
+          <div className="grid md:grid-rows-[1fr_1fr] gap-8 text-white">
             {/* Image side */}
-            <div>
-              <div className='mb-8'>
+            <div className='flex gap-8 justify-center flex-wrap'>
+              <div >
                 <Image alt='founder_image' src={founderImage} className='mb-4 rounded-md w-[250px]' />
                 <p className='mb-2 text-xl font-semibold'>Anurag Goel</p>
                 <p className='text-base opacity-70'>Founder & CEO, Sapocom Global</p>
               </div>
-              <div className=''>
+              <div >
                 <Image alt='founder_image' src={directorImage} className='mb-4 rounded-md w-[250px]' />
                 <p className='mb-2 text-xl font-semibold'>Dr. Tribhuvan Raj</p>
-                <p className='text-base opacity-70'>Director, Sapocom Global</p>
+                <p className='text-base opacity-70'>Co-Founder & Director, Sapocom Global</p>
               </div>
             </div>
             {/* Message side */}
@@ -118,7 +118,7 @@ function AboutUs() {
           <p data-aos='flip-left' data-aos-delay='100' className='text-black opacity-70'>Our team of SAP professionals is the driving force behind our success. With their expertise, dedication, and unwavering commitment to delivering top-notch services, we can help businesses thrive and reach new heights with our innovative SAP solutions.</p>
         </div>
         {/* Teams Card */}
-        <div data-aos='zoom-in' className="grid max-review:grid-cols-2 grid-cols-auto-5">
+        <div data-aos='zoom-in' className="grid max-review:grid-cols-2 grid-cols-auto-4">
           {
             teamsList.map((team, ind) => {
               return (

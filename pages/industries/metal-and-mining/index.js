@@ -24,7 +24,7 @@ export default function MetalMining() {
   return (
     <>
       <SetHeaders title='Metal & Mining Industry | Sapocom' />
-      <HeaderBanner heading='Metal & Mining Industry' para='Upgrade(Enhance) your metal and mining operations with our SAP software - with enhanced business  processes and boost productivity towards sustainable growth.' bgImg={bgBanner} />
+      <HeaderBanner heading='Metal & Mining Industry' para='Ignite the Future of Metal and Mining with SAP CTRM: Unleash Enhanced Business Processes and Propel Productivity towards Sustainable Growth! ' bgImg={bgBanner} />
 
       <AboutIndustry
         title='OVERVIEW'

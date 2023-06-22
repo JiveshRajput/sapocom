@@ -27,7 +27,8 @@ function Services() {
   return (
     <>
       <SetHeaders title='Services | Sapocom' />
-      <HeaderBanner heading='Empowering Global SAP Projects - SAPOCOM Consulting & Talent Solutions' para='Integrated software for oil, gas, and energy to facilitate the adoption of a sustainable energy mix with cutting-edge solutions.' bgImg={serviceBanner} />
+      <HeaderBanner heading='Empowering Global SAP Projects - SAPOCOM Consulting & Talent Solutions' para='Integrated platform for Oil & Gas, Metal & Mining to facilitate digital transformation using SAP business processes for future
+sustainability & growth. ' bgImg={serviceBanner} />
 
 
       {/* Overview */}
@@ -69,7 +70,7 @@ function Services() {
           <div className="flex items-center flex-col mb-10 max-md:mb-5 text-center">
             <p data-aos="flip-left" data-aos-delay="100" className="uppercase mb-4 font-medium ">SERVICES</p>
             <h2 data-aos="flip-right" data-aos-delay="100" className="md:text-4xl text-3xl font-semibold text-white mb-4 max-w-1000">Empower Your Business with the Best-in-Class SAP Technologies for Future-Proof Growth</h2>
-            <p data-aos="flip-left" data-aos-delay="100" className="opacity-70 max-w-[900px]">With global collaborations, we work with clients worldwide in most SAP modules to leverage and diversify our project experience. We are determined to establish our organization and develop a unique community of SAP and IT professionals that will contribute significantly to global SAP projec</p>
+            <p data-aos="flip-left" data-aos-delay="100" className="opacity-70 max-w-[900px]">With global collaborations, we work with clients worldwide in most SAP modules to leverage and diversify our project experience. We are determined to establish our organization and develop a unique community of SAP and IT professionals that will contribute significantly to global SAP project</p>
           </div>
           {/* Cards */}
           {/* View on Desktop */}
@@ -270,7 +271,7 @@ function Services() {
                     <SwiperSlide key={ind}>
                       <div className='bg-white text-black rounded-lg'>
                         <div className='w-full h-auto'>
-                        <Image src={image} width={350} alt='service_images' className='aspect-video object-cover rounded-t-lg w-full h-auto' priority />
+                          <Image src={image} width={350} alt='service_images' className='aspect-video object-cover rounded-t-lg w-full h-auto' priority />
                         </div>
                         <div className="p-4 min-h-[196px]">
                           <h1 className='mb-3 text-xl font-semibold'>{title}</h1>
