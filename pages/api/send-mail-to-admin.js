@@ -10,9 +10,9 @@ export const config = {
 };
 
 const data = {
-  MAIL_EMAIL: 'punjabibollywoodmovies@gmail.com',
-  MAIL_PASSWORD: 'exyrgedqjwtedrth',
-  ADMIN_MAIL: 'contact@sapocomglobal.com'
+  MAIL_EMAIL: 'sapocomwebsiteform@gmail.com',
+  MAIL_PASSWORD: 'misukhzojcklpkop',
+  ADMIN_MAIL: 'websitequery@sapocomglobal.com'
 }
 
 export default async function handler(req, res) {
@@ -35,7 +35,6 @@ export default async function handler(req, res) {
         from: data.MAIL_EMAIL, // sender address
         to: data.ADMIN_MAIL, // list of receivers 
         subject: `Form Submission - ${name} details are there.`, // Subject line
-        // text: `Dear ${username || 'User'}, Your OTP is ${req.app.locals.OTP}. Enter the OTP to reset your password.`, // plain text body
         html: `<h1>${name} Submitted the Form</h1>
         <div>
           <p>Name: ${name}</p>
