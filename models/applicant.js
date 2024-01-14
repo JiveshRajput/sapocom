@@ -1,7 +1,7 @@
 // ApplicantModel.js
-const mongoose = require("mongoose");
+import { Schema, models, model } from "mongoose";
 
-const applicantSchema = new mongoose.Schema({
+const applicantSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -30,9 +30,13 @@ const applicantSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const ApplicantModel =
-  mongoose.models.Applicant || mongoose.model("Applicant", applicantSchema);
+const ApplicantModel = models.Applicant || model("Applicant", applicantSchema);
 
-exports.ApplicantModel = ApplicantModel;
+const _ApplicantModel = ApplicantModel;
+export { _ApplicantModel as ApplicantModel };

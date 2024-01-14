@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+import { connect } from "mongoose";
 
-exports.connectToDatabase = async () => {
+export async function connectToDatabase() {
   try {
-    await mongoose.connect("mongodb://localhost:27017/mydatabase");
+    await connect("mongodb://localhost:27017/mydatabase");
   } catch (error) {
     console.error("Failed to connect to MongoDB", error);
   }
-};
+}

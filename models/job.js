@@ -1,7 +1,7 @@
 // JobModel.js
-const mongoose = require("mongoose");
+import { Schema, models, model } from "mongoose";
 
-const jobSchema = new mongoose.Schema({
+const jobSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -22,8 +22,13 @@ const jobSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
 });
 
-const JobModel = mongoose.models.Job || mongoose.model("Job", jobSchema);
+const JobModel = models.Job || model("Job", jobSchema);
 
-exports.JobModel = JobModel;
+const _JobModel = JobModel;
+export { _JobModel as JobModel };
