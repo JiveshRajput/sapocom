@@ -5,18 +5,22 @@ const jobSchema = new Schema({
   title: {
     type: String,
     required: true,
+    trim: true,
   },
   department: {
     type: String,
     required: true,
+    trim: true,
   },
   description: {
     type: String,
     required: true,
+    trim: true,
   },
   place: {
     type: String,
     required: true,
+    trim: true,
   },
   isClosed: {
     type: Boolean,
@@ -30,5 +34,4 @@ const jobSchema = new Schema({
 
 const JobModel = models.Job || model("Job", jobSchema);
 
-const _JobModel = JobModel;
-export { _JobModel as JobModel };
+export { JobModel };

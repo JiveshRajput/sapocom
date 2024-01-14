@@ -5,14 +5,19 @@ const applicantSchema = new Schema({
   name: {
     type: String,
     required: true,
+    trim: true,
   },
   email: {
     type: String,
     required: true,
+    match: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+    lowercase: true,
+    trim: true,
   },
   mobileNumber: {
     type: Number,
     required: true,
+    minLength: 10,
   },
   resume: {
     type: String,
@@ -21,10 +26,12 @@ const applicantSchema = new Schema({
   relevantExperience: {
     type: String,
     required: true,
+    trim: true,
   },
   highestGraduation: {
     type: String,
     required: true,
+    trim: true,
   },
   graduationYear: {
     type: Number,
@@ -38,5 +45,4 @@ const applicantSchema = new Schema({
 
 const ApplicantModel = models.Applicant || model("Applicant", applicantSchema);
 
-const _ApplicantModel = ApplicantModel;
-export { _ApplicantModel as ApplicantModel };
+export { ApplicantModel };
