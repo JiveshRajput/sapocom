@@ -1,32 +1,33 @@
-// Import necessary modules
-import { connectToDatabase } from "../../../utils/db";
-import { ApplicantModel } from "../../../models/applicant";
+import { connectToDatabase } from "@/lib/db";
+import { ApplicantModel } from "@models/applicant";
 
 import formidable from "formidable";
 import path from "path";
 
+import { protectRoute } from "@/lib/auth";
+
 export const config = {
   api: {
-    bodyParser: false, // Disable the built-in bodyParser
+    bodyParser: false,
   },
 };
 
 // GET /api/applicants
-export default async function handler(req, res) {
+const handler = async function (req, res) {
   if (req.method === "GET") {
     try {
-      // Connect to the database
       await connectToDatabase();
 
-      // Fetch all applicants from the database
+      const authenticatedUser = await protectRoute(req, res);
+      if (!authenticatedUser) return;
+
       const applicants = await ApplicantModel.find({
         isDeleted: false,
       });
 
-      // Return the applicants as the response
       res.status(200).json(applicants);
     } catch (error) {
-      // Handle any errors
+      console.log(error);
       res.status(500).json({ message: "Internal Server Error" });
     }
   } else if (req.method === "POST") {
@@ -50,13 +51,10 @@ export default async function handler(req, res) {
           }
         }
 
-        // Extract the fields and files from the form data
         const resume = files.resume[0].newFilename;
 
-        // Connect to the database
         await connectToDatabase();
 
-        // Create a new applicant in the database
         const newApplicant = await ApplicantModel.create({
           ...fieldsObject,
           resume,
@@ -69,23 +67,24 @@ export default async function handler(req, res) {
     }
   } else if (req.method === "DELETE") {
     try {
-      // Connect to the database
       await connectToDatabase();
 
-      // Delete the applicant from the database
+      const authenticatedUser = await protectRoute(req, res);
+      if (!authenticatedUser) return;
+
       const deletedApplicant = await ApplicantModel.findByIdAndUpdate(
         req.query.id,
         { isDeleted: true },
         { new: true }
       );
 
-      // Return the deleted applicant as the response
       res.status(204).json(deletedApplicant);
     } catch (error) {
       res.status(500).json({ message: "Internal Server Error" });
     }
   } else {
-    // Handle unsupported HTTP methods
     res.status(405).json({ message: "Method Not Allowed" });
   }
-}
+};
+
+export default handler;

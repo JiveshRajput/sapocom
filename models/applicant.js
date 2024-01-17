@@ -41,6 +41,11 @@ const applicantSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  jobApplied: {
+    type: Schema.Types.ObjectId,
+    ref: "Job",
+    required: true,
+  },
 });
 
 const ApplicantModel = models.Applicant || model("Applicant", applicantSchema);

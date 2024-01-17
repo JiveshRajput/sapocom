@@ -22,18 +22,6 @@ const adminSchema = Schema({
   },
 });
 
-adminSchema.pre("save", async function (next) {
-  this.password = await bcrypt.hash(this.password, 12);
-  next();
-});
-
-adminSchema.methods.checkPassword = async function (
-  candidatePassword,
-  userPassword
-) {
-  return await bcrypt.compare(candidatePassword, userPassword);
-};
-
 const AdminModel = models.Admin || model("Admin", adminSchema);
 
 export { AdminModel };
