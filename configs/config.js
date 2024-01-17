@@ -104,6 +104,10 @@ export const navTabs = [
         link: '/services'
     },
     {
+        name: 'Careers',
+        link: '/careers'
+    },
+    {
         name: 'Industries',
         link: '/industries',
         subTabs: [

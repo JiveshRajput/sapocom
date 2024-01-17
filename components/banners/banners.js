@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
 
-export function HeaderBanner({ bgImg, heading, para, cta = '/contact-us' }) {
+export function HeaderBanner({ bgImg, heading, para, cta = '/contact-us', btnText = 'Request Consultation' }) {
     return (
         <>
             <section className='w-full pb-20 pt-48 px-4 relative'>
@@ -15,7 +15,7 @@ export function HeaderBanner({ bgImg, heading, para, cta = '/contact-us' }) {
                     <h1 className="max-w-[650px] mb-3 text-3xl z-40 font-bold">{heading}</h1>
                     <p className=" m-0 max-w-[500px] z-30 mb-8">{para}</p>
                     <Link passHref href={cta}>
-                        <button className='px-5 py-2 rounded-md text-white bg-gradient-to-r from-primary to-secondary'>Request Consultation</button>
+                        <button className='px-5 py-2 rounded-md text-white bg-gradient-to-r from-primary to-secondary'>{btnText}</button>
                     </Link>
                 </div>
             </section>
