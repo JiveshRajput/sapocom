@@ -8,8 +8,6 @@ export default async function handler(req, res) {
     try {
       await connectToDatabase();
 
-      console.log(req.query);
-
       const authenticatedUser = await protectRoute(req, res);
       if (!authenticatedUser) return;
 

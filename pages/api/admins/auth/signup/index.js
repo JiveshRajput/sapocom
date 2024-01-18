@@ -5,8 +5,6 @@ import jwt from "jsonwebtoken";
 
 import { connectToDatabase } from "@/lib/db";
 
-connectToDatabase();
-
 export default async function handler(req, res) {
   const jwtSecret = process.env.JWT_SECRET || "secret";
   const jwtExpires = process.env.JWT_EXPIRES_IN || "1d";
@@ -17,6 +15,8 @@ export default async function handler(req, res) {
   const { name, email, password } = req.body;
 
   try {
+    await connectToDatabase();
+
     const existingUser = await AdminModel.findOne({ email });
 
     if (existingUser) {
