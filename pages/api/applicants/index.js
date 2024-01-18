@@ -1,5 +1,5 @@
 import { connectToDatabase } from "@/lib/db";
-import { ApplicantModel } from "@models/applicant";
+import { ApplicantModel } from "@/models/applicant";
 
 import formidable from "formidable";
 import path from "path";
@@ -72,13 +72,13 @@ const handler = async function (req, res) {
       const authenticatedUser = await protectRoute(req, res);
       if (!authenticatedUser) return;
 
-      const deletedApplicant = await ApplicantModel.findByIdAndUpdate(
+      await ApplicantModel.findByIdAndUpdate(
         req.query.id,
         { isDeleted: true },
         { new: true }
       );
 
-      res.status(204).json(deletedApplicant);
+      res.status(204).end();
     } catch (error) {
       res.status(500).json({ message: "Internal Server Error" });
     }

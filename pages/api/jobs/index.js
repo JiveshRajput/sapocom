@@ -54,13 +54,13 @@ export default async function handler(req, res) {
       const authenticatedUser = await protectRoute(req, res);
       if (!authenticatedUser) return;
 
-      const deletedJob = await JobModel.findByIdAndUpdate(
+      await JobModel.findByIdAndUpdate(
         req.query.id,
         { isDeleted: true },
         { new: true }
       );
 
-      res.status(204).json(deletedJob);
+      res.status(204).end();
     } catch (error) {
       res.status(500).json({ message: "Internal Server Error" });
     }
