@@ -6,6 +6,8 @@ import path from "path";
 
 import { protectRoute } from "@/lib/auth";
 
+import sendMail from "@/lib/email";
+
 export const config = {
   api: {
     bodyParser: false,
@@ -61,8 +63,11 @@ const handler = async function (req, res) {
         });
 
         res.status(201).json(newApplicant);
+
+        await sendMail(newApplicant);
       });
     } catch (error) {
+      console.log(error);
       res.status(500).json({ message: "Internal Server Error" });
     }
   } else if (req.method === "DELETE") {
