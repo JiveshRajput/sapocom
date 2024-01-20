@@ -36,10 +36,6 @@ export default function JobForm({ jobData }) {
     try {
       dispatch(setLoadingState(true));
       const formData = new FormData(e.target);
-      for (const key in form) {
-        formData.append(key, form[key]);
-      }
-      // form.jobApplied= jobData._id;
       formData.append('jobApplied',jobData._id);
 
       const response = await axios.post(
@@ -61,7 +57,6 @@ export default function JobForm({ jobData }) {
       });
     } catch (error) {
       alert("Something went wrong. Please Try Again");
-
     } finally {
       dispatch(setLoadingState(false));
     }
