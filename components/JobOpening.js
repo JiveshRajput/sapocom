@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function JobOpening({ jobData }) {
-  const slug = jobData._id;
+  const slug = jobData.slug;
   return (
     <div className="flex flex-wrap justify-between  rounded-lg bg-white p-6 shadow-md transition-transform hover:-translate-y-1 hover:transform hover:border-blue-400 hover:shadow-xl">
       <div className="flex-col m-2">
