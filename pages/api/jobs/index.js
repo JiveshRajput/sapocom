@@ -9,8 +9,14 @@ export default async function handler(req, res) {
     try {
       await connectToDatabase();
 
+      // const jobs = await JobModel.find({
+      //   isDeleted: false,
+      // });
+
+      //getting jobs if query is present
       const jobs = await JobModel.find({
         isDeleted: false,
+        ...(req.query && req.query),
       });
 
       res.status(200).json(jobs);
