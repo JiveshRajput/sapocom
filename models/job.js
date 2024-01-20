@@ -30,6 +30,14 @@ const jobSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  slug: {
+    type: String,
+    required: true,
+  },
+  details: {
+    type: String,
+    required: true,
+  },
 });
 
 const JobModel = models.Job || model("Job", jobSchema);
