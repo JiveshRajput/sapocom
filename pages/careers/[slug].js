@@ -43,7 +43,7 @@ function MyPage() {
             {"About this position"}
           </h2>
           <div
-            className="max-w-900 mx-auto text-lg text-secondary list-disc pl-4"
+            className="max-w-900 mx-auto text-base text-secondary list-disc pl-4"
             dangerouslySetInnerHTML={{ __html: jobData.details }}
           />
         </div>
