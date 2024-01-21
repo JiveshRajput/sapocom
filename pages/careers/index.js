@@ -8,25 +8,22 @@ import Loader from "@/layouts/Loader";
 import Image from "next/image";
 import img1 from "@/assets/images/careers/career-info-img1.webp";
 import img2 from "@/assets/images/careers/career-info-img2.webp";
-import { useDispatch } from "react-redux";
-import { setLoadingState } from "@/store/reducers/valueReducer";
 export default function Careers() {
   const [OpeningsData, setOpeningsData] = useState([]);
-  const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        dispatch(setLoadingState(true));
         const response = await axios.get(`/api/jobs`);
         setOpeningsData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
-        dispatch(setLoadingState(false));
+        setIsLoading(false);
       }
     };
     fetchData();
-  }, [dispatch]);
+  }, []);
   const scrollLogic = () => {
     // Smooth scroll to the element with id "openings"
     const targetElement = document.getElementById("openings");
@@ -34,6 +31,22 @@ export default function Careers() {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
   };
+  if (isLoading)
+    return (
+      <>
+        <div className="fixed top-0 left-0 z-[100] w-screen h-screen bg-black/50 p-4 grid place-items-center">
+          <div className="p-4 bg-white w-[110px] h-[110px] rounded-full grid place-items-center">
+            <span className="loader"></span>
+          </div>
+        </div>
+        <BannerWithClickHandler
+          heading="Join Our Talented Team"
+          para="Explore exciting career opportunities and be a part of something amazing!"
+          bgImg={bgBanner}
+          clickHandler={scrollLogic}
+        />
+      </>
+    );
   return (
     <>
       <Loader />
