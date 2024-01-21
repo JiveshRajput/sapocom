@@ -48,7 +48,7 @@ export default function Careers() {
       />
 
       {/* Job Openings */}
-      {OpeningsData.length > 0 ? (
+      {OpeningsData && OpeningsData.length > 0 ? (
         <div className="w-full py-12 md:py-20" id="openings">
           <div className="max-w-800 mx-auto">
             <h1 className="mb-4 text-center text-4xl font-bold">
@@ -64,12 +64,20 @@ export default function Careers() {
             </div>
           </div>
         </div>
+      ) : OpeningsData && OpeningsData.length > 0 ? (
+        <div className="max-w-800 mx-auto">
+          <div className="max-w-800 mx-auto">
+            <p className="text-3xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary  to-white  md:text-4xl z-40 font-semibold">
+              Currently, No Open Positions - Stay Tuned for Exciting Career
+              Opportunities Ahead!
+            </p>
+          </div>
+        </div>
       ) : (
         <div className="max-w-800 mx-auto">
           <div className="max-w-800 mx-auto">
-            <p className="my-8 text-center text-lg text-gray-600">
-              Currently, No Open Positions - Stay Tuned for Exciting Career
-              Opportunities Ahead!
+            <p className="text-3xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary  to-white  md:text-4xl z-40 font-semibold">
+              Loading...
             </p>
           </div>
         </div>
@@ -85,14 +93,14 @@ export default function Careers() {
             </h1>
             <p className="text-left text-base text-gray-600">
               Embark on a transformative journey with our internship program as
-              we invite aspiring talents to join our dynamic team. This isn&apos;t
-              just an internship; it&apos;s an opportunity to unlock your potential
-              and shape your career trajectory on a global scale. our internship
-              program is designed to be a launchpad for your professional
-              aspirations. From hands-on projects to mentorship opportunities,
-              we offer an environment that fosters learning and growth. Your
-              journey starts here, and the future is yours to shape! Apply now
-              and be a part of something extraordinary.
+              we invite aspiring talents to join our dynamic team. This
+              isn&apos;t just an internship; it&apos;s an opportunity to unlock
+              your potential and shape your career trajectory on a global scale.
+              our internship program is designed to be a launchpad for your
+              professional aspirations. From hands-on projects to mentorship
+              opportunities, we offer an environment that fosters learning and
+              growth. Your journey starts here, and the future is yours to
+              shape! Apply now and be a part of something extraordinary.
             </p>
           </div>
         </div>
@@ -113,8 +121,8 @@ export default function Careers() {
               experienced global executive or a recent graduate with a universal
               mindset, we provide a platform for you to bring your talents to a
               truly international stage. Explore the opportunities, discover
-              your potential, and become part of a cosmopolitan community that&apos;s
-              shaping the future at SAPOCOM
+              your potential, and become part of a cosmopolitan community
+              that&apos;s shaping the future at SAPOCOM
             </p>
           </div>
           <Image src={img2} alt={"careers-img-2"} className="w-[350px]" />

@@ -219,7 +219,7 @@ export default function JobForm({ jobData }) {
               <div>
                 <button
                   type="submit"
-                  className="py-2 px-4 w-full bg-[#641977] text-white rounded-lg hover:opacity-100 hover:bg-[#390D44]"
+                  className="py-2 px-4 w-full bg-[#641977] text-white rounded-lg hover:opacity-100 hover:bg-[#390D44] transition duration-300 "
                 >
                   Submit
                 </button>
