@@ -66,7 +66,7 @@ export default function JobForm({ jobData }) {
       <Loader />
       <div className="w-full p-4 py-8 md:py-10">
         <div className="max-w-1200 mx-auto">
-          <div className="max-w-900 mx-auto flex-col space-y-4 p-4 shadow-lg">
+          <div className="max-w-900 mx-auto flex-col space-y-4 p-4 shadow-lg rounded-lg">
             <h2 className="text-center text-3xl font-bold text-secondary">
               {"Join Our Team – Apply Today!"}
             </h2>
@@ -219,7 +219,7 @@ export default function JobForm({ jobData }) {
               <div>
                 <button
                   type="submit"
-                  className="py-2 px-4 w-full bg-secondary opacity-75 text-white rounded-lg hover:opacity-100 hover:bg-secondary"
+                  className="py-2 px-4 w-full bg-[#641977] text-white rounded-lg hover:opacity-100 hover:bg-[#390D44]"
                 >
                   Submit
                 </button>
