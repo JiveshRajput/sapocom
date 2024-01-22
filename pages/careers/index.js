@@ -31,25 +31,16 @@ export default function Careers() {
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
   };
-  if (isLoading)
-    return (
-      <>
+
+  return (
+    <>
+      {isLoading && (
         <div className="fixed top-0 left-0 z-[100] w-screen h-screen bg-black/50 p-4 grid place-items-center">
           <div className="p-4 bg-white w-[110px] h-[110px] rounded-full grid place-items-center">
             <span className="loader"></span>
           </div>
         </div>
-        <BannerWithClickHandler
-          heading="Join Our Talented Team"
-          para="Explore exciting career opportunities and be a part of something amazing!"
-          bgImg={bgBanner}
-          clickHandler={scrollLogic}
-        />
-      </>
-    );
-  return (
-    <>
-      <Loader />
+      )}
       <SetHeaders title="Careers | Sapocom" />
 
       {/* Banner */}
