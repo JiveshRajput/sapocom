@@ -8,6 +8,7 @@ import Loader from "@/layouts/Loader";
 import Image from "next/image";
 import img1 from "@/assets/images/careers/career-info-img1.webp";
 import img2 from "@/assets/images/careers/career-info-img2.webp";
+
 export default function Careers() {
   const [OpeningsData, setOpeningsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ export default function Careers() {
     };
     fetchData();
   }, []);
+
   const scrollLogic = () => {
     // Smooth scroll to the element with id "openings"
     const targetElement = document.getElementById("openings");
@@ -34,15 +36,7 @@ export default function Careers() {
 
   return (
     <>
-      {isLoading && (
-        <div className="fixed top-0 left-0 z-[100] w-screen h-screen bg-black/50 p-4 grid place-items-center">
-          <div className="p-4 bg-white w-[110px] h-[110px] rounded-full grid place-items-center">
-            <span className="loader"></span>
-          </div>
-        </div>
-      )}
       <SetHeaders title="Careers | Sapocom" />
-
       {/* Banner */}
       <BannerWithClickHandler
         heading="Join Our Talented Team"
@@ -52,50 +46,52 @@ export default function Careers() {
       />
 
       {/* Job Openings */}
-      {OpeningsData && OpeningsData.length > 0 ? (
-        <div className="w-full py-12 md:py-20" id="openings">
-          <div className="max-w-800 mx-auto">
-            <h1 className="mb-4 text-center text-4xl font-bold">
-              Join Our Team
-            </h1>
-            <p className="mb-8 text-center text-lg text-gray-600">
-              Explore exciting opportunities to work with us.
-            </p>
-            <div className="flex-col space-y-4">
-              {OpeningsData.map((opening, ind) => {
-                return <JobOpening jobData={opening} key={ind} />;
-              })}
-            </div>
-          </div>
+      <div className="w-full py-20 p-4" id="openings">
+        <div className="max-w-1200 mx-auto">
+          <h1 className="mb-2 text-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+            Join Our Team
+          </h1>
+          <p className="mb-8 text-center text-base text-black">
+            Explore exciting opportunities to work with us.
+          </p>
+          {
+            isLoading ? (
+              <p className="text-2xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-4xl z-40 font-semibold">Loading...
+              </p>
+            ) : (
+              <>
+                {OpeningsData && OpeningsData.length > 0 ? (
+                  <div className="mx-auto">
+                    <div className="flex-col space-y-4">
+                      {OpeningsData.map((opening, ind) => {
+                        return <JobOpening jobData={opening} key={ind} />;
+                      })}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="max-w-1200 mx-auto">
+                    <p className="text-lg text-center my-8 text-transparent md:text-xl font-semibold">
+                      Currently, No Open Positions - Stay Tuned for Exciting Career
+                      Opportunities Ahead!
+                    </p>
+                  </div>
+                )}
+              </>
+            )
+          }
+
         </div>
-      ) : OpeningsData && OpeningsData.length > 0 ? (
-        <div className="max-w-800 mx-auto">
-          <div className="max-w-800 mx-auto">
-            <p className="text-3xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary  to-white  md:text-4xl z-40 font-semibold">
-              Currently, No Open Positions - Stay Tuned for Exciting Career
-              Opportunities Ahead!
-            </p>
-          </div>
-        </div>
-      ) : (
-        <div className="max-w-800 mx-auto">
-          <div className="max-w-800 mx-auto">
-            <p className="text-3xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary  to-white  md:text-4xl z-40 font-semibold">
-              Loading...
-            </p>
-          </div>
-        </div>
-      )}
+      </div>
 
       {/* Pathway for interns */}
-      <div className="w-full pb-12 md:pb-20">
-        <div className="max-w-1200 mx-auto flex flex-wrap-reverse px-2 items-center justify-center">
+      <div className="w-full py-8 px-4">
+        <div className="max-w-1200 mx-auto flex flex-wrap-reverse items-center justify-center">
           <Image src={img1} alt={"careers-img-2"} className="w-[350px]" />
           <div className="max-w-[600px] mx-auto p-2">
-            <h1 className="pb-4 text-left text-4xl font-bold">
+            <h1 className="pb-4 text-left text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Paving global pathway for Interns
             </h1>
-            <p className="text-left text-base text-gray-600">
+            <p className="text-left text-base text-black opacity-70">
               Embark on a transformative journey with our internship program as
               we invite aspiring talents to join our dynamic team. This
               isn&apos;t just an internship; it&apos;s an opportunity to unlock
@@ -108,12 +104,12 @@ export default function Careers() {
             </p>
           </div>
         </div>
-        <div className="max-w-1200 mx-auto flex flex-wrap px-2 pt-8 md:pt-12 justify-center items-center">
+        <div className="max-w-1200 mx-auto flex flex-wrap justify-center items-center">
           <div className="max-w-[600px] mx-auto p-2 ">
-            <h1 className="pb-4 text-left text-4xl font-bold">
+            <h1 className="pb-4 text-left text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               For Experienced Professionals
             </h1>
-            <p className="text-left text-base text-gray-600">
+            <p className="text-left text-base text-black opacity-70">
               Welcome to our global career hub, where diverse talents converge
               to shape the future. At SAPOCOM, we celebrate the richness of
               cultures and perspectives that make up our worldwide team. As you
