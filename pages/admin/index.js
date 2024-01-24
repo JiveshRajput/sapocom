@@ -15,7 +15,8 @@ const Login = () => {
     e.preventDefault();
     try {
       setIsLoading(true);
-      await axios.post("/api/admins/auth/login", form);
+      const response = await axios.post("/api/admins/auth/login", form);
+      console.log(response);
       router.push("/admin/dashboard");
     } catch (error) {
       setError(error.response.data.message);
