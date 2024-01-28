@@ -14,7 +14,7 @@ export default function JobCard({ jobData }) {
             {department}
           </span>}
         </div>
-        <h2 className="text-center text-5xl font-bold">{title}</h2>
+        <h2 className="text-center text-4xl x-sm:text-5xl font-bold">{title}</h2>
         <div className="text-center text-md">{place}</div>
           <p className="text-center text-md">{description}</p>
       </div>

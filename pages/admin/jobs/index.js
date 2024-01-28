@@ -1,5 +1,8 @@
 import AdminJobOpening from "@/components/admin/AdminJob";
-import { setJobModalState, setModalId, setModalType } from "@/store/reducers/valueReducer";
+import {
+  setJobModalState,
+  setModalType,
+} from "@/store/reducers/valueReducer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -23,23 +26,23 @@ const AdminJobs = () => {
   }, []);
   const createHandler = () => {
     dispatch(setJobModalState(true));
-    dispatch(setModalType('Create'));
-  }
+    dispatch(setModalType("Create"));
+  };
   return (
     <>
       <div className="w-full py-8 md:py-12">
         <div className="max-w-1200 mx-auto">
-          <div className="flex justify-center flex-wrap items-center gap-2 mb-2 x-sm:mb-4">
+          <div className="flex justify-between flex-wrap items-center gap-2 px-2 mb-3 x-sm:mb-8">
             <h2 className="text-center text-4xl font-bold text-secondary">
-            Jobs Listed
-          </h2>
+              Listed Jobs
+            </h2>
             <button
               onClick={createHandler}
-              className="px-2 border-2 text-xl border-primary text-primary rounded-md font-semibold hover:bg-primary/10"
+              className="px-2 border-2 text-md border-primary text-primary rounded-md font-semibold hover:bg-primary/10"
             >
-              +
+              + Add Job
             </button>
-            </div>
+          </div>
           {isLoading ? (
             <p className="text-2xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-4xl z-40 font-semibold">
               Loading...

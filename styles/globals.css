@@ -227,3 +227,15 @@ input[type=number] {
     box-shadow: .4em -.4em 0 0 currentcolor;
   }
 }
+
+#custom ul {
+  list-style-type: disc;
+  padding-left: 0.75rem; 
+  padding-right: 0.75rem; 
+}
+
+#custom ol {
+  list-style-type: decimal;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}

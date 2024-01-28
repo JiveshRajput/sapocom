@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -9,34 +8,25 @@ import {
   setLoadingState,
 } from "@/store/reducers/valueReducer";
 import ModalWrapper from "@/layouts/ModalWrapper";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 export default function DeleteModal() {
   const dispatch = useDispatch();
+  const router = useRouter();
   const deleteModalOpen = useSelector(getDeleteModalState);
   const id = useSelector(getModalId);
   const type = useSelector(getModalType);
   async function deleteHandler() {
-    console.log(id);
-    console.log(type);
+    const url = `/api/${type}?id=${id}`;
     try {
-      dispatch(setLoadingState(true));
-      const url = `${MAIN_URL}/api/send-mail-to-admin`;
-      const jsonResponse = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-      const response = await jsonResponse.json();
-      dispatch(setLoadingState(false));
+      setLoadingState(true);
+      await axios.delete(url);
       closeModal(true);
-      setTimeout(() => {
-        alert("Form Submitted Successfully!!!");
-      }, 10);
-      setForm({ name: "", email: "", number: "", message: "" });
+      router.reload();
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching data:", error);
+    } finally {
       dispatch(setLoadingState(false));
     }
   }
@@ -56,7 +46,7 @@ export default function DeleteModal() {
                 className="absolute right-4 top-4 md:right-6 md:top-6 bg-black p-2 z-50 rounded-sm cursor-pointer opacity-30 hover:opacity-100 transition-[opacity]"
                 onClick={closeModal}
               >
-                <Image  
+                <Image
                   src={require("../../assets/images/icons/cross-menu.svg")}
                   width={15}
                   height={15}

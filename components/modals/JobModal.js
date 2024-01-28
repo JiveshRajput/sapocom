@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -9,53 +9,145 @@ import {
   setLoadingState,
 } from "@/store/reducers/valueReducer";
 import ModalWrapper from "@/layouts/ModalWrapper";
-import { MAIN_URL } from "@/configs/config";
+import axios from "axios";
+import { useRouter } from "next/router";
+import { generateSlug } from "../admin/utils/generateSlug";
+import dynamic from "next/dynamic";
+import "react-quill/dist/quill.snow.css"; // Import Quill styles
+
+const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
 
 export default function JobModal() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const jobModalOpen = useSelector(getJobModalState);
+  const [isLoading, setIsLoading] = useState(true);
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    number: "",
-    message: "",
+    title: "",
+    department: "",
+    description: "",
+    place: "",
+    details: "",
   });
   const id = useSelector(getModalId);
   const type = useSelector(getModalType);
-  async function formSubmitHandler(e) {
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let url = `/api/jobs?_id=${id}`;
+      try {
+        const res = await axios.get(url);
+        setForm(res.data[0]);
+        console.log('ho gya' , res.data[0]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    // if edit , then first fetch the previous data
+    if (type == "Edit") {
+      console.log('getting fetched');
+      fetchData();
+    } else {
+      setForm({
+        title: "",
+        department: "",
+        description: "",
+        place: "",
+        details: "",
+      });
+    }
+    setIsLoading(false);
+  }, [jobModalOpen]);
+  async function createJob(e) {
     e.preventDefault();
+    const createUrl = `/api/jobs`;
     try {
       dispatch(setLoadingState(true));
-      const url = `${MAIN_URL}/api/send-mail-to-admin`;
-      const jsonResponse = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-      const response = await jsonResponse.json();
-      dispatch(setLoadingState(false));
+      let slug, isUnique;
+      do {
+        slug = generateSlug(form["title"]);
+        let url = `/api/jobs?slug=${slug}`;
+        const response = await axios.get(url);
+        isUnique = response.data.length == 0;
+      } while (!isUnique);
+      form["slug"] = slug;
+      form["isClosed"] = false;
+      await axios.post(createUrl, form);
       closeModal(true);
-      setTimeout(() => {
-        alert("Form Submitted Successfully!!!");
-      }, 10);
-      setForm({ name: "", email: "", number: "", message: "" });
+      router.reload();
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching data:", error);
+    } finally {
       dispatch(setLoadingState(false));
     }
   }
+  async function editJob(e) {
+    e.preventDefault();
+    const editUrl = `/api/jobs?id=${id}`;
+    try {
+      dispatch(setLoadingState(true));
+      await axios.put(editUrl, form);
+      closeModal(true);
+      router.reload();
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      dispatch(setLoadingState(false));
+    }
+  }
+  function formSubmitHandler(e) {
+    e.preventDefault();
+    if (type == "Edit") editJob(e);
+    else createJob(e);
+  }
+  const quillModules = {
+    toolbar: [
+      [{ header: [1, 2, 3, false] }],
+      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ list: "ordered" }, { list: "bullet" }],
+      ["link", "image"],
+      [{ align: [] }],
+      [{ color: [] }],
+      ["code-block"],
+      ["clean"],
+    ],
+  };
+
+  const quillFormats = [
+    "header",
+    "bold",
+    "italic",
+    "underline",
+    "strike",
+    "blockquote",
+    "list",
+    "bullet",
+    "link",
+    "image",
+    "align",
+    "color",
+    "code-block",
+  ];
+
+  const handleEditorChange = (value) => {
+    setForm({ ...form, details: value });
+  };
 
   function closeModal() {
+    setForm({
+      title: "",
+      department: "",
+      description: "",
+      place: "",
+      details: "",
+    });
     dispatch(setJobModalState(false));
   }
-
   return (
     <>
-      {jobModalOpen && (
+      {jobModalOpen && !isLoading && (
         <ModalWrapper closeModal={closeModal}>
-          <div className="max-w-800 rounded-lg bg-white p-4 relative">
+          <div className="max-w-800 rounded-lg bg-white pt-4 px-4 relative">
             {/* close modal button */}
             <div
               className="absolute right-4 top-4 md:right-6 md:top-6 bg-black p-2 z-50 rounded-sm cursor-pointer opacity-30 hover:opacity-100 transition-[opacity]"
@@ -68,9 +160,8 @@ export default function JobModal() {
                 alt="hamburger"
               />
             </div>
-            {/* Contact Form*/}
             <div className="md:m-4">
-              <h1 className="text-secondary font-semibold text-xl review:text-2xl md:text-3xl mb-2 max-md:text-center">
+              <h1 className="text-secondary font-semibold text-xl review:text-2xl md:text-3xl max-md:text-center">
                 {type} Job
               </h1>
               <form
@@ -78,7 +169,7 @@ export default function JobModal() {
                 onSubmit={formSubmitHandler}
               >
                 <div className="grid md:grid-cols-2 md:gap-6">
-                  <label htmlFor="title" className="mb-6 block">
+                  <label htmlFor="title" className="mb-2 md:mb-3 block">
                     <span className="block text-sm text-gray-600">
                       Job Title *
                     </span>
@@ -95,7 +186,7 @@ export default function JobModal() {
                       }
                     />
                   </label>
-                  <label htmlFor="department" className="mb-6 block">
+                  <label htmlFor="department" className="mb-2 md:mb-3 block">
                     <span className="block text-sm text-gray-600">
                       Department *
                     </span>
@@ -108,65 +199,63 @@ export default function JobModal() {
                       className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
                       value={form.department}
                       onChange={(e) =>
-                        setForm({ ...form, department: e.target.value })
-                      }
-                    />
-                  </label>
-                </div>
-                <div className="grid md:grid-cols-2 md:gap-6">
-                <label htmlFor="description" className="mb-6 block">
-                    <span className="block text-sm text-gray-600">
-                    Job Description *
-                    </span>
-                    <input
-                      type="text"
-                      name="description"
-                      id="description"
-                      required
-                      placeholder="Description"
-                      className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                      value={form.description}
-                      onChange={(e) =>
-                        setForm({ ...form, description: e.target.value })
-                      }
-                    />
-                  </label>
-                  <label htmlFor="place" className="mb-6 block">
-                    <span className="block text-sm text-gray-600">
-                      Job Location *
-                    </span>
-                    <input
-                      type="text"
-                      name="place"
-                      id="place"
-                      required
-                      placeholder="Location"
-                      className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                      value={form.place}
-                      onChange={(e) =>
-                        setForm({ ...form, place: e.target.value })
+                        setForm({
+                          ...form,
+                          department: e.target.value.toUpperCase(),
+                        })
                       }
                     />
                   </label>
                 </div>
 
-                <label htmlFor="details" className="mb-6 block">
-                    <span className="block text-sm text-gray-600">
-                      Job Details *
-                    </span>
-                    <textarea
-                      type="text"
-                      name="details"
-                      id="details"
-                      required
-                      placeholder="details"
-                      className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                      value={form.details}
-                      onChange={(e) =>
-                        setForm({ ...form, details: e.target.value })
-                      }
-                    />
-                  </label>
+                <label htmlFor="place" className="mb-2 md:mb-3 block">
+                  <span className="block text-sm text-gray-600">
+                    Job Location *
+                  </span>
+                  <input
+                    type="text"
+                    name="place"
+                    id="place"
+                    required
+                    placeholder="Location"
+                    className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
+                    value={form.place}
+                    onChange={(e) =>
+                      setForm({ ...form, place: e.target.value })
+                    }
+                  />
+                </label>
+
+                <label htmlFor="description" className="mb-2 md:mb-3 block">
+                  <span className="block text-sm text-gray-600">
+                    Job Description *
+                  </span>
+                  <textarea
+                    type="text"
+                    name="description"
+                    id="description"
+                    required
+                    placeholder="description"
+                    className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
+                    value={form.description}
+                    rows={6}
+                    style={{ resize: "none" }}
+                    onChange={(e) =>
+                      setForm({ ...form, description: e.target.value })
+                    }
+                  />
+                </label>
+                <label htmlFor="details" className="mb-2 md:mb-3 block">
+                  <span className="block text-sm text-gray-600">
+                    Job Details *
+                  </span>
+                  <QuillEditor
+                    value={form.details}
+                    onChange={handleEditorChange}
+                    modules={quillModules}
+                    formats={quillFormats}
+                  />
+                </label>
                 <div>
                   <button
                     type="submit"

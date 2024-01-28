@@ -8,7 +8,7 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
     const menuClass = "bg-white"
   return (
     <header className="w-full px-4 py-2 h-[65px] sticky top-0 left-0 z-[90] shadow-md bg-white">
-      <div className="flex w-full justify-between">
+      <div className="flex w-full gap-4">
         <div
           className={`flex justify-center items-center`}
           onClick={() => setShowSidebar(!showSidebar)}
@@ -22,9 +22,7 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
           />
           
         </div>
-        <div className="hidden review:flex justify-center items-center text-center text-4xl font-bold text-secondary">
-            ADMIN PANEL
-        </div>
+        
         <Link href="/" passHref>
           <Image
             src={logo}
