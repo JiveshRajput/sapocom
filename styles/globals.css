@@ -228,13 +228,13 @@ input[type=number] {
   }
 }
 
-#custom ul {
+#jobData ul {
   list-style-type: disc;
   padding-left: 0.75rem; 
   padding-right: 0.75rem; 
 }
 
-#custom ol {
+#jobData ol {
   list-style-type: decimal;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
