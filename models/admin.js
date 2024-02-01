@@ -20,6 +20,10 @@ const adminSchema = Schema({
     select: false,
     minlength: 8,
   },
+  otp: {
+    type: Number,
+    select: false,
+  },
 });
 
 const AdminModel = models.Admin || model("Admin", adminSchema);
