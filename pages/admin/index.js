@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import ForgotPassword from "@/components/admin/ForgotPassword";
 
 const Login = () => {
   const [form, setForm] = useState({
@@ -8,6 +9,7 @@ const Login = () => {
     password: "",
   });
   const [error, setError] = useState(null);
+  const [forgotPass, setForgotPass] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
@@ -22,7 +24,8 @@ const Login = () => {
       setIsLoading(false);
     }
   }
-
+  console.log('forgotPass ',forgotPass);
+  if (forgotPass) return <ForgotPassword changedPassword={()=>setForgotPass(false)} />;
   return (
     <>
       {isLoading && (
@@ -40,16 +43,16 @@ const Login = () => {
             </h2>
             <form className="mt-8 space-y-3" onSubmit={handleLogin}>
               <div>
-                <label htmlFor="username">
+                <label htmlFor="email">
                   <span className="block text-md text-gray-600">Email</span>
                   <input
                     id="email"
                     name="email"
                     type="email"
-                    autoComplete="username"
+                    autoComplete="email"
                     required
                     className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                    placeholder="Username"
+                    placeholder="Email"
                     value={form.email}
                     onChange={(e) =>
                       setForm({
@@ -90,6 +93,15 @@ const Login = () => {
                   className="py-2 px-4 w-full bg-[#641977] text-white rounded-lg hover:opacity-100 hover:bg-[#390D44] transition duration-300"
                 >
                   Log In
+                </button>
+              </div>
+              <div className="text-center">
+                <button
+                  type="button"
+                  onClick={() => setForgotPass(true)}
+                  className="text-[#641977] hover:underline"
+                >
+                  Forgot Password?
                 </button>
               </div>
             </form>
