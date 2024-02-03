@@ -55,7 +55,7 @@ export default function JobModal() {
       });
     }
     setIsLoading(false);
-  }, [jobModalOpen]);
+  }, [jobModalOpen, id, type]);
   async function createJob(e) {
     e.preventDefault();
     const createUrl = `/api/jobs`;

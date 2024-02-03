@@ -55,7 +55,7 @@ export default function EventModal() {
       });
     }
     setIsLoading(false);
-  }, [eventModalOpen]);
+  }, [eventModalOpen ,id, type]);
   async function createEvent(e) {
     e.preventDefault();
     const createUrl = `/api/events`;
