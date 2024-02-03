@@ -2,41 +2,42 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  getJobModalState,
+  getEventModalState,
   getModalId,
   getModalType,
-  setJobModalState,
+  setEventModalState,
   setLoadingState,
 } from "@/store/reducers/valueReducer";
 import ModalWrapper from "@/layouts/ModalWrapper";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { generateSlug } from "../admin/utils/generateSlug";
-import dynamic from "next/dynamic";
-import "react-quill/dist/quill.snow.css"; // Import Quill styles
+import { formatDate, parseDate } from "../admin/utils/formatDate";
+import {
+  convertTo12HourFormat,
+  convertTo24HourFormat,
+} from "../admin/utils/formatTime";
 
-const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
-
-export default function JobModal() {
+export default function EventModal() {
   const router = useRouter();
   const dispatch = useDispatch();
-  const jobModalOpen = useSelector(getJobModalState);
+  const eventModalOpen = useSelector(getEventModalState);
   const [isLoading, setIsLoading] = useState(true);
   const [form, setForm] = useState({
     title: "",
-    department: "",
     description: "",
-    place: "",
-    details: "",
+    eventTime: "",
+    eventDate: "",
   });
   const id = useSelector(getModalId);
   const type = useSelector(getModalType);
 
   useEffect(() => {
     const fetchData = async () => {
-      let url = `/api/jobs?_id=${id}`;
+      let url = `/api/events?_id=${id}`;
       try {
         const res = await axios.get(url);
+        res.data[0].eventDate = parseDate(res.data[0].eventDate);
+        res.data[0].eventTime = convertTo24HourFormat(res.data[0].eventTime);
         setForm(res.data[0]);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -48,28 +49,20 @@ export default function JobModal() {
     } else {
       setForm({
         title: "",
-        department: "",
         description: "",
-        place: "",
-        details: "",
+        eventTime: "",
+        eventDate: "",
       });
     }
     setIsLoading(false);
-  }, [jobModalOpen]);
-  async function createJob(e) {
+  }, [eventModalOpen]);
+  async function createEvent(e) {
     e.preventDefault();
-    const createUrl = `/api/jobs`;
+    const createUrl = `/api/events`;
     try {
       dispatch(setLoadingState(true));
-      let slug, isUnique;
-      do {
-        slug = generateSlug(form["title"]);
-        let url = `/api/jobs?slug=${slug}`;
-        const response = await axios.get(url);
-        isUnique = response.data.length == 0;
-      } while (!isUnique);
-      form["slug"] = slug;
-      form["isClosed"] = false;
+      form["eventDate"] = formatDate(form["eventDate"]);
+      form["eventTime"] = convertTo12HourFormat(form["eventTime"]);
       await axios.post(createUrl, form);
       closeModal(true);
       router.reload();
@@ -79,11 +72,13 @@ export default function JobModal() {
       dispatch(setLoadingState(false));
     }
   }
-  async function editJob(e) {
+  async function editEvent(e) {
     e.preventDefault();
-    const editUrl = `/api/jobs?id=${id}`;
+    const editUrl = `/api/events?id=${id}`;
     try {
       dispatch(setLoadingState(true));
+      form["eventDate"] = formatDate(form["eventDate"]);
+      form["eventTime"] = convertTo12HourFormat(form["eventTime"]);
       await axios.put(editUrl, form);
       closeModal(true);
       router.reload();
@@ -95,55 +90,22 @@ export default function JobModal() {
   }
   function formSubmitHandler(e) {
     e.preventDefault();
-    if (type == "Edit") editJob(e);
-    else createJob(e);
+    if (type == "Edit") editEvent(e);
+    else createEvent(e);
   }
-  const quillModules = {
-    toolbar: [
-      [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
-      [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image"],
-      [{ align: [] }],
-      [{ color: [] }],
-      ["code-block"],
-      ["clean"],
-    ],
-  };
-
-  const quillFormats = [
-    "header",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "link",
-    "image",
-    "align",
-    "color",
-    "code-block",
-  ];
-
-  const handleEditorChange = (value) => {
-    setForm({ ...form, details: value });
-  };
 
   function closeModal() {
     setForm({
       title: "",
-      department: "",
       description: "",
-      place: "",
-      details: "",
+      eventTime: "",
+      eventDate: "",
     });
-    dispatch(setJobModalState(false));
+    dispatch(setEventModalState(false));
   }
   return (
     <>
-      {jobModalOpen && !isLoading && (
+      {eventModalOpen && !isLoading && (
         <ModalWrapper closeModal={closeModal}>
           <div className="max-w-800 rounded-lg bg-white pt-4 px-4 pb-2 x-sm:pb-4 md:pb-0 relative">
             {/* close modal button */}
@@ -160,80 +122,40 @@ export default function JobModal() {
             </div>
             <div className="md:m-4">
               <h1 className="text-secondary font-semibold text-xl review:text-2xl md:text-3xl max-md:text-center">
-                {type} Job
+                {type} Event
               </h1>
               <form
                 className="max-w-800 mx-auto md:p-4"
                 onSubmit={formSubmitHandler}
               >
-                <div className="grid md:grid-cols-2 md:gap-6">
-                  <label htmlFor="title" className="mb-2 md:mb-3 block">
-                    <span className="block text-sm text-gray-600">
-                      Job Title *
-                    </span>
-                    <input
-                      type="text"
-                      name="title"
-                      id="title"
-                      required
-                      placeholder="Title"
-                      className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                      value={form.title}
-                      onChange={(e) =>
-                        setForm({ ...form, title: e.target.value })
-                      }
-                    />
-                  </label>
-                  <label htmlFor="department" className="mb-2 md:mb-3 block">
-                    <span className="block text-sm text-gray-600">
-                      Department *
-                    </span>
-                    <input
-                      type="text"
-                      name="department"
-                      id="department"
-                      required
-                      placeholder="Department"
-                      className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                      value={form.department}
-                      onChange={(e) =>
-                        setForm({
-                          ...form,
-                          department: e.target.value.toUpperCase(),
-                        })
-                      }
-                    />
-                  </label>
-                </div>
-
-                <label htmlFor="place" className="mb-2 md:mb-3 block">
+                <label htmlFor="title" className="mb-2 md:mb-3 block">
                   <span className="block text-sm text-gray-600">
-                    Job Location *
+                    Event Title *
                   </span>
                   <input
                     type="text"
-                    name="place"
-                    id="place"
+                    name="title"
+                    id="title"
                     required
-                    placeholder="Location"
+                    placeholder="Title"
                     className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                    value={form.place}
+                    value={form.title}
                     onChange={(e) =>
-                      setForm({ ...form, place: e.target.value })
+                      setForm({ ...form, title: e.target.value.toUpperCase() })
                     }
                   />
                 </label>
 
                 <label htmlFor="description" className="mb-2 md:mb-3 block">
                   <span className="block text-sm text-gray-600">
-                    Job Description *
+                    Event Description *
                   </span>
                   <textarea
                     type="text"
                     name="description"
                     id="description"
                     required
-                    placeholder="description"
+                    placeholder="Description"
                     className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
                     value={form.description}
                     rows={6}
@@ -243,15 +165,38 @@ export default function JobModal() {
                     }
                   />
                 </label>
-                <label htmlFor="details" className="mb-2 md:mb-3 block">
+
+                <label htmlFor="eventDate" className="mb-2 md:mb-3 block">
                   <span className="block text-sm text-gray-600">
-                    Job Details *
+                    Event Date *
                   </span>
-                  <QuillEditor
-                    value={form.details}
-                    onChange={handleEditorChange}
-                    modules={quillModules}
-                    formats={quillFormats}
+                  <input
+                    type="date"
+                    name="eventDate"
+                    id="eventDate"
+                    required
+                    className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
+                    value={form.eventDate}
+                    onChange={(e) =>
+                      setForm({ ...form, eventDate: e.target.value })
+                    }
+                  />
+                </label>
+
+                <label htmlFor="eventTime" className="mb-2 md:mb-3 block">
+                  <span className="block text-sm text-gray-600">
+                    Event Time *
+                  </span>
+                  <input
+                    type="time"
+                    name="eventTime"
+                    id="eventTime"
+                    required
+                    className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent"
+                    value={form.eventTime}
+                    onChange={(e) =>
+                      setForm({ ...form, eventTime: e.target.value })
+                    }
                   />
                 </label>
                 <div>

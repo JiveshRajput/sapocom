@@ -54,32 +54,30 @@ export default function Careers() {
           <p className="mb-8 text-center text-base text-black">
             Explore exciting opportunities to work with us.
           </p>
-          {
-            isLoading ? (
-              <p className="text-2xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-4xl z-40 font-semibold">Loading...
-              </p>
-            ) : (
-              <>
-                {OpeningsData && OpeningsData.length > 0 ? (
-                  <div className="mx-auto">
-                    <div className="flex-col space-y-4">
-                      {OpeningsData.map((opening, ind) => {
-                        return <JobOpening jobData={opening} key={ind} />;
-                      })}
-                    </div>
+          {isLoading ? (
+            <p className="text-2xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-4xl z-40 font-semibold">
+              Loading...
+            </p>
+          ) : (
+            <>
+              {OpeningsData && OpeningsData.length > 0 ? (
+                <div className="mx-auto">
+                  <div className="flex-col space-y-4">
+                    {OpeningsData.map((opening, ind) => {
+                      return <JobOpening jobData={opening} key={ind} />;
+                    })}
                   </div>
-                ) : (
-                  <div className="max-w-1200 mx-auto">
-                    <p className="text-lg text-center my-8 text-transparent md:text-xl font-semibold">
-                      Currently, No Open Positions - Stay Tuned for Exciting Career
-                      Opportunities Ahead!
-                    </p>
-                  </div>
-                )}
-              </>
-            )
-          }
-
+                </div>
+              ) : (
+                <div className="max-w-1200 mx-auto">
+                  <p className="text-lg text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-xl z-40 font-semibold">
+                    Currently, No Open Positions - Stay Tuned for Exciting
+                    Career Opportunities Ahead!
+                  </p>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
 

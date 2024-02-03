@@ -6,6 +6,7 @@ import AdminNavbar from "@/components/admin/AdminNavbar";
 import DeleteModal from "@/components/modals/DeleteModal";
 import JobModal from "@/components/modals/JobModal";
 import { useRouter } from "next/router";
+import EventModal from "@/components/modals/EventModal";
 
 function AdminLayout({ children }) {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -24,6 +25,7 @@ function AdminLayout({ children }) {
       <>
         {/* <Loader /> */}
         <DeleteModal />
+        <EventModal />
         <JobModal />
         <AdminNavbar
           setShowSidebar={setShowSidebar}
