@@ -6,6 +6,11 @@ const toggleSlice = createSlice({
         navbar: false,
         isLoading: false,
         contactUsModal: false,
+        deleteModal: false,
+        eventModal: false,
+        jobModal: false,
+        modalId: 'default',
+        modalType: 'default',
         activeTab: 'Home',
     },
     reducers: {
@@ -18,12 +23,32 @@ const toggleSlice = createSlice({
         setContactUsModalState(state, action) {
             state.contactUsModal = action.payload;
         },
+        setDeleteModalState(state, action) {
+            state.deleteModal = action.payload;
+        },
+        setJobModalState(state, action) {
+            state.jobModal = action.payload;
+        },
+        setEventModalState(state, action) {
+            state.eventModal = action.payload;
+        },
+        setModalId(state, action) {
+            state.modalId = action.payload;
+        },
+        setModalType(state, action) {
+            state.modalType = action.payload;
+        },
     }
 })
 
 export const getNavbarValue = (state) => state.value.navbar;
 export const getLoadingState = (state) => state.value.isLoading;
 export const getContactUsModalState = (state) => state.value.contactUsModal;
+export const getDeleteModalState = (state) => state.value.deleteModal;
+export const getJobModalState = (state) => state.value.jobModal;
+export const getEventModalState = (state) => state.value.eventModal;
+export const getModalId = (state) => state.value.modalId;
+export const getModalType = (state) => state.value.modalType;
 
-export const { setNavbarValue, setLoadingState, setContactUsModalState } = toggleSlice.actions;
+export const { setNavbarValue, setLoadingState, setContactUsModalState , setDeleteModalState , setJobModalState,setEventModalState ,setModalId ,setModalType} = toggleSlice.actions;
 export default toggleSlice.reducer;
