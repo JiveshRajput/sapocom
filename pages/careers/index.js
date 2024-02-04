@@ -94,11 +94,16 @@ export default function Careers() {
               we invite aspiring talents to join our dynamic team. This
               isn&apos;t just an internship; it&apos;s an opportunity to unlock
               your potential and shape your career trajectory on a global scale.
-              our internship program is designed to be a launchpad for your
+            </p>
+            <p className="text-left text-base text-black opacity-70">
+              Our internship program is designed to be a launchpad for your
               professional aspirations. From hands-on projects to mentorship
               opportunities, we offer an environment that fosters learning and
-              growth. Your journey starts here, and the future is yours to
-              shape! Apply now and be a part of something extraordinary.
+              growth.
+            </p>
+            <p className="text-left text-base text-black opacity-70">
+              Your journey starts here, and the future is yours to shape! Apply
+              now and be a part of something extraordinary.
             </p>
           </div>
         </div>
@@ -113,14 +118,20 @@ export default function Careers() {
               cultures and perspectives that make up our worldwide team. As you
               navigate through our career opportunities, envision joining a
               dynamic environment that spans continents, embraces diversity, and
-              thrives on collaboration. Our commitment to innovation knows no
-              borders, and we invite professionals from every corner of the
-              globe to contribute their unique skills. Whether you&apos;re an
-              experienced global executive or a recent graduate with a universal
-              mindset, we provide a platform for you to bring your talents to a
-              truly international stage. Explore the opportunities, discover
-              your potential, and become part of a cosmopolitan community
-              that&apos;s shaping the future at SAPOCOM
+              thrives on collaboration.
+            </p>
+            <p className="text-left text-base text-black opacity-70">
+              Our commitment to innovation knows no borders, and we invite
+              professionals from every corner of the globe to contribute their
+              unique skills. Whether you&apos;re an experienced global executive
+              or a recent graduate with a universal mindset, we provide a
+              platform for you to bring your talents to a truly international
+              stage.
+            </p>
+            <p className="text-left text-base text-black opacity-70">
+              Explore the opportunities, discover your potential, and become
+              part of a cosmopolitan community that&apos;s shaping the future at
+              SAPOCOM
             </p>
           </div>
           <Image src={img2} alt={"careers-img-2"} className="w-[350px]" />
