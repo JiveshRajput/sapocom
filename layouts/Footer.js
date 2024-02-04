@@ -19,6 +19,8 @@ function Footer() {
           <Link href='/' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Home</Link>
           <Link href='/about-us' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>About Us</Link>
           <Link href='/services' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Services</Link>
+          <Link href='/careers' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Careers</Link>
+          <Link href='/events' className='text-black mb-2 block transition-[transform] hover:text-primary  hover:translate-x-2'>Events</Link>
           <Link href='/industries' className='text-black block transition-[transform] hover:text-primary  hover:translate-x-2'>Industries</Link>
         </div>
         {/* Third Row */}
