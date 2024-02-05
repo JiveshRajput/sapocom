@@ -4,19 +4,19 @@ import "react-quill/dist/quill.snow.css"; // Import Quill styles
 
 const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
 
-export default function Home() {
+export default function TextEditor({ value = "", onChange = () => {} }) {
   const [content, setContent] = useState("");
 
   const quillModules = {
     toolbar: [
-      [{ header: [1, 2, 3, false] }],
-      ["bold", "italic", "underline", "strike", "blockquote"],
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      ["bold", "italic", "underline", "strike"],
       [{ list: "ordered" }, { list: "bullet" }],
-      ["link", "image"],
-      [{ align: [] }],
+      // ["link", "image"],
+      // [{ align: [] }],
       [{ color: [] }],
-      ["code-block"],
-      ["clean"],
+      // ["code-block"],
+      // ["clean"],
     ],
   };
 
@@ -26,14 +26,14 @@ export default function Home() {
     "italic",
     "underline",
     "strike",
-    "blockquote",
+    // "blockquote",
     "list",
     "bullet",
-    "link",
-    "image",
-    "align",
+    // "link",
+    // "image",
+    // "align",
     "color",
-    "code-block",
+    // "code-block",
   ];
 
   const handleEditorChange = (newContent) => {
@@ -41,11 +41,13 @@ export default function Home() {
   };
 
   return (
-    <QuillEditor
-      value={content}
-      onChange={handleEditorChange}
-      modules={quillModules}
-      formats={quillFormats}
-    />
+    <div style={{ maxHeight: "180px", overflowY: "auto" }}>
+      <QuillEditor
+        value={value}
+        onChange={onChange}
+        modules={quillModules}
+        formats={quillFormats}
+      />
+    </div>
   );
 }

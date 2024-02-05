@@ -50,7 +50,7 @@ function MyPage() {
             </h2>
             <div
               className="text-base text-black opacity-70"
-              id="custom"
+              id="jobData"
               dangerouslySetInnerHTML={{ __html: jobData.details }}
             />
           </div>

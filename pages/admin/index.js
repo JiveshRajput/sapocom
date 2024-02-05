@@ -24,7 +24,6 @@ const Login = () => {
       setIsLoading(false);
     }
   }
-  console.log('forgotPass ',forgotPass);
   if (forgotPass) return <ForgotPassword changedPassword={()=>setForgotPass(false)} />;
   return (
     <>

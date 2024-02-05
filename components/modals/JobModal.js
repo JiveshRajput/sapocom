@@ -15,7 +15,8 @@ import { generateSlug } from "../admin/utils/generateSlug";
 import dynamic from "next/dynamic";
 import "react-quill/dist/quill.snow.css"; // Import Quill styles
 
-const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
+// const QuillEditor = dynamic(() => import("react-quill"), { ssr: false });
+import TextEditor from "../admin/utils/QuillEditor";
 
 export default function JobModal() {
   const router = useRouter();
@@ -145,7 +146,7 @@ export default function JobModal() {
     <>
       {jobModalOpen && !isLoading && (
         <ModalWrapper closeModal={closeModal}>
-          <div className="max-w-800 rounded-lg bg-white pt-4 px-4 pb-2 x-sm:pb-4 md:pb-0 relative">
+          <div className="max-w-800 rounded-lg bg-white p-3 md:p-2 relative">
             {/* close modal button */}
             <div
               className="absolute right-4 top-4 md:right-6 md:top-6 bg-black p-2 z-50 rounded-sm cursor-pointer opacity-30 hover:opacity-100 transition-[opacity]"
@@ -159,11 +160,11 @@ export default function JobModal() {
               />
             </div>
             <div className="md:m-4">
-              <h1 className="text-secondary font-semibold text-xl review:text-2xl md:text-3xl max-md:text-center">
+              <h1 className="text-secondary font-semibold text-lg review:text-xl md:text-2xl max-md:text-center">
                 {type} Job
               </h1>
               <form
-                className="max-w-800 mx-auto md:p-4"
+                className="max-w-800 mx-auto"
                 onSubmit={formSubmitHandler}
               >
                 <div className="grid md:grid-cols-2 md:gap-6">
@@ -236,7 +237,7 @@ export default function JobModal() {
                     placeholder="description"
                     className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
                     value={form.description}
-                    rows={6}
+                    rows={3}
                     style={{ resize: "none" }}
                     onChange={(e) =>
                       setForm({ ...form, description: e.target.value })
@@ -247,11 +248,11 @@ export default function JobModal() {
                   <span className="block text-sm text-gray-600">
                     Job Details *
                   </span>
-                  <QuillEditor
+                  <TextEditor
                     value={form.details}
                     onChange={handleEditorChange}
-                    modules={quillModules}
-                    formats={quillFormats}
+                    // modules={quillModules}
+                    // formats={quillFormats}
                   />
                 </label>
                 <div>

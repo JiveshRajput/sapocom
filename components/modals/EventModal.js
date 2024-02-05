@@ -55,7 +55,7 @@ export default function EventModal() {
       });
     }
     setIsLoading(false);
-  }, [eventModalOpen ,id, type]);
+  }, [eventModalOpen, id, type]);
   async function createEvent(e) {
     e.preventDefault();
     const createUrl = `/api/events`;
@@ -107,7 +107,7 @@ export default function EventModal() {
     <>
       {eventModalOpen && !isLoading && (
         <ModalWrapper closeModal={closeModal}>
-          <div className="max-w-800 rounded-lg bg-white pt-4 px-4 pb-2 x-sm:pb-4 md:pb-0 relative">
+          <div className="max-w-800 rounded-lg bg-white p-3 md:p-2 relative">
             {/* close modal button */}
             <div
               className="absolute right-4 top-4 md:right-6 md:top-6 bg-black p-2 z-50 rounded-sm cursor-pointer opacity-30 hover:opacity-100 transition-[opacity]"
@@ -121,31 +121,65 @@ export default function EventModal() {
               />
             </div>
             <div className="md:m-4">
-              <h1 className="text-secondary font-semibold text-xl review:text-2xl md:text-3xl max-md:text-center">
+              <h1 className="text-secondary font-semibold text-lg review:text-xl md:text-2xl max-review:text-center">
                 {type} Event
               </h1>
-              <form
-                className="max-w-800 mx-auto md:p-4"
-                onSubmit={formSubmitHandler}
-              >
-                <label htmlFor="title" className="mb-2 md:mb-3 block">
-                  <span className="block text-sm text-gray-600">
-                    Event Title *
-                  </span>
-                  <input
-                    type="text"
-                    name="title"
-                    id="title"
-                    required
-                    placeholder="Title"
-                    className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                    value={form.title}
-                    onChange={(e) =>
-                      setForm({ ...form, title: e.target.value.toUpperCase() })
-                    }
-                  />
-                </label>
+              <form className="max-w-800 mx-auto" onSubmit={formSubmitHandler}>
+                <div className="grid review:grid-cols-3 review:gap-6">
+                    <label htmlFor="title" className="mb-2 md:mb-3 block">
+                      <span className="block text-sm text-gray-600">
+                        Event Title *
+                      </span>
+                      <input
+                        type="text"
+                        name="title"
+                        id="title"
+                        required
+                        placeholder="Title"
+                        className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
+                        value={form.title}
+                        onChange={(e) =>
+                          setForm({
+                            ...form,
+                            title: e.target.value.toUpperCase(),
+                          })
+                        }
+                      />
+                    </label>
 
+                    <label htmlFor="eventDate" className="mb-2 md:mb-3 block">
+                      <span className="block text-sm text-gray-600">
+                        Event Date *
+                      </span>
+                      <input
+                        type="date"
+                        name="eventDate"
+                        id="eventDate"
+                        required
+                        className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
+                        value={form.eventDate}
+                        onChange={(e) =>
+                          setForm({ ...form, eventDate: e.target.value })
+                        }
+                      />
+                    </label>
+                    <label htmlFor="eventTime" className="mb-2 md:mb-3 block">
+                    <span className="block text-sm text-gray-600">
+                      Event Time *
+                    </span>
+                    <input
+                      type="time"
+                      name="eventTime"
+                      id="eventTime"
+                      required
+                      className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent"
+                      value={form.eventTime}
+                      onChange={(e) =>
+                        setForm({ ...form, eventTime: e.target.value })
+                      }
+                    />
+                  </label>
+                </div>
                 <label htmlFor="description" className="mb-2 md:mb-3 block">
                   <span className="block text-sm text-gray-600">
                     Event Description *
@@ -158,44 +192,10 @@ export default function EventModal() {
                     placeholder="Description"
                     className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
                     value={form.description}
-                    rows={6}
+                    rows={3}
                     style={{ resize: "none" }}
                     onChange={(e) =>
                       setForm({ ...form, description: e.target.value })
-                    }
-                  />
-                </label>
-
-                <label htmlFor="eventDate" className="mb-2 md:mb-3 block">
-                  <span className="block text-sm text-gray-600">
-                    Event Date *
-                  </span>
-                  <input
-                    type="date"
-                    name="eventDate"
-                    id="eventDate"
-                    required
-                    className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent placeholder:text-gray-400"
-                    value={form.eventDate}
-                    onChange={(e) =>
-                      setForm({ ...form, eventDate: e.target.value })
-                    }
-                  />
-                </label>
-
-                <label htmlFor="eventTime" className="mb-2 md:mb-3 block">
-                  <span className="block text-sm text-gray-600">
-                    Event Time *
-                  </span>
-                  <input
-                    type="time"
-                    name="eventTime"
-                    id="eventTime"
-                    required
-                    className="border-2 border-gray-300 text-gray-500 w-full rounded-lg focus:border-gray-400 p-2 outline-none bg-transparent"
-                    value={form.eventTime}
-                    onChange={(e) =>
-                      setForm({ ...form, eventTime: e.target.value })
                     }
                   />
                 </label>
