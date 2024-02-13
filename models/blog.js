@@ -1,7 +1,7 @@
-// EventModel.js
+// BlogModel.js
 import { Schema, models, model } from "mongoose";
 
-const eventSchema = new Schema({
+const blogSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -16,16 +16,16 @@ const eventSchema = new Schema({
     type: Boolean,
     default: false,
   },
-  eventDate: {
-    type: Date,
+  imageLink: {
+    type: String,
     required: true,
   },
-  eventTime: {
+  externalLink: {
     type: String,
     required: true,
   },
 });
 
-const EventModel = models.Event || model("Event", eventSchema);
+const BlogModel = models.Blog || model("Blog", blogSchema);
 
-export { EventModel };
+export { BlogModel };
