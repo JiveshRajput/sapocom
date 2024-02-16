@@ -19,8 +19,7 @@ const handler = async function (req, res) {
     try {
       await connectToDatabase();
 
-      const authenticatedUser = await protectRoute(req, res);
-      if (!authenticatedUser) return;
+      
 
       const pictures = await PictureModel.find({
         isDeleted: false,
