@@ -1,18 +1,18 @@
-import AdminEvent from "@/components/admin/AdminEvent";
-import { setEventModalState, setJobModalState, setModalType } from "@/store/reducers/valueReducer";
+import AdminBlog from "@/components/admin/AdminBlog";
+import { setBlogModalState, setModalType } from "@/store/reducers/valueReducer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
-const AdminJobs = () => {
+const AdminBlogs = () => {
   const dispatch = useDispatch();
-  const [EventsData, setEventsData] = useState([]);
+  const [BlogsData, setBlogsData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/events`);
-        setEventsData(response.data);
+        const response = await axios.get(`/api/blogs`);
+        setBlogsData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -22,7 +22,7 @@ const AdminJobs = () => {
     fetchData();
   }, []);
   const createHandler = () => {
-    dispatch(setEventModalState(true));
+    dispatch(setBlogModalState(true));
     dispatch(setModalType("Create"));
   };
   return (
@@ -31,35 +31,36 @@ const AdminJobs = () => {
         <div className="max-w-1200 mx-auto">
           <div className="flex justify-between flex-wrap items-center gap-2  mb-3 x-sm:mb-8">
             <h2 className="text-center text-4xl font-bold text-secondary">
-              Listed Events
+              Listed Blogs
             </h2>
             <button
               onClick={createHandler}
               className="px-2 border-2 text-md border-primary text-primary rounded-md font-semibold hover:bg-primary/10"
             >
-              + Add Event
+              + Add Blog
             </button>
           </div>
-          {/* Events */}
+          {/* Blogs */}
           {isLoading ? (
             <p className="text-2xl text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-4xl z-40 font-semibold">
               Loading...
             </p>
           ) : (
             <>
-              {EventsData && EventsData.length > 0 ? (
-                <div className="mx-auto">
-                  <div className="flex-col space-y-4">
-                    {EventsData.map((opening, ind) => {
-                      return <AdminEvent eventData={opening} key={ind} />;
-                    })}
-                  </div>
+              {BlogsData && BlogsData.length > 0 ? (
+                <div className="mx-auto grid x-sm:grid-cols-2 review:grid-cols-3 gap-2">
+                  {BlogsData.map((blog, ind) => {
+                    return (
+                      <div key={ind}>
+                        <AdminBlog blogData={blog} />
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
                 <div className="max-w-1200 mx-auto">
                   <p className="text-lg text-center my-8 text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary md:text-xl z-40 font-semibold">
-                    Currently, there are no upcoming events scheduled. Stay
-                    tuned for future updates!
+                    Currently, there are no blogs!
                   </p>
                 </div>
               )}
@@ -71,4 +72,4 @@ const AdminJobs = () => {
   );
 };
 
-export default AdminJobs;
+export default AdminBlogs;

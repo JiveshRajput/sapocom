@@ -1,12 +1,11 @@
 import React, {  useEffect, useState } from "react";
-import Loader from "../Loader";
-import Footer from "../Footer";
 import AdminSidebar from "@/components/admin/AdminSidebar";
 import AdminNavbar from "@/components/admin/AdminNavbar";
 import DeleteModal from "@/components/modals/DeleteModal";
 import JobModal from "@/components/modals/JobModal";
 import { useRouter } from "next/router";
-import EventModal from "@/components/modals/EventModal";
+import BlogModal from "@/components/modals/BlogModal";
+import SlideModal from "@/components/modals/SlideModal";
 
 function AdminLayout({ children }) {
   const [showSidebar, setShowSidebar] = useState(false);
@@ -25,7 +24,8 @@ function AdminLayout({ children }) {
       <>
         {/* <Loader /> */}
         <DeleteModal />
-        <EventModal />
+        <BlogModal />
+        <SlideModal />
         <JobModal />
         <AdminNavbar
           setShowSidebar={setShowSidebar}
