@@ -63,7 +63,7 @@ export default function Events() {
             <h1 className="mb-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Our Culture
             </h1>
-            <p className="text-left text-base mb-4 text-black ">
+            <p className="text-left text-base mb-8 text-black ">
               SAPOCOM is committed to cultivating a professional yet supportive
               work environment, emphasizing mutual respect and employee
               well-being. By fostering strong relationships beyond typical
@@ -80,35 +80,35 @@ export default function Events() {
               workplace culture. To uphold this commitment, we:
             </p>
 
-            <ul className="list-disc pl-4 mb-2 text-base text-black">
-              <li>
+            <div className="my-2">
+              <p>
                 <strong> Foster Social Bonds</strong>: We prioritize building
                 strong relationships among team members, creating a supportive
                 and collaborative work environment.
-              </li>
-              <li>
+              </p>
+              <p>
                 <strong>Promote Work-Life Balance</strong>: We encourage
                 employees to maintain a healthy balance between work and
                 personal life, revitalizing them to perform at their best.
-              </li>
-              <li>
+              </p>
+              <p>
                 <strong>Encourage Creative Thinking</strong>: We embrace
                 creativity as a cornerstone of innovation, empowering employees
                 to think outside the box and find resourceful solutions.
-              </li>
-              <li>
+              </p>
+              <p>
                 <strong>Celebrate Achievements</strong>: We recognize and
                 celebrate both professional milestones and personal
                 accomplishments, fostering a culture of appreciation and
                 acknowledgment.
-              </li>
-              <li>
+              </p>
+              <p>
                 <strong>Reward Positive Behavior</strong>: We incentivize
                 positive behavior and successes, reinforcing our values and
                 promoting a culture of continuous improvement and excellence.
-              </li>
-            </ul>
-            <p className="text-left text-base mb-4 text-black ">
+              </p>
+            </div>
+            <p className="text-left text-base mb-8 text-black ">
               We strive to cultivate a workplace where achievement, enjoyment,
               and celebration are integral parts of our everyday experience.
             </p>
@@ -126,7 +126,10 @@ export default function Events() {
         </div>
       </div>
 
-      <section id="Header_Banner" className="max-w-1200 mx-auto rounded-lg overflow-hidden">
+      <section
+        id="Header_Banner"
+        className="max-w-1200 mx-auto rounded-lg overflow-hidden"
+      >
         <Swiper
           slidesPerView={1}
           loop={true}
@@ -153,7 +156,7 @@ export default function Events() {
         </Swiper>
       </section>
 
-      <div className="w-full p-4 pt-20" id = "blogs">
+      <div className="w-full p-4 pt-20" id="blogs">
         <div className="max-w-800  mx-auto">
           <h1 className="mb-8 text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
             Blogs
