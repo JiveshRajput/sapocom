@@ -4,7 +4,7 @@ import bgBanner from "@/assets/images/bgImages/eventsBanner.jpg";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import img1 from "@/assets/images/careers/career-info-img1.webp";
+import img1 from "@/assets/images/culture/team-image.jpeg";
 import BlogCard from "@/components/BlogCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper";
@@ -58,7 +58,7 @@ export default function Events() {
       {/* Pathway for interns */}
       <div className="w-full py-8 px-4">
         <div className="max-w-1200 mx-auto flex flex-wrap-reverse items-center justify-center">
-          <Image src={img1} alt={"careers-img-2"} className="w-[350px]" />
+          <Image src={img1} alt={"careers-img-2"} className="w-[350px] rounded-lg" />
           <div className="max-w-[600px] mx-auto p-2">
             <h1 className="mb-2 text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Our Culture
@@ -75,43 +75,33 @@ export default function Events() {
               Fun @ Work
             </h2>
             <p className="text-left text-base mb-2 text-black ">
-              <strong>Achieve, Have Fun, and Celebrate</strong> is a core
-              principle at SAPOCOM, guiding our approach to fostering a vibrant
-              workplace culture. To uphold this commitment, we:
+              Achieve, Have Fun, and Celebrate is a core principle at SAPOCOM, guiding our approach to fostering a vibrant workplace culture. To uphold this commitment, we:
             </p>
 
-            <div className="my-2">
-              <p>
-                <strong> Foster Social Bonds</strong>: We prioritize building
-                strong relationships among team members, creating a supportive
-                and collaborative work environment.
-              </p>
-              <p>
-                <strong>Promote Work-Life Balance</strong>: We encourage
-                employees to maintain a healthy balance between work and
-                personal life, revitalizing them to perform at their best.
-              </p>
-              <p>
-                <strong>Encourage Creative Thinking</strong>: We embrace
-                creativity as a cornerstone of innovation, empowering employees
-                to think outside the box and find resourceful solutions.
-              </p>
-              <p>
-                <strong>Celebrate Achievements</strong>: We recognize and
-                celebrate both professional milestones and personal
-                accomplishments, fostering a culture of appreciation and
-                acknowledgment.
-              </p>
-              <p>
-                <strong>Reward Positive Behavior</strong>: We incentivize
-                positive behavior and successes, reinforcing our values and
-                promoting a culture of continuous improvement and excellence.
-              </p>
-            </div>
+            <ul className="my-2 pl-4">
+              <li className='list-disc'>
+                We prioritize building strong relationships among team members, creating a supportive and collaborative work environment.
+              </li>
+              <li className='list-disc'>
+                SAPOCOM encourages its employees to maintain a healthy balance between work and personal life, revitalizing them to perform at their best.
+              </li>
+              <li className='list-disc'>
+                As an organization, we embrace creativity as a cornerstone of innovation, empowering employees to think outside the box and find resourceful solutions.
+              </li>
+              <li className='list-disc'>
+                We recognize and celebrate both professional milestones and personal accomplishments, fostering a culture of appreciation and acknowledgment.
+              </li>           
+              <li className='list-disc'>
+                We incentivize positive behaviour and successes, reinforcing our values and promoting a culture of continuous improvement and excellence.
+              </li>           
+              
+            </ul>
+
             <p className="text-left text-base mb-8 text-black ">
               We strive to cultivate a workplace where achievement, enjoyment,
               and celebration are integral parts of our everyday experience.
             </p>
+
             <h2 className="mb-2 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
               Environment
             </h2>
@@ -146,7 +136,7 @@ export default function Events() {
                     src={`/uploads/${cultureData[ind].link}`}
                     alt="bg_image"
                     priority={true}
-                    className="absolute w-full h-full object-cover"
+                    className="absolute w-full h-full object-contain bg-white"
                     fill
                   />
                 </div>
@@ -172,7 +162,7 @@ export default function Events() {
           ) : (
             <>
               {BlogData && BlogData.length > 0 ? (
-                <div className="mx-auto grid x-sm:grid-cols-2 review:grid-cols-3 gap-2">
+                <div className="mx-auto grid x-sm:grid-cols-2 review:grid-cols-3 gap-4">
                   {BlogData.map((blog, ind) => {
                     return (
                       <div key={ind}>
