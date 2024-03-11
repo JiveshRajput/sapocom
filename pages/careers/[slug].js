@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { setLoadingState } from "@/store/reducers/valueReducer";
 import { useDispatch } from "react-redux";
 import Loader from "@/layouts/Loader";
-import { MAIN_URL } from '@/configs/config';
 
 function MyPage() {
   // function MyPage({ jobData = {} }) {

@@ -85,8 +85,11 @@ import team9 from '@/assets/images/about/team9.png'
 import team10 from '@/assets/images/about/founder.png'
 
 export const MAIN_URL = 'http://localhost:3000';
+export const MONGODB_URL = 'mongodb+srv://sapocomwebsiteadm:sapocom@123@sapocomwebsite.saidz2h.mongodb.net/?retryWrites=true&w=majority';
+export const MONGODB_URL_DEMO = "mongodb+srv://princeverma360p:e9QGzKyLf9xm19Ib@cluster0.smaku2s.mongodb.net/?retryWrites=true&w=majority";
 // export const MAIN_URL = 'https://sapocom.vercel.app';
 // export const MAIN_URL = 'https://sapocomglobal.com';
+
 
 
 // Home page

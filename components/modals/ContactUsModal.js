@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContactUsModalState, setContactUsModalState, setLoadingState } from '@/store/reducers/valueReducer';
 import ModalWrapper from '@/layouts/ModalWrapper'
 import contactUsModalImage from '@/assets/images/modals/contactUsSideImage.png'
-import { MAIN_URL } from '@/configs/config';
+// import { MAIN_URL } from '@/configs/config';
 
 export default function ContactUsModal() {
     const dispatch = useDispatch();
@@ -16,7 +16,8 @@ export default function ContactUsModal() {
         e.preventDefault();
         try {
             dispatch(setLoadingState(true));
-            const url = `${MAIN_URL}/api/send-mail-to-admin`;
+            const url = `/api/send-mail-to-admin`;
+            // const url = `${MAIN_URL}/api/send-mail-to-admin`;
             const jsonResponse = await fetch(url, {
                 method: 'POST',
                 headers: {

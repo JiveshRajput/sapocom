@@ -7,7 +7,7 @@ import { setLoadingState } from '@/store/reducers/valueReducer';
 
 // images
 import contactAddressBg from '@/assets/images/contact/contact-address.png'
-import { MAIN_URL } from '@/configs/config';
+// import { MAIN_URL } from '@/configs/config';
 
 function ContactUs() {
   const dispatch = useDispatch();
@@ -17,7 +17,8 @@ function ContactUs() {
     e.preventDefault();
     try {
       dispatch(setLoadingState(true));
-      const url = `${MAIN_URL}/api/send-mail-to-admin`;
+      const url = `/api/send-mail-to-admin`;
+      // const url = `${MAIN_URL}/api/send-mail-to-admin`;
       const jsonResponse = await fetch(url, {
         method: 'POST',
         headers: {
