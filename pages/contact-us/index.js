@@ -18,7 +18,6 @@ function ContactUs() {
     try {
       dispatch(setLoadingState(true));
       const url = `/api/send-mail-to-admin`;
-      // const url = `${MAIN_URL}/api/send-mail-to-admin`;
       const jsonResponse = await fetch(url, {
         method: 'POST',
         headers: {
@@ -40,8 +39,7 @@ function ContactUs() {
 
     // Send Mail to User
     // try {
-    //   const url = `${MAIN_URL}/api/send-mail-to-user`;
-    //   // const url = 'http://localhost:3000/api/send-mail-to-user';
+    //   const url = `/api/send-mail-to-user`;
     //   const jsonResponse = await fetch(url, {
     //     method: 'POST',
     //     headers: { "Content-Type": "application/json" },
