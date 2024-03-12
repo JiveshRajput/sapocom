@@ -50,7 +50,7 @@ export default function Events() {
       <SetHeaders title="Our Culture | Sapocom" />
       <BannerWithClickHandler
         heading="Discover What's Happening"
-        para="Stay informed about our upcoming events and join the excitement!"
+        para="Stay updated and be part of the excitement ahead!"
         bgImg={bgBanner}
         btnText="View Blogs"
         clickHandler={scrollLogic}
