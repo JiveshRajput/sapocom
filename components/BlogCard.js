@@ -3,12 +3,14 @@ export default function BlogCard({ blogData }) {
 
   return (
     <a href={externalLink} target="_blank">
-      <div className="bg-white border border-gray-300 shadow-md transition-transform hover:-translate-y-1 hover:transform hover:shadow-lg rounded-lg">
+      <div className="bg-white border border-gray-300 shadow-md transition-transform hover:-translate-y-1 hover:transform hover:shadow-lg rounded-lg overflow-hidden">
+        <div>
         <img
-          className="mx-auto rounded-t-lg aspect-video object-contain bg-gray-200"
+          className=" aspect-video object-cover w-full bg-gray-200"
           src={imageLink}
           alt="blog-image"
-        />
+          />
+        </div>
         <div className="p-4">
           <h5 className="mb-2 truncate text-xl font-bold tracking-tight text-gray-900">
             {title}

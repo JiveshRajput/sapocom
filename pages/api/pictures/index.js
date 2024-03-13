@@ -60,9 +60,9 @@ const handler = async function (req, res) {
             link,
           });
   
-          res.status(201).json(newPicture);
-  
+          res.status(201).json({message:"File Uploaded Successfully!", newPicture});  
         });
+        
       } else {
         console.log('PATH DOESNT EXISTS');
 
@@ -76,7 +76,7 @@ const handler = async function (req, res) {
         form.parse(req, async (err, fields, files) => {
           if (err) {
             console.error("Error parsing form data:", err);
-            res.status(500).json({ error: "Internal Server Error" });
+            res.status(500).json({ err, error: "Internal Server Error" });
             return;
           }
           const fieldsObject = {};
@@ -87,7 +87,7 @@ const handler = async function (req, res) {
             }
           }
           const link = files.picture[0].newFilename;
-
+          console.log("LINK", link);
           await connectToDatabase();
 
           const newPicture = await PictureModel.create({
@@ -95,8 +95,7 @@ const handler = async function (req, res) {
             link,
           });
 
-          res.status(201).json(newPicture);
-
+          res.status(201).json({message:"File Uploaded Successfully!", newPicture});
         });
     }
 

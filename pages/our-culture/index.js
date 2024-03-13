@@ -162,7 +162,7 @@ export default function Events() {
           ) : (
             <>
               {BlogData && BlogData.length > 0 ? (
-                <div className="mx-auto grid x-sm:grid-cols-2 review:grid-cols-3 gap-4">
+                <div className="mx-auto grid grid-cols-1 x-sm:grid-cols-2 review:grid-cols-3 gap-4">
                   {BlogData.map((blog, ind) => {
                     return (
                       <div key={ind}>
