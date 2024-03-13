@@ -2,8 +2,8 @@ export default function BlogCard({ blogData }) {
   const { title, description, imageLink, externalLink } = blogData;
 
   return (
-    <a href={externalLink} target="_blank">
-      <div className="bg-white border border-gray-300 shadow-md transition-transform hover:-translate-y-1 hover:transform hover:shadow-lg rounded-lg overflow-hidden">
+    <a href={externalLink} target="_blank" className="h-full block">
+      <div className="h-full bg-white border border-gray-300 shadow-md transition-transform hover:-translate-y-1 hover:transform hover:shadow-lg rounded-lg overflow-hidden">
         <div>
         <img
           className=" aspect-video object-cover w-full bg-gray-200"
@@ -11,6 +11,7 @@ export default function BlogCard({ blogData }) {
           alt="blog-image"
           />
         </div>
+
         <div className="p-4">
           <h5 className="mb-2 truncate text-lg font-bold tracking-tight text-gray-900">
             {title}

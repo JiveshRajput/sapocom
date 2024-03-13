@@ -118,7 +118,7 @@ export default function Events() {
 
       <section
         id="Header_Banner"
-        className="max-w-1200 mx-auto rounded-lg overflow-hidden"
+        className="max-w-1200 mx-auto rounded-lg overflow-hidden py-8 px-4"
       >
         <Swiper
           slidesPerView={1}
@@ -147,8 +147,8 @@ export default function Events() {
         </Swiper>
       </section>
 
-      <div className="w-full p-4 pt-20" id="blogs">
-        <div className="max-w-800  mx-auto">
+      <div className="w-full p-4 pt-16 py-8" id="blogs">
+        <div className="max-w-900  mx-auto">
           <h1 className="mb-8 text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
             Blogs
           </h1>
@@ -163,7 +163,7 @@ export default function Events() {
           ) : (
             <>
               {BlogData && BlogData.length > 0 ? (
-                <div className="mx-auto grid grid-cols-1 x-sm:grid-cols-2 review:grid-cols-3 gap-4">
+                <div className="mx-auto grid grid-cols-1 x-sm:grid-cols-2 review:grid-cols-3 gap-5">
                   {BlogData.map((blog, ind) => {
                     return (
                       <div key={ind}>
