@@ -31,10 +31,10 @@ const handler = async function (req, res) {
     }
   } else if (req.method === "POST") {
     try {
-      if(fs.existsSync(path.join(process.cwd(), "public", "uploads"))) {
-        console.log('PATH EXISTS')
+      // if(fs.existsSync(path.join(process.cwd(), "public", "uploads"))) {
+        // console.log('PATH EXISTS')
         const form = formidable({
-          uploadDir: path.join(process.cwd(), "public", "uploads"),
+          // uploadDir: path.join(process.cwd(), "public", "uploads"),
           keepExtensions: true,
         });
   
@@ -47,11 +47,12 @@ const handler = async function (req, res) {
           const fieldsObject = {};
   
           for (const key in fields) {
-            console.log(key, fields[key][0]);
+            // console.log(key, fields[key][0]);
             if (Object.prototype.hasOwnProperty.call(fields, key)) {
               fieldsObject[key] = fields[key][0];
             }
           }
+
           const link = files.picture[0].newFilename;
   
           await connectToDatabase();
@@ -64,42 +65,42 @@ const handler = async function (req, res) {
           res.status(201).json({message:"File Uploaded Successfully!", newPicture});  
         });
         
-      } else {
-        console.log('PATH DOESNT EXISTS');
+    //   } else {
+    //     console.log('PATH DOESNT EXISTS');
 
-        fs.mkdirSync(path.join(process.cwd(), "public", "uploads"))
+    //     fs.mkdirSync(path.join(process.cwd(), "public", "uploads"))
 
-        const form = formidable({
-          uploadDir: path.join(process.cwd(), "public", "uploads"),
-          keepExtensions: true,
-        });
+    //     const form = formidable({
+    //       uploadDir: path.join(process.cwd(), "public", "uploads"),
+    //       keepExtensions: true,
+    //     });
 
-        form.parse(req, async (err, fields, files) => {
-          if (err) {
-            console.error("Error parsing form data:", err);
-            res.status(500).json({ err, error: "Internal Server Error" });
-            return;
-          }
-          const fieldsObject = {};
+    //     form.parse(req, async (err, fields, files) => {
+    //       if (err) {
+    //         console.error("Error parsing form data:", err);
+    //         res.status(500).json({ err, error: "Internal Server Error" });
+    //         return;
+    //       }
+    //       const fieldsObject = {};
 
-          for (const key in fields) {
-            console.log(key, fields[key][0]);
-            if (Object.prototype.hasOwnProperty.call(fields, key)) {
-              fieldsObject[key] = fields[key][0];
-            }
-          }
-          const link = files.picture[0].newFilename;
-          console.log("LINK", link);
-          await connectToDatabase();
+    //       for (const key in fields) {
+    //         console.log(key, fields[key][0]);
+    //         if (Object.prototype.hasOwnProperty.call(fields, key)) {
+    //           fieldsObject[key] = fields[key][0];
+    //         }
+    //       }
+    //       const link = files.picture[0].newFilename;
+    //       console.log("LINK", link);
+    //       await connectToDatabase();
 
-          const newPicture = await PictureModel.create({
-            ...fieldsObject,
-            link,            
-          });
+    //       const newPicture = await PictureModel.create({
+    //         ...fieldsObject,
+    //         link,            
+    //       });
 
-          res.status(201).json({message:"File Uploaded Successfully!", newPicture});
-        });
-    }
+    //       res.status(201).json({message:"File Uploaded Successfully!", newPicture});
+    //     });
+    // }
 
     } catch (error) {
       console.log(error);
