@@ -16,7 +16,7 @@ export default function ApplicantData({ data }) {
   };
   const downloadResume = () => {
     const downloadUrl = `/uploads/${data.resume}`;
-    console.log('url ', downloadUrl)
+    // console.log('url ', downloadUrl)
     const link = document.createElement('a');
     link.href = downloadUrl;
     link.setAttribute('download', 'resume.pdf');

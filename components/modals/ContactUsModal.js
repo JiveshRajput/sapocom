@@ -32,7 +32,7 @@ export default function ContactUsModal() {
             }, 10);
             setForm({ name: '', email: '', number: '', message: '' });
         } catch (error) {
-            console.log(error);
+            // console.log(error);
             dispatch(setLoadingState(false));
         }
 

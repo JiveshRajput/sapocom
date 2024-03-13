@@ -39,8 +39,8 @@ const ForgotPassword = ({changedPassword}) => {
     try {
       setIsLoading(true);
       const response = await axios.post("/api/admins/auth/resetPassword", form);
-      console.log('form ' , form);
-      console.log('res ' , response);
+      // console.log('form ' , form);
+      // console.log('res ' , response);
       changedPassword();
     } catch (error) {
       setError(error.response.data.message);

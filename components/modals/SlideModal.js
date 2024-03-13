@@ -54,15 +54,13 @@ export default function SlideModal() {
   }
 
   function convertToBase64(file) {
-    console.log(file);
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = () =>{
-      console.log(reader.result);
       setImage(reader.result);
     }
     reader.onerror = error => {
-      console.log("ERROR ON CONVERTING TO BASE", error);
+      // console.log("ERROR ON CONVERTING TO BASE", error);
     }
   }
 
