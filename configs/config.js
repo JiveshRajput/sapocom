@@ -107,14 +107,6 @@ export const navTabs = [
     link: "/services",
   },
   {
-    name: "Careers",
-    link: "/careers",
-  },
-  {
-    name: "Our Culture",
-    link: "/our-culture",
-  },
-  {
     name: "Industries",
     link: "/industries",
     subTabs: [
@@ -135,6 +127,14 @@ export const navTabs = [
         link: "/chemical",
       },
     ],
+  },
+  {
+    name: "Our Culture",
+    link: "/our-culture",
+  },
+  {
+    name: "Careers",
+    link: "/careers",
   },
 ];
 export const slidesData = [

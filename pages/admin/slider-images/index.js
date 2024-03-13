@@ -21,9 +21,11 @@ const AdminSlider = () => {
     };
     fetchSlides();
   }, []);
+
   const createHandler = () => {
     dispatch(setSlideModalState(true));
   };
+  
   return (
     <>
       <div className="w-full py-8 md:py-12 px-4">

@@ -47,6 +47,7 @@ const handler = async function (req, res) {
           const fieldsObject = {};
   
           for (const key in fields) {
+            console.log(key, fields[key][0]);
             if (Object.prototype.hasOwnProperty.call(fields, key)) {
               fieldsObject[key] = fields[key][0];
             }
@@ -82,6 +83,7 @@ const handler = async function (req, res) {
           const fieldsObject = {};
 
           for (const key in fields) {
+            console.log(key, fields[key][0]);
             if (Object.prototype.hasOwnProperty.call(fields, key)) {
               fieldsObject[key] = fields[key][0];
             }
@@ -92,7 +94,7 @@ const handler = async function (req, res) {
 
           const newPicture = await PictureModel.create({
             ...fieldsObject,
-            link,
+            link,            
           });
 
           res.status(201).json({message:"File Uploaded Successfully!", newPicture});

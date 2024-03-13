@@ -12,6 +12,10 @@ const pictureSchema = new Schema({
     required: true,
     trim: true,
   },
+  imageBlob: {
+    type: String,
+    required: true,
+  },
   isDeleted: {
     type: Boolean,
     default: false,

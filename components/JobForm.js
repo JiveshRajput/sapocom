@@ -138,7 +138,7 @@ export default function JobForm({ jobData }) {
                 </div>
                 <input
                   type="file"
-                  accept=".pdf"
+                  accept=".pdf,.doc,.docx"
                   name="resume"
                   id="resume"
                   className="hidden"

@@ -12,10 +12,10 @@ export default function BlogCard({ blogData }) {
           />
         </div>
         <div className="p-4">
-          <h5 className="mb-2 truncate text-xl font-bold tracking-tight text-gray-900">
+          <h5 className="mb-2 truncate text-lg font-bold tracking-tight text-gray-900">
             {title}
           </h5>
-          <p className="line-clamp-3 font-normal text-gray-700 ">{description}</p>
+          <p className="line-clamp-3 font-normal text-sm text-gray-700 ">{description}</p>
         </div>
       </div>
     </a>
