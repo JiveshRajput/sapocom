@@ -41,7 +41,7 @@ const handler = async function (req, res) {
         form.parse(req, async (err, fields, files) => {
           if (err) {
             console.error("Error parsing form data:", err);
-            res.status(500).json({ error: "Internal Server Error" });
+            res.status(500).json({ err, error: "Internal Server Error" });
             return;
           }
           const fieldsObject = {};
