@@ -9,6 +9,7 @@ import dlt from "@/assets/images/icons/delete.svg";
 
 export default function AdminSliderCard({ sliderData }) {
   const link = sliderData.link;
+  const imageBlob = sliderData.imageBlob;
   const dispatch = useDispatch();
   const deleteHandler = () => {
     dispatch(setDeleteModalState(true));
@@ -24,7 +25,8 @@ export default function AdminSliderCard({ sliderData }) {
             src={imageLink}
             alt={"careers-img-2"}
           /> */}
-      <img src={`/uploads/${link}`} alt="bg_image" className="w-full" />
+      <img src={imageBlob} alt="bg_image" className="w-full" />
+      {/* <img src={`/uploads/${link}`} alt="bg_image" className="w-full" /> */}
       <div className="w-full flex items-center justify-center">
         <div
           onClick={deleteHandler}

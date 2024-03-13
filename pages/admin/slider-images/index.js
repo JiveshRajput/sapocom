@@ -53,7 +53,7 @@ const AdminSlider = () => {
                   {sliderData.map((slide, ind) => {
                     return (
                       <div key={ind}>
-                        <AdminSliderCard sliderData={sliderData[ind]} />
+                        <AdminSliderCard sliderData={slide} />
                       </div>
                     );
                   })}
