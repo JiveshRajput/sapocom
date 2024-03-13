@@ -3,7 +3,7 @@ import { PictureModel } from "@/models/picture";
 
 import formidable from "formidable";
 import path from "path";
-
+import fs from 'fs';
 import { protectRoute } from "@/lib/auth";
 
 
@@ -19,8 +19,6 @@ const handler = async function (req, res) {
     try {
       await connectToDatabase();
 
-      
-
       const pictures = await PictureModel.find({
         isDeleted: false,
         ...(req.query && req.query),
@@ -33,40 +31,78 @@ const handler = async function (req, res) {
     }
   } else if (req.method === "POST") {
     try {
-      const form = formidable({
-        uploadDir: path.join(process.cwd(), "public", "uploads"),
-        keepExtensions: true,
-      });
-
-      form.parse(req, async (err, fields, files) => {
-        if (err) {
-          console.error("Error parsing form data:", err);
-          res.status(500).json({ error: "Internal Server Error" });
-          return;
-        }
-        const fieldsObject = {};
-
-        for (const key in fields) {
-          if (Object.prototype.hasOwnProperty.call(fields, key)) {
-            fieldsObject[key] = fields[key][0];
+      if(fs.existsSync(path.join(process.cwd(), "public", "uploads"))) {
+        console.log('PATH EXISTS')
+        const form = formidable({
+          uploadDir: path.join(process.cwd(), "public", "uploads"),
+          keepExtensions: true,
+        });
+  
+        form.parse(req, async (err, fields, files) => {
+          if (err) {
+            console.error("Error parsing form data:", err);
+            res.status(500).json({ error: "Internal Server Error" });
+            return;
           }
-        }
+          const fieldsObject = {};
+  
+          for (const key in fields) {
+            if (Object.prototype.hasOwnProperty.call(fields, key)) {
+              fieldsObject[key] = fields[key][0];
+            }
+          }
+          const link = files.picture[0].newFilename;
+  
+          await connectToDatabase();
+  
+          const newPicture = await PictureModel.create({
+            ...fieldsObject,
+            link,
+          });
+  
+          res.status(201).json(newPicture);
+  
+        });
+      } else {
+        console.log('PATH DOESNT EXISTS');
 
-        const link = files.picture[0].newFilename;
+        fs.mkdirSync(path.join(process.cwd(), "public", "uploads"))
 
-        await connectToDatabase();
-
-        const newPicture = await PictureModel.create({
-          ...fieldsObject,
-          link,
+        const form = formidable({
+          uploadDir: path.join(process.cwd(), "public", "uploads"),
+          keepExtensions: true,
         });
 
-        res.status(201).json(newPicture);
+        form.parse(req, async (err, fields, files) => {
+          if (err) {
+            console.error("Error parsing form data:", err);
+            res.status(500).json({ error: "Internal Server Error" });
+            return;
+          }
+          const fieldsObject = {};
 
-      });
+          for (const key in fields) {
+            if (Object.prototype.hasOwnProperty.call(fields, key)) {
+              fieldsObject[key] = fields[key][0];
+            }
+          }
+          const link = files.picture[0].newFilename;
+
+          await connectToDatabase();
+
+          const newPicture = await PictureModel.create({
+            ...fieldsObject,
+            link,
+          });
+
+          res.status(201).json(newPicture);
+
+        });
+    }
+
     } catch (error) {
       console.log(error);
-      res.status(500).json({ message: "Internal Server Error" });
+      res.status(500).json({ message: "Internal Server Error", error });
     }
   } else if (req.method === "DELETE") {
     try {
