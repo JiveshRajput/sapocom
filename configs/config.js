@@ -85,12 +85,12 @@ import team9 from "@/assets/images/about/team9.png";
 import team10 from "@/assets/images/about/founder.png";
 
 export const MAIN_URL = "http://localhost:3000";
-export const MONGODB_URL =
-  "mongodb+srv://sapocomwebsiteadm:sapocom123@sapocomwebsite.saidz2h.mongodb.net/?retryWrites=true&w=majority";
-export const MONGODB_URL_DEMO =
-  "mongodb+srv://princeverma360p:e9QGzKyLf9xm19Ib@cluster0.smaku2s.mongodb.net/?retryWrites=true&w=majority";
-// export const MAIN_URL = 'https://sapocom.vercel.app';
-// export const MAIN_URL = 'https://sapocomglobal.com';
+export const MONGODB_URL = "mongodb+srv://sapocomwebsiteadm:sapocom123@sapocomwebsite.saidz2h.mongodb.net/?retryWrites=true&w=majority";
+
+export const CLOUDINARY_CLOUD_NAME = "dm3nsocto";
+export const CLOUDINARY_API_KEY = "337611292273711";
+export const CLOUDINARY_API_SECRET = "r05mKtqNuGvgSkyIV4qYbtoJr2o";
+
 
 // Home page
 export const navTabs = [
