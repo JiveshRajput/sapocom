@@ -27,7 +27,7 @@ export default function SlideModal() {
       const form = new FormData(e.target);
       // form.append("imageBlob", "");
       // form.append("imageBlob", image);
-      form.append("picture", picture);
+      // form.append("picture", picture);
       await axios.post(createUrl, form);
       closeModal(true);
       router.reload();
