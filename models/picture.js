@@ -12,7 +12,7 @@ const pictureSchema = new Schema({
     required: true,
     trim: true,
   },
-  imageBlob: {
+  cloudinaryImageId: {
     type: String,
     required: true,
   },

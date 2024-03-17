@@ -9,13 +9,15 @@ import dlt from "@/assets/images/icons/delete.svg";
 
 export default function AdminSliderCard({ sliderData }) {
   const link = sliderData.link;
-  const imageBlob = sliderData.imageBlob;
+  // const imageBlob = sliderData.imageBlob;
   const dispatch = useDispatch();
+
   const deleteHandler = () => {
     dispatch(setDeleteModalState(true));
     dispatch(setModalType("pictures"));
     dispatch(setModalId(sliderData._id));
   };
+  
   return (
     <div className="max-w-1/3 bg-white border border-gray-300 shadow-md transition-transform hover:-translate-y-1 hover:transform hover:shadow-lg rounded-lg">
       {/* <Image
@@ -25,7 +27,7 @@ export default function AdminSliderCard({ sliderData }) {
             src={imageLink}
             alt={"careers-img-2"}
           /> */}
-      <img src={imageBlob} alt="bg_image" className="w-full" />
+      <img src={link} alt="bg_image" className="w-full" />
       {/* <img src={`/uploads/${link}`} alt="bg_image" className="w-full" /> */}
       <div className="w-full flex items-center justify-center">
         <div

@@ -35,17 +35,13 @@ export default function SlideModal() {
     }
   }
 
-
-
   const handleTitleChange = (e) => {
     setSlideTitle(e.target.value);
   };
 
   const handleImageChange = (e) => {
-    // Handle image upload logic here
     convertToBase64(e.target.files[0]);
   };
-
 
   function closeModal() {
     setSlideTitle("");

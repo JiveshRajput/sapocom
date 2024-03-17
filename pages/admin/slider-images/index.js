@@ -1,5 +1,5 @@
 import AdminSliderCard from "@/components/admin/AdminSliderCard";
-import {  setSlideModalState } from "@/store/reducers/valueReducer";
+import {  setLoadingState, setSlideModalState } from "@/store/reducers/valueReducer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -8,15 +8,19 @@ const AdminSlider = () => {
   const dispatch = useDispatch();
   const [sliderData, setSliderData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+
   useEffect(() => {
     const fetchSlides = async () => {
-      try {
+      dispatch(setLoadingState(true));
+      try {        
         const res = await axios.get("/api/pictures");
         setSliderData(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
         setIsLoading(false);
+        dispatch(setLoadingState(false));
       }
     };
     fetchSlides();

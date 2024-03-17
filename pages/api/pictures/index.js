@@ -1,10 +1,9 @@
+import formidable from "formidable";
+
 import { connectToDatabase } from "@/lib/db";
 import { PictureModel } from "@/models/picture";
-
-import formidable from "formidable";
-import path from "path";
-import fs from 'fs';
 import { protectRoute } from "@/lib/auth";
+import cloudinary from "@/lib/cloudinary";
 
 
 export const config = {
@@ -31,75 +30,38 @@ const handler = async function (req, res) {
     }
   } else if (req.method === "POST") {
     try {
-      // if(fs.existsSync(path.join(process.cwd(), "public", "uploads"))) {
-        // console.log('PATH EXISTS')
-        const form = formidable({
-          // uploadDir: path.join(process.cwd(), "public", "uploads"),
-          keepExtensions: true,
-        });
-  
-        form.parse(req, async (err, fields, files) => {
-          if (err) {
-            console.error("Error parsing form data:", err);
-            res.status(500).json({ err, error: "Internal Server Error" });
-            return;
+      const form = formidable({
+        keepExtensions: true,
+      });
+
+      form.parse(req, async (err, fields, files) => {
+        if (err) {
+          console.error("Error parsing form data:", err);
+          res.status(500).json({ err, error: "Internal Server Error" });
+          return;
+        }
+        const fieldsObject = {};
+
+        for (const key in fields) {
+          if (Object.prototype.hasOwnProperty.call(fields, key)) {
+            fieldsObject[key] = fields[key][0];
           }
-          const fieldsObject = {};
-  
-          for (const key in fields) {
-            if (Object.prototype.hasOwnProperty.call(fields, key)) {
-              fieldsObject[key] = fields[key][0];
-            }
-          }
+        }
 
-          const link = files.picture[0].newFilename;
-  
-          await connectToDatabase();
-  
-          const newPicture = await PictureModel.create({
-            ...fieldsObject,
-            link,
-          });
-  
-          res.status(201).json({message:"File Uploaded Successfully!", newPicture});  
+        const fileStr = fieldsObject.imageBlob;
+
+        const uploadResponse = await cloudinary.uploader.upload(fileStr, {
+          upload_preset: 'sapocom',
         });
-        
-    //   } else {
-    //     console.log('PATH DOESNT EXISTS');
 
-    //     fs.mkdirSync(path.join(process.cwd(), "public", "uploads"))
+        // console.log("CLOUDINARY IMAGE:", uploadResponse);
+        const link = uploadResponse.url;
 
-    //     const form = formidable({
-    //       uploadDir: path.join(process.cwd(), "public", "uploads"),
-    //       keepExtensions: true,
-    //     });
+        await connectToDatabase();
+        const newPicture = await PictureModel.create({ ...fieldsObject, link, cloudinaryImageId: uploadResponse.public_id });
 
-    //     form.parse(req, async (err, fields, files) => {
-    //       if (err) {
-    //         console.error("Error parsing form data:", err);
-    //         res.status(500).json({ err, error: "Internal Server Error" });
-    //         return;
-    //       }
-    //       const fieldsObject = {};
-
-    //       for (const key in fields) {
-    //         console.log(key, fields[key][0]);
-    //         if (Object.prototype.hasOwnProperty.call(fields, key)) {
-    //           fieldsObject[key] = fields[key][0];
-    //         }
-    //       }
-    //       const link = files.picture[0].newFilename;
-    //       console.log("LINK", link);
-    //       await connectToDatabase();
-
-    //       const newPicture = await PictureModel.create({
-    //         ...fieldsObject,
-    //         link,            
-    //       });
-
-    //       res.status(201).json({message:"File Uploaded Successfully!", newPicture});
-    //     });
-    // }
+        res.status(201).json({ message: "File Uploaded Successfully!", newPicture });
+      });
 
     } catch (error) {
       console.log(error);
@@ -112,11 +74,18 @@ const handler = async function (req, res) {
       const authenticatedUser = await protectRoute(req, res);
       if (!authenticatedUser) return;
 
-      await PictureModel.findByIdAndUpdate(
-        req.query.id,
-        { isDeleted: true },
-        { new: true }
-      );
+      const picture = await PictureModel.findById(req.query.id);
+      // console.log("PICTURE:", picture);
+      // console.log("CLOUDINARY ID:", picture.cloudinaryImageId);
+      
+      await cloudinary.v2.uploader.destroy(picture.cloudinaryImageId);
+      await PictureModel.deleteOne({ _id: req.query.id })
+      
+      // await PictureModel.findByIdAndUpdate(
+      //   req.query.id,
+      //   { isDeleted: true },
+      //   { new: true }
+      // );
 
       res.status(204).end();
     } catch (error) {
