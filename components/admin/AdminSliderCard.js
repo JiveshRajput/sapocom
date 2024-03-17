@@ -9,7 +9,6 @@ import dlt from "@/assets/images/icons/delete.svg";
 
 export default function AdminSliderCard({ sliderData }) {
   const link = sliderData.link;
-  // const imageBlob = sliderData.imageBlob;
   const dispatch = useDispatch();
 
   const deleteHandler = () => {
@@ -20,17 +19,9 @@ export default function AdminSliderCard({ sliderData }) {
   
   return (
     <div className="max-w-1/3 bg-white border border-gray-300 shadow-md transition-transform hover:-translate-y-1 hover:transform hover:shadow-lg rounded-lg">
-      {/* <Image
-            loader={() => imageLink}
-            unoptimized={true}
-            fill={true}
-            src={imageLink}
-            alt={"careers-img-2"}
-          /> */}
       <img src={link} alt="bg_image" className="w-full" />
-      {/* <img src={`/uploads/${link}`} alt="bg_image" className="w-full" /> */}
       <div className="w-full flex items-center justify-center">
-        <div
+        <div 
           onClick={deleteHandler}
           className="py-1 px-2 w-[40px] text-sm cursor-pointer text-primary rounded-full font-semibold hover:bg-primary/10"
         >

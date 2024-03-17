@@ -134,7 +134,6 @@ export default function Events() {
                 <div className="flex justify-center items-center flex-col w-full h-full p-4  relative bg-black">
                   <Image
                     src={value.link}
-                    // src={value.imageBlob}
                     alt="bg_image"
                     priority={true}
                     className="absolute w-full h-full object-contain bg-white"

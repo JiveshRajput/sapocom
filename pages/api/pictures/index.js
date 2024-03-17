@@ -1,4 +1,7 @@
 import formidable from "formidable";
+import fs from "fs";
+import path from 'path';
+import datauri from 'datauri';
 
 import { connectToDatabase } from "@/lib/db";
 import { PictureModel } from "@/models/picture";
@@ -40,6 +43,7 @@ const handler = async function (req, res) {
           res.status(500).json({ err, error: "Internal Server Error" });
           return;
         }
+
         const fieldsObject = {};
 
         for (const key in fields) {
@@ -47,24 +51,38 @@ const handler = async function (req, res) {
             fieldsObject[key] = fields[key][0];
           }
         }
-
-        const fileStr = fieldsObject.imageBlob;
-
-        const uploadResponse = await cloudinary.uploader.upload(fileStr, {
-          upload_preset: 'sapocom',
-        });
-
-        // console.log("CLOUDINARY IMAGE:", uploadResponse);
+       
+        const file = files.picture[0];
+        const base64Image = await convertImageToBase64(file.filepath);
+        // console.log("BASE IAMGE: ", base64Image);
+        
+        console.log("cloudinary file upload start" );
+        let uploadResponse;
+        try {
+          
+          uploadResponse = await cloudinary.v2.uploader.upload(base64Image, {
+            upload_preset: 'sapocom',
+            timeout: 300000,
+          });
+        } catch (error) {
+          console.log("cloudinary error", error );
+        }
+        console.log("cloudinary file upload end" );
+        
         const link = uploadResponse.url;
-
+        
+        console.log("connect to db start");
         await connectToDatabase();
+        console.log("connect to db end");
+        console.log("save picture start");
         const newPicture = await PictureModel.create({ ...fieldsObject, link, cloudinaryImageId: uploadResponse.public_id });
+        console.log("save picture end");
 
         res.status(201).json({ message: "File Uploaded Successfully!", newPicture });
       });
 
     } catch (error) {
-      console.log(error);
+      console.log("ERROR:", error);
       res.status(500).json({ message: "Internal Server Error", error });
     }
   } else if (req.method === "DELETE") {
@@ -75,21 +93,13 @@ const handler = async function (req, res) {
       if (!authenticatedUser) return;
 
       const picture = await PictureModel.findById(req.query.id);
-      // console.log("PICTURE:", picture);
-      // console.log("CLOUDINARY ID:", picture.cloudinaryImageId);
-      
+
       await cloudinary.v2.uploader.destroy(picture.cloudinaryImageId);
       await PictureModel.deleteOne({ _id: req.query.id })
-      
-      // await PictureModel.findByIdAndUpdate(
-      //   req.query.id,
-      //   { isDeleted: true },
-      //   { new: true }
-      // );
 
       res.status(204).end();
     } catch (error) {
-      res.status(500).json({ message: "Internal Server Error" });
+      res.status(500).json({ message: "Internal Server Error", error });
     }
   } else {
     res.status(405).json({ message: "Method Not Allowed" });
@@ -97,3 +107,9 @@ const handler = async function (req, res) {
 };
 
 export default handler;
+
+
+async function convertImageToBase64(img) {
+  const base64Image = await datauri(img);
+  return base64Image;
+}

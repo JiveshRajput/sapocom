@@ -16,6 +16,7 @@ export default function SlideModal() {
   const slideModalOpen = useSelector(getSlideModalState);
   const [slideTitle, setSlideTitle] = useState("");
   const [image, setImage] = useState("");
+  const [picture, setPicture] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -24,7 +25,9 @@ export default function SlideModal() {
     try {
       dispatch(setLoadingState(true));
       const form = new FormData(e.target);
-      form.append("imageBlob", image);
+      // form.append("imageBlob", "");
+      // form.append("imageBlob", image);
+      form.append("picture", picture);
       await axios.post(createUrl, form);
       closeModal(true);
       router.reload();
@@ -41,11 +44,13 @@ export default function SlideModal() {
 
   const handleImageChange = (e) => {
     convertToBase64(e.target.files[0]);
+    setPicture(e.target.files[0]);
   };
 
   function closeModal() {
     setSlideTitle("");
     setImage("");
+    setPicture("");
     dispatch(setSlideModalState(false));
   }
 
@@ -56,7 +61,6 @@ export default function SlideModal() {
       setImage(reader.result);
     }
     reader.onerror = error => {
-      // console.log("ERROR ON CONVERTING TO BASE", error);
     }
   }
 
