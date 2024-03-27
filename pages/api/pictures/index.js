@@ -58,25 +58,24 @@ const handler = async function (req, res) {
         
         console.log("cloudinary file upload start" );
         let uploadResponse;
-        try {
-          
+        try {          
           uploadResponse = await cloudinary.v2.uploader.upload(base64Image, {
             upload_preset: 'sapocom',
             timeout: 300000,
           });
+          // console.log("cloudinary file upload end" );
+          
+          const link = uploadResponse.url;
+          
+          // console.log("connect to db start");
+          await connectToDatabase();
+          // console.log("connect to db end");
+          // console.log("save picture start");
+          const newPicture = await PictureModel.create({ ...fieldsObject, link, cloudinaryImageId: uploadResponse.public_id });
+          // console.log("save picture end");
         } catch (error) {
           console.log("cloudinary error", error );
         }
-        console.log("cloudinary file upload end" );
-        
-        const link = uploadResponse.url;
-        
-        console.log("connect to db start");
-        await connectToDatabase();
-        console.log("connect to db end");
-        console.log("save picture start");
-        const newPicture = await PictureModel.create({ ...fieldsObject, link, cloudinaryImageId: uploadResponse.public_id });
-        console.log("save picture end");
 
         res.status(201).json({ message: "File Uploaded Successfully!", newPicture });
       });

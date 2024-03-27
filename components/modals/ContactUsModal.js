@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContactUsModalState, setContactUsModalState, setLoadingState } from '@/store/reducers/valueReducer';
 import ModalWrapper from '@/layouts/ModalWrapper'
 import contactUsModalImage from '@/assets/images/modals/contactUsSideImage.png'
-// import { MAIN_URL } from '@/configs/config';
 
 export default function ContactUsModal() {
     const dispatch = useDispatch();

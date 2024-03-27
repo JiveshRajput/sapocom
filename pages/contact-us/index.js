@@ -7,7 +7,6 @@ import { setLoadingState } from '@/store/reducers/valueReducer';
 
 // images
 import contactAddressBg from '@/assets/images/contact/contact-address.png'
-// import { MAIN_URL } from '@/configs/config';
 
 function ContactUs() {
   const dispatch = useDispatch();

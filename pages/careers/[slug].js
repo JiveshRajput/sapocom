@@ -9,8 +9,6 @@ import { useDispatch } from "react-redux";
 import Loader from "@/layouts/Loader";
 
 function MyPage() {
-  // function MyPage({ jobData = {} }) {
-  // console.log(jobData);
   const dispatch = useDispatch();
   const router = useRouter();
   const { slug } = router.query;
@@ -56,34 +54,10 @@ function MyPage() {
         </div>
       )}
 
-      {/* Back to careers page button */}
-      {/* <div className="mx-auto max-w-1200 px-2">
-        <Link passHref href={"/careers"}>
-          <button className="py-1 px-4 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary/10">
-            &larr; View All Openings
-          </button>
-        </Link>
-      </div> */}
-
       {/* form to apply for job */}
       <JobForm jobData={jobData} />
     </>
   );
 }
-
-// export async function getServerSideProps({ request, response, resolvedUrl }) {
-//   // console.log(resolvedUrl);
-//   const slug = resolvedUrl.split('/')[2];
-//   // console.log(slug);
-//   let data;
-//   try {
-//     // Fetch data from external API
-//     const res = await fetch(`${MAIN_URL}/api/jobs?slug=${slug}`)
-//     data = await res.json();
-//     return { props: { jobData: data?.[0], error: '', isError: false } }
-//   } catch (error) {
-//     return { props: { jobData: {}, error: error.message, isError: true } }
-//   }
-// }
 
 export default MyPage;
